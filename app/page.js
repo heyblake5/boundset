@@ -373,7 +373,7 @@ function Section({ children, className = '', id = '' }) {
   )
 }
 
-// Navigation
+// Navigation — UPDATED: added quiz link
 function Nav() {
   const [scrolled, setScrolled] = useState(false)
   useEffect(() => {
@@ -386,7 +386,12 @@ function Nav() {
     <motion.nav initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : ''}`}>
       <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
         <a href="#" className="font-serif text-2xl text-brand font-semibold tracking-tight">boundset</a>
-        <button data-cal-link="heyblake/positioning" data-cal-namespace="positioning" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' className={`px-6 py-3 rounded-full font-medium transition-all duration-300 cursor-pointer ${scrolled ? 'bg-brand text-white hover:bg-brand/90' : 'bg-stone-900 text-white hover:bg-stone-800'}`}>Book a call</button>
+        <div className="flex items-center gap-3">
+          <a href="/quiz" className={`px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 border ${scrolled ? 'border-brand text-brand hover:bg-brand/5' : 'border-white/60 text-white hover:bg-white/10'}`}>
+            Take the quiz
+          </a>
+          <button data-cal-link="heyblake/positioning" data-cal-namespace="positioning" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' className={`px-6 py-3 rounded-full font-medium transition-all duration-300 cursor-pointer ${scrolled ? 'bg-brand text-white hover:bg-brand/90' : 'bg-stone-900 text-white hover:bg-stone-800'}`}>Book a call</button>
+        </div>
       </div>
     </motion.nav>
   )
@@ -523,9 +528,15 @@ export default function Home() {
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }} className="text-brand font-medium mb-6 uppercase tracking-wide text-sm">POSITIONING FOR STARTUPS</motion.p>
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="text-4xl md:text-6xl lg:text-7xl font-serif text-stone-900 leading-[1.1] mb-8">Nail your positioning so your product sells itself.</motion.h1>
             <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="text-xl md:text-2xl text-stone-600 leading-relaxed mb-10 max-w-2xl">A 2-week sprint for seed-stage startups and beyond. You'll walk away with your positioning locked, messaging documented, and copy ready to use across your site, sales calls, and outreach.</motion.p>
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="mb-20">
+            
+            {/* UPDATED: Hero CTAs — primary + secondary quiz CTA */}
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex flex-wrap items-center gap-4 mb-20">
               <button data-cal-link="heyblake/positioning" data-cal-namespace="positioning" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' className="inline-flex items-center justify-center px-8 py-4 bg-brand text-white font-medium rounded-full hover:bg-brand/90 transition-all duration-300 text-lg cursor-pointer">Book a free 1:1 consultation</button>
+              <a href="/quiz" className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-brand font-medium rounded-full border-2 border-brand hover:bg-brand/5 transition-all duration-300 text-lg">
+                Get your positioning score
+              </a>
             </motion.div>
+
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.5 }}>
               <SocialProofLogos />
             </motion.div>
@@ -684,7 +695,7 @@ export default function Home() {
         </div>
       </Section>
       
-      {/* Testimonial - Just the quote, green background, no label or headline */}
+      {/* Testimonial */}
       <Section className="py-20 md:py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="bg-brand rounded-3xl p-8 md:p-12 lg:p-16">
