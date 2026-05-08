@@ -6,7 +6,7 @@ interface Question { id: string; text: string; opts: Option[]; }
 interface Section { id: string; name: string; desc: string; questions: Question[]; }
 interface Fixes { [key: string]: { high: string; mid: string; low: string; } }
 
-const NOTION_DB = 'f269ed94-8619-42d3-bb7d-2c348b1c9a55';
+const NOTION_DB = 'dea3beef-c6ad-47d1-9e09-8120798dfe27';
 
 const qLabels: Record<string, string> = {
   c1:'C1 Team Description Consistency', c2:'C2 Homepage Hero Speed', c3:'C3 Messaging Update Frequency', c4:'C4 Cross-Channel Consistency',
