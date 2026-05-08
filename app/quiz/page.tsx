@@ -11,7 +11,7 @@ export default function QuizPage() {
         .ql-logo img{height:24px;width:auto}
         .ql-ncta{background:#1e4d35;color:#fff;border:none;border-radius:100px;padding:10px 22px;font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.2s}
         .ql-ncta:hover{background:#1a3d2e;transform:translateY(-1px)}
-        .ql-hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative}
+        .ql-hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 40px;position:relative}
         .ql-hbg{position:absolute;top:50%;left:50%;transform:translate(-50%,-55%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(45,106,74,0.07) 0%,transparent 70%);pointer-events:none}
         .ql-eye{display:inline-flex;align-items:center;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#2d6a4a;background:#e8f0eb;padding:6px 14px;border-radius:100px;margin-bottom:28px}
         .ql h1{font-family:'Playfair Display',serif;font-size:clamp(42px,7vw,76px);font-weight:400;line-height:1.1;letter-spacing:-1px;max-width:800px;margin-bottom:24px}
@@ -20,10 +20,9 @@ export default function QuizPage() {
         .ql-btn{background:#1e4d35;color:#fff;border:none;border-radius:100px;padding:16px 32px;font-family:'DM Sans',sans-serif;font-size:15px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:all 0.2s}
         .ql-btn:hover{background:#1a3d2e;transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,61,46,0.2)}
         .ql-meta{font-size:12px;color:#888;margin-top:14px}
-        .ql-lr{margin-top:64px;text-align:center}
-        .ql-ll{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#888;margin-bottom:20px}
+        .ql-lr{margin-top:40px;text-align:center}
         .ql-logos{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap}
-        .ql-div{width:1px;height:80px;background:linear-gradient(to bottom,transparent,rgba(0,0,0,0.14),transparent);margin:0 auto}
+        .ql-div{width:1px;height:40px;background:linear-gradient(to bottom,transparent,rgba(0,0,0,0.14),transparent);margin:0 auto}
         .ql-sec{padding:96px 24px;max-width:960px;margin:0 auto}
         .ql-sube{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#888;margin-bottom:14px}
         .ql h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:400;line-height:1.15;letter-spacing:-0.5px;margin-bottom:14px}
@@ -62,7 +61,7 @@ export default function QuizPage() {
       <div className="ql">
         <nav id="qnav">
           <a href="https://boundset.com" className="ql-logo">
-            <img src="/wordmark-logo.svg" alt="Boundset" />
+            <img src="/favicon.svg" alt="Boundset" style={{height:'28px',width:'auto'}} />
           </a>
           <a href="/quiz/score" className="ql-ncta">Get your positioning score</a>
         </nav>
@@ -75,12 +74,11 @@ export default function QuizPage() {
           <a href="/quiz/score" className="ql-btn">Get your positioning score →</a>
           <p className="ql-meta">Takes 4–6 minutes · Free · No pitch</p>
           <div className="ql-lr">
-            <p className="ql-ll">Trusted by founders at</p>
             <div className="ql-logos">
-              <img src="/logo-provable.svg" alt="Provable" style={{height:'22px',opacity:0.45,filter:'grayscale(1)'}} />
-              <img src="/logo-athena.svg" alt="Athena" style={{height:'22px',opacity:0.45,filter:'grayscale(1)'}} />
-              <img src="/logo-gamma.svg" alt="Gamma" style={{height:'22px',opacity:0.45,filter:'grayscale(1)'}} />
-              <img src="/logo-originalvoices.svg" alt="OriginalVoices" style={{height:'22px',opacity:0.45,filter:'grayscale(1)'}} />
+              <img src="/logo-provable.svg" alt="Provable" style={{height:'28px',opacity:0.6,filter:'grayscale(1)'}} />
+              <img src="/logo-athena.svg" alt="Athena" style={{height:'28px',opacity:0.6,filter:'grayscale(1)'}} />
+              <img src="/logo-gamma.svg" alt="Gamma" style={{height:'28px',opacity:0.6,filter:'grayscale(1)'}} />
+              <img src="/logo-originalvoices.svg" alt="OriginalVoices" style={{height:'28px',opacity:0.6,filter:'grayscale(1)'}} />
             </div>
           </div>
         </section>
@@ -146,7 +144,7 @@ export default function QuizPage() {
 
         <footer className="ql-foot">
           <a href="https://boundset.com" className="ql-logo">
-            <img src="/wordmark-logo.svg" alt="Boundset" style={{height:'20px',opacity:0.7}} />
+            <img src="/favicon.svg" alt="Boundset" style={{height:'24px',width:'auto',opacity:0.7}} />
           </a>
           <div className="ql-fls">
             <a href="https://boundset.com">Home</a>
