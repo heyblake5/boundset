@@ -70,30 +70,9 @@ async function sendToNotion(
   totalScore: number, gradeLabel: string,
   optionTexts: Record<string,string>
 ) {
-  const props: Record<string, unknown> = {
-    'Name': name,
-    'Email': email,
-    'Company': company,
-    'Website': url.startsWith('http') ? url : 'https://'+url,
-    'Total Score': totalScore,
-    'Grade': gradeLabel,
-    'Message Clarity': dimScores['clarity'] ?? 0,
-    'Market Positioning': dimScores['market'] ?? 0,
-    'Value Communication': dimScores['value'] ?? 0,
-    'Sales Efficiency': dimScores['sales'] ?? 0,
-    'Internal Alignment': dimScores['alignment'] ?? 0,
-  };
-  Object.entries(qLabels).forEach(([qid, label]) => {
-    props[label] = optionTexts[qid] ?? '';
-  });
-
-  await fetch('https://api.notion.com/v1/pages', {
+  await fetch('/api/quiz', {
     method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${process.env.NEXT_PUBLIC_NOTION_TOKEN}`,
-      'Content-Type': 'application/json',
-      'Notion-Version': '2022-06-28',
-    },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       parent: { database_id: NOTION_DB },
       properties: {
