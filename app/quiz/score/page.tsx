@@ -246,7 +246,7 @@ export default function QuizScorePage() {
       `}</style>
       <div className="qz">
         <div className="qz-w">
-          <a href="https://boundset.com" style={{display:"flex",alignItems:"center",textDecoration:"none",marginBottom:"48px"}}><img src="/wordmark-logo.svg" alt="Boundset" style={{height:"24px",width:"auto"}} /></a>
+          <a href="https://boundset.com" style={{display:"flex",alignItems:"center",textDecoration:"none",marginBottom:"48px"}}><img src="/favicon.svg" alt="Boundset" style={{height:"28px",width:"auto"}} /></a>
           {step==='intro'&&(
             <div>
               <div className="qz-ey">Positioning Pressure Test</div>
