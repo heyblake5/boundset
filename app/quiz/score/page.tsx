@@ -143,7 +143,7 @@ export default function QuizScorePage() {
 
   const goBack = () => { if (pairIdx > 0) { setPairIdx(p => p - 1); window.scrollTo(0,0); } };
 
-  const dimScores = {};
+  const dimScores = /** @type {Record<string, number>} */ ({});
   sections.forEach(function(sec) {
     const total = sec.questions.reduce((sum, q) => sum + (answers[q.id] || 0), 0);
     dimScores[sec.id] = Math.round((total / 16) * 20);
