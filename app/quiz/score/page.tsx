@@ -55,7 +55,7 @@ const sections = [
       { id:'s3', text:'How long do new sales hires take to confidently describe your product and its value?',
         opts:[{t:'A few days with good docs',s:4},{t:'1–2 weeks',s:2},{t:'2–4 weeks',s:1},{t:'Over a month',s:0}] },
       { id:'s4', text:"How often do deals stall because prospects can't build internal consensus on what you do?",
-        opts:[{t:'Rarely or never',s:4},{t:'Occasionally',s:2},{t:'More often than we\'d like',s:1},{t:'Frequently',s:0}] },
+        opts:[{t:'Rarely or never',s:4},{t:'Occasionally',s:2},{t:"More often than we'd like",s:1},{t:'Frequently',s:0}] },
     ]
   },
   {
@@ -63,8 +63,8 @@ const sections = [
     desc: 'Whether your whole team pulls from a single source of truth on messaging.',
     questions: [
       { id:'a1', text:'Does a single messaging document exist that your whole team actually uses?',
-        opts:[{t:'Yes, actively used',s:4},{t:'Yes, but outdated or ignored',s:2},{t:'Something exists but it\'s informal',s:1},{t:'Nothing exists',s:0}] },
-      { id:'a2', text:'How aligned are your marketing and sales teams on the core message you\'re taking to market?',
+        opts:[{t:'Yes, actively used',s:4},{t:'Yes, but outdated or ignored',s:2},{t:"Something exists but it's informal",s:1},{t:'Nothing exists',s:0}] },
+      { id:'a2', text:"How aligned are your marketing and sales teams on the core message you're taking to market?",
         opts:[{t:'Very aligned, same story everywhere',s:4},{t:'Generally aligned with some divergence',s:2},{t:'Noticeably different approaches',s:1},{t:'They operate in silos',s:0}] },
       { id:'a3', text:'How clear is your team on who your ideal customer is and what they care most about?',
         opts:[{t:'Very clear, documented and shared',s:4},{t:'Mostly clear with some disagreement',s:2},{t:'Informal understanding, nothing written',s:1},{t:'Actively debated or unclear',s:0}] },
@@ -74,7 +74,7 @@ const sections = [
   },
 ];
 
-const fixes: Record<string, Record<string, string>> = {
+const fixes = {
   clarity: {
     high: "Your messaging is well-calibrated. The next move is stress-testing it with a cold audience who has never heard of you. Run your hero copy by five strangers in your ICP and see if they can repeat it back.",
     mid: "Your messaging works internally but loses precision externally. Write a single north star sentence that every team member memorizes and every channel opens with. Lock it down before anything else.",
@@ -102,24 +102,24 @@ const fixes: Record<string, Record<string, string>> = {
   },
 };
 
-type Answers = Record<string, number>;
-
-const allQs: Array<{q: typeof sections[0]['questions'][0], sec: typeof sections[0]}> = [];
-sections.forEach(sec => sec.questions.forEach(q => allQs.push({ q, sec })));
-const pairs: Array<typeof allQs> = [];
+const allQs = [];
+sections.forEach(function(sec) {
+  sec.questions.forEach(function(q) { allQs.push({ q, sec }); });
+});
+const pairs = [];
 for (let i = 0; i < allQs.length; i += 2) {
   pairs.push([allQs[i], allQs[i+1]].filter(Boolean));
 }
 
 export default function QuizScorePage() {
-  const [step, setStep] = useState<'intro'|'quiz'|'results'>('intro');
+  const [step, setStep] = useState('intro');
   const [name, setName] = useState('');
   const [company, setCompany] = useState('');
   const [email, setEmail] = useState('');
   const [url, setUrl] = useState('');
   const [introErr, setIntroErr] = useState('');
   const [pairIdx, setPairIdx] = useState(0);
-  const [answers, setAnswers] = useState<Answers>({});
+  const [answers, setAnswers] = useState({});
   const [quizErr, setQuizErr] = useState(false);
 
   const startQuiz = () => {
@@ -129,7 +129,7 @@ export default function QuizScorePage() {
     setStep('quiz');
   };
 
-  const selectAnswer = (qId: string, score: number) => {
+  const selectAnswer = (qId, score) => {
     setAnswers(prev => ({ ...prev, [qId]: score }));
   };
 
@@ -143,9 +143,9 @@ export default function QuizScorePage() {
 
   const goBack = () => { if (pairIdx > 0) { setPairIdx(p => p - 1); window.scrollTo(0,0); } };
 
-  const dimScores: Record<string, number> = {};
-  sections.forEach(sec => {
-    const total = sec.questions.reduce((sum, q) => sum + (answers[q.id] ?? 0), 0);
+  const dimScores = {};
+  sections.forEach(function(sec) {
+    const total = sec.questions.reduce((sum, q) => sum + (answers[q.id] || 0), 0);
     dimScores[sec.id] = Math.round((total / 16) * 20);
   });
   const totalScore = Object.values(dimScores).reduce((a, b) => a + b, 0);
@@ -178,7 +178,7 @@ export default function QuizScorePage() {
         .qz-field input { width: 100%; padding: 13px 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; font-family: 'DM Sans',sans-serif; font-size: 15px; background: #fff; color: #1a1a1a; outline: none; transition: border-color 0.2s; }
         .qz-field input:focus { border-color: #2d6a4a; }
         .qz-field input::placeholder { color: #bbb; }
-        .qz-btn { background: #1e4d35; color: #fff; border: none; border-radius: 100px; padding: 14px 28px; font-family: 'DM Sans',sans-serif; font-size: 15px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; transition: all 0.2s; }
+        .qz-btn { background: #1e4d35; color: #fff; border: none; border-radius: 100px; padding: 14px 28px; font-family: 'DM Sans',sans-serif; font-size: 15px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; transition: all 0.2s; text-decoration: none; }
         .qz-btn:hover { background: #1a3d2e; transform: translateY(-1px); }
         .qz-btn-sec { background: transparent; color: #4a4a4a; border: 1px solid rgba(0,0,0,0.1); border-radius: 100px; padding: 12px 24px; font-family: 'DM Sans',sans-serif; font-size: 14px; cursor: pointer; transition: all 0.2s; }
         .qz-btn-sec:hover { border-color: #2d6a4a; color: #2d6a4a; }
@@ -229,7 +229,6 @@ export default function QuizScorePage() {
         <div className="qz-wrap">
           <a href="https://boundset.com" className="qz-logo">boundset</a>
 
-          {/* INTRO */}
           {step === 'intro' && (
             <div>
               <div className="qz-eye">Positioning Pressure Test</div>
@@ -251,7 +250,6 @@ export default function QuizScorePage() {
             </div>
           )}
 
-          {/* QUIZ */}
           {step === 'quiz' && (
             <div>
               <div className="qz-prog-bg"><div className="qz-prog-fill" style={{width: pct+'%'}} /></div>
@@ -277,7 +275,6 @@ export default function QuizScorePage() {
             </div>
           )}
 
-          {/* RESULTS */}
           {step === 'results' && (
             <div>
               <div className="qz-res-hdr">
@@ -288,7 +285,7 @@ export default function QuizScorePage() {
               </div>
               {sections.map(sec => {
                 const s = dimScores[sec.id];
-                const pct = s * 5;
+                const barPct = s * 5;
                 const pillClass = s >= 15 ? 'pill-h' : s >= 9 ? 'pill-m' : 'pill-l';
                 const barColor = s >= 15 ? '#1a3d2e' : s >= 9 ? '#b07d1a' : '#8B2020';
                 const fixKey = s >= 15 ? 'high' : s >= 9 ? 'mid' : 'low';
@@ -301,7 +298,7 @@ export default function QuizScorePage() {
                       </div>
                       <span className={`qz-pill ${pillClass}`}>{s}/20</span>
                     </div>
-                    <div className="qz-bar-bg"><div className="qz-bar-fill" style={{width: pct+'%', background: barColor}} /></div>
+                    <div className="qz-bar-bg"><div className="qz-bar-fill" style={{width: barPct+'%', background: barColor}} /></div>
                     <div className="qz-fix"><strong>What to do now</strong>{fixes[sec.id][fixKey]}</div>
                   </div>
                 );
@@ -313,7 +310,7 @@ export default function QuizScorePage() {
                   <a className="qz-cta-btn" href="https://boundset.com" target="_blank" rel="noreferrer">Book a free 15-minute call →</a>
                   <div className="qz-exp-row">
                     <button className="qz-exp-btn" onClick={() => window.print()}>↓ Download as PDF</button>
-                    <button className="qz-exp-btn" onClick={() => { navigator.clipboard?.writeText(`I just took the Boundset Positioning Pressure Test and scored ${totalScore}/100. If you run a B2B SaaS company, take it at boundset.com/quiz`).then(() => alert('Copied to clipboard.')); }}>↗ Copy share text</button>
+                    <button className="qz-exp-btn" onClick={() => { navigator.clipboard && navigator.clipboard.writeText('I just took the Boundset Positioning Pressure Test and scored ' + totalScore + '/100. If you run a B2B SaaS company, take it at boundset.com/quiz').then(() => alert('Copied to clipboard.')); }}>↗ Copy share text</button>
                   </div>
                 </div>
               ) : (
