@@ -6,6 +6,16 @@ interface Question { id: string; text: string; opts: Option[]; }
 interface Section { id: string; name: string; desc: string; questions: Question[]; }
 interface Fixes { [key: string]: { high: string; mid: string; low: string; } }
 
+const NOTION_DB = 'f269ed94-8619-42d3-bb7d-2c348b1c9a55';
+
+const qLabels: Record<string, string> = {
+  c1:'C1 Team Description Consistency', c2:'C2 Homepage Hero Speed', c3:'C3 Messaging Update Frequency', c4:'C4 Cross-Channel Consistency',
+  m1:'M1 Competitor Comparison Accuracy', m2:'M2 Homepage Differentiation Clarity', m3:'M3 Sales Competitive Answer', m4:'M4 Buyer Targeting Specificity',
+  v1:'V1 Homepage Dominance', v2:'V2 Cost of Inaction Messaging', v3:'V3 Value Prop Clarity', v4:'V4 Why Us Answer Quality',
+  s1:'S1 Sales Call Explanation Time', s2:'S2 Internal Champion Accuracy', s3:'S3 New Hire Ramp Time', s4:'S4 Deal Stall Frequency',
+  a1:'A1 Messaging Doc Existence', a2:'A2 Marketing Sales Alignment', a3:'A3 ICP Clarity', a4:'A4 Founder Brand Consistency',
+};
+
 const sections: Section[] = [
   { id:'clarity', name:'Message Clarity', desc:'How consistently and concisely your team communicates what you do.', questions:[
     { id:'c1', text:'If you asked three people on your team to describe your product in one sentence right now, how similar would their answers be?', opts:[{t:'Basically identical',s:4},{t:'Similar themes, different words',s:2},{t:'Noticeably different',s:1},{t:'Very different',s:0}] },
@@ -54,6 +64,58 @@ for (let i=0;i<allQs.length;i+=2) pairs.push([allQs[i],allQs[i+1]].filter(Boolea
 
 type Step = 'intro'|'quiz'|'results';
 
+async function sendToNotion(
+  name: string, email: string, company: string, url: string,
+  answers: Record<string,number>, dimScores: Record<string,number>,
+  totalScore: number, gradeLabel: string,
+  optionTexts: Record<string,string>
+) {
+  const props: Record<string, unknown> = {
+    'Name': name,
+    'Email': email,
+    'Company': company,
+    'Website': url.startsWith('http') ? url : 'https://'+url,
+    'Total Score': totalScore,
+    'Grade': gradeLabel,
+    'Message Clarity': dimScores['clarity'] ?? 0,
+    'Market Positioning': dimScores['market'] ?? 0,
+    'Value Communication': dimScores['value'] ?? 0,
+    'Sales Efficiency': dimScores['sales'] ?? 0,
+    'Internal Alignment': dimScores['alignment'] ?? 0,
+  };
+  Object.entries(qLabels).forEach(([qid, label]) => {
+    props[label] = optionTexts[qid] ?? '';
+  });
+
+  await fetch('https://api.notion.com/v1/pages', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${process.env.NEXT_PUBLIC_NOTION_TOKEN}`,
+      'Content-Type': 'application/json',
+      'Notion-Version': '2022-06-28',
+    },
+    body: JSON.stringify({
+      parent: { database_id: NOTION_DB },
+      properties: {
+        'Name': { title: [{ text: { content: name } }] },
+        'Email': { email: email },
+        'Company': { rich_text: [{ text: { content: company } }] },
+        'Website': { url: url.startsWith('http') ? url : 'https://'+url },
+        'Total Score': { number: totalScore },
+        'Grade': { select: { name: gradeLabel } },
+        'Message Clarity': { number: dimScores['clarity'] ?? 0 },
+        'Market Positioning': { number: dimScores['market'] ?? 0 },
+        'Value Communication': { number: dimScores['value'] ?? 0 },
+        'Sales Efficiency': { number: dimScores['sales'] ?? 0 },
+        'Internal Alignment': { number: dimScores['alignment'] ?? 0 },
+        ...Object.fromEntries(Object.entries(qLabels).map(([qid, label]) => [
+          label, { rich_text: [{ text: { content: optionTexts[qid] ?? '' } }] }
+        ])),
+      },
+    }),
+  });
+}
+
 export default function QuizScorePage() {
   const [step, setStep] = useState<Step>('intro');
   const [name, setName] = useState('');
@@ -63,6 +125,7 @@ export default function QuizScorePage() {
   const [introErr, setIntroErr] = useState('');
   const [pairIdx, setPairIdx] = useState(0);
   const [answers, setAnswers] = useState<Record<string,number>>({});
+  const [optionTexts, setOptionTexts] = useState<Record<string,string>>({});
   const [quizErr, setQuizErr] = useState(false);
 
   const startQuiz = () => {
@@ -71,14 +134,33 @@ export default function QuizScorePage() {
     setIntroErr('');setStep('quiz');
   };
 
-  const selectAnswer = (qId:string,score:number) => setAnswers(prev=>({...prev,[qId]:score}));
+  const selectAnswer = (qId:string, score:number, text:string) => {
+    setAnswers(prev=>({...prev,[qId]:score}));
+    setOptionTexts(prev=>({...prev,[qId]:text}));
+  };
 
   const goNext = () => {
     const pair = pairs[pairIdx];
     if (pair.some(item=>answers[item.q.id]===undefined)){setQuizErr(true);return;}
     setQuizErr(false);
     if (pairIdx<pairs.length-1){setPairIdx(p=>p+1);window.scrollTo(0,0);}
-    else setStep('results');
+    else showResults();
+  };
+
+  const showResults = () => {
+    const ds: Record<string,number> = {};
+    sections.forEach(sec=>{
+      const total:number = sec.questions.reduce((sum,q)=>sum+(answers[q.id]??0),0);
+      ds[sec.id]=Math.round((total/16)*20);
+    });
+    const ts:number = Object.values(ds).reduce((a:number,b:number)=>a+b,0);
+    let gl='';
+    if(ts>=85)gl='Strong positioning';
+    else if(ts>=70)gl='Some gaps showing';
+    else if(ts>=50)gl='Positioning is a bottleneck';
+    else gl='Positioning needs a rebuild';
+    sendToNotion(name,email,company,url,answers,ds,ts,gl,optionTexts).catch(()=>{});
+    setStep('results');
   };
 
   const goBack = () => {if(pairIdx>0){setPairIdx(p=>p-1);window.scrollTo(0,0);}};
@@ -164,7 +246,7 @@ export default function QuizScorePage() {
       `}</style>
       <div className="qz">
         <div className="qz-w">
-          <a href="https://boundset.com" className="qz-lo">boundset</a>
+          <a href="https://boundset.com" style={{display:"flex",alignItems:"center",textDecoration:"none",marginBottom:"48px"}}><img src="/wordmark-logo.svg" alt="Boundset" style={{height:"24px",width:"auto"}} /></a>
           {step==='intro'&&(
             <div>
               <div className="qz-ey">Positioning Pressure Test</div>
@@ -192,7 +274,7 @@ export default function QuizScorePage() {
                   <div className="qz-qt">{item.q.text}</div>
                   <div className="qz-og">
                     {item.q.opts.map((o,oi)=>(
-                      <button key={oi} className={`qz-op${answers[item.q.id]===o.s?' sl':''}`} onClick={()=>selectAnswer(item.q.id,o.s)}>{o.t}</button>
+                      <button key={oi} className={`qz-op${answers[item.q.id]===o.s?' sl':''}`} onClick={()=>selectAnswer(item.q.id,o.s,o.t)}>{o.t}</button>
                     ))}
                   </div>
                 </div>
