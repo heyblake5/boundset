@@ -5,7 +5,6 @@ export default function QuizLandingPage() {
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap');
         html { scroll-behavior: smooth; }
         .quiz-body { font-family: 'DM Sans', sans-serif; background: #f5f4f0; color: #1a1a1a; line-height: 1.6; overflow-x: hidden; }
-        .pf { font-family: 'Playfair Display', serif; }
         .pf-i { font-family: 'Playfair Display', serif; font-style: italic; color: #2d6a4a; }
         nav.qnav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 48px; display: flex; align-items: center; justify-content: space-between; background: rgba(245,244,240,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color 0.3s; }
         nav.qnav.scrolled { border-bottom-color: rgba(0,0,0,0.09); }
@@ -76,7 +75,6 @@ export default function QuizLandingPage() {
           <a href="/quiz/score" className="qnav-cta">Get your positioning score</a>
         </nav>
 
-        {/* HERO */}
         <section className="qhero">
           <div className="qhero-bg" />
           <div className="qeyebrow">Positioning Quiz</div>
@@ -97,7 +95,6 @@ export default function QuizLandingPage() {
 
         <div className="qdivider" />
 
-        {/* HOW IT WORKS */}
         <div className="qsection">
           <p className="qsection-eyebrow reveal">How it works</p>
           <h2 className="qh2 reveal reveal-d1">Five dimensions, one score,<br />and a real plan to fix it</h2>
@@ -126,7 +123,6 @@ export default function QuizLandingPage() {
 
         <div className="qdivider" />
 
-        {/* COMPARISON */}
         <div className="qpain">
           <div className="qpain-inner">
             <p className="qsection-eyebrow reveal">What changes</p>
@@ -149,7 +145,6 @@ export default function QuizLandingPage() {
           </div>
         </div>
 
-        {/* FINAL CTA */}
         <div className="qfinal">
           <h2 className="qh2 reveal">Find out where you stand <span className="pf-i">right now</span></h2>
           <p className="reveal reveal-d1">Free, done in under 6 minutes, and specific enough that you'll know exactly what to fix before the week is out.</p>
