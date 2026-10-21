@@ -18,3 +18,11 @@ body {
   background: #1B4332;
   color: white;
 }
+
+/* Shared utilities for content pages */
+.balance { text-wrap: balance; }
+.placeholder { background: #fef3c7; color: #78350f; padding: 0 .2em; border-radius: 3px; font-style: normal; }
+.focus-ring:focus-visible, .skip-link:focus-visible { outline: 3px solid #1B4332; outline-offset: 3px; }
+.bg-brand .focus-ring:focus-visible { outline-color: #fff; }
+.skip-link { position: absolute; left: -9999px; top: 0; }
+.skip-link:focus { left: 1rem; top: 1rem; z-index: 100; background: #fff; color: #1B4332; padding: .5rem 1rem; border-radius: 999px; }

@@ -2,6 +2,7 @@ import './globals.css'
 import Script from 'next/script'
 
 export const metadata = {
+  metadataBase: new URL('https://boundset.com'),
   title: 'Boundset | Positioning & Messaging for Startups',
   description: 'Stop rewriting your homepage. Get positioning that lasts, messaging that converts, and copy ready to use. 2-week sprints for B2B SaaS founders.',
   keywords: ['startup positioning', 'B2B SaaS messaging', 'positioning consultant', 'startup messaging', 'product positioning'],
