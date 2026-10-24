@@ -17,7 +17,7 @@ export default function Page() {
         </div>
         <div className="mt-8 flex flex-wrap gap-4">
           <CopyButton text={text} />
-          <a href="/tools/positioning-statement-generator" className="px-6 py-3 rounded-full border border-brand text-brand font-medium hover:bg-brand/5">Use the generator</a>
+          <a href="/free-tools/positioning-statement-generator" className="px-6 py-3 rounded-full border border-brand text-brand font-medium hover:bg-brand/5">Use the generator</a>
         </div>
         <Sources keys={p.src} />
       </section>

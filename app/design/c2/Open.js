@@ -1,15 +1,14 @@
 'use client'
 import { useEffect } from 'react'
-// Tap/click/Enter opens one artifact at a time; Escape or a second tap closes it.
+// Deliverables disclosure: one open at a time. Native buttons give Enter/Space; Escape closes.
 export default function Open() {
   useEffect(() => {
-    const els = [...document.querySelectorAll('[data-art]')]
-    const set = (el) => els.forEach((e) => { const on = e === el; e.toggleAttribute('data-open', on); e.setAttribute('aria-expanded', on) })
-    els.forEach((e) => { e.setAttribute('role', 'button'); e.setAttribute('aria-expanded', 'false') })
-    const click = (e) => { const el = e.target.closest('[data-art]'); if (!el) return; set(el.hasAttribute('data-open') ? null : el) }
-    const key = (e) => { const el = e.target.closest && e.target.closest('[data-art]'); if (e.key === 'Escape') set(null); else if (el && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); set(el.hasAttribute('data-open') ? null : el) } }
-    document.addEventListener('click', click); document.addEventListener('keydown', key)
-    return () => { document.removeEventListener('click', click); document.removeEventListener('keydown', key) }
+    const btns = [...document.querySelectorAll('[data-art]')]
+    const set = (b) => btns.forEach((x) => { const on = x === b; x.setAttribute('aria-expanded', on); x.closest('li').toggleAttribute('data-open', on) })
+    const click = (e) => { const b = e.currentTarget; set(b.getAttribute('aria-expanded') === 'true' ? null : b) }
+    const key = (e) => { if (e.key === 'Escape' && btns.some((b) => b.getAttribute('aria-expanded') === 'true')) set(null) }
+    btns.forEach((b) => b.addEventListener('click', click)); document.addEventListener('keydown', key)
+    return () => { btns.forEach((b) => b.removeEventListener('click', click)); document.removeEventListener('keydown', key) }
   }, [])
   return null
 }

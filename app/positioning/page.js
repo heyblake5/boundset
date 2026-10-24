@@ -6,7 +6,7 @@ export default function Page() {
     <Article p={p}>
       <Sections sections={p.sections} />
       <section className="grid sm:grid-cols-3 gap-4">
-        {[['/tools/positioning-statement-generator', 'Draft your statement'], ['/templates/positioning-canvas', 'Positioning canvas'], ['/answers/positioning-vs-messaging', 'Positioning vs messaging']].map(([h, t]) => (
+        {[['/free-tools/positioning-statement-generator', 'Draft your statement'], ['/templates/positioning-canvas', 'Positioning canvas'], ['/answers/positioning-vs-messaging', 'Positioning vs messaging']].map(([h, t]) => (
           <a key={h} href={h} className="p-6 rounded-2xl bg-brand text-white font-serif text-xl hover:bg-brand/90 transition-colors">{t} →</a>
         ))}
       </section>
