@@ -17,7 +17,8 @@
 .h1,.h2,.h2xl,.tierName,.price,.logo,.quote,.vnum,.mA,.introP{font-family:var(--serif),Georgia,serif;font-optical-sizing:auto;font-feature-settings:"kern","liga","clig","onum" 0}
 
 .nav{position:fixed;inset:0 0 auto;z-index:30;display:flex;justify-content:space-between;align-items:center;height:72px;padding:0 var(--pad);
-  background:color-mix(in srgb,var(--ink) 88%,transparent);border-bottom:1px solid transparent}
+  background:var(--ink);border-bottom:1px solid transparent;transition:border-color var(--t) var(--ease)}
+.nav[data-cta]{border-bottom-color:var(--hair)}
 .logo{font-size:26px;letter-spacing:-.02em;text-decoration:none;line-height:1}
 .navR{display:flex;gap:var(--s3);align-items:center}
 .navLink{font-size:15px;text-decoration:none;color:var(--mute)!important;transition:color var(--t) var(--ease)}
