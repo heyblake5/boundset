@@ -39,7 +39,7 @@ export default function C2() {
           <h1 className={s.h1}>{H(d.hero.h1)}</h1>
           <div className={s.ctas} data-hero-cta><Cal className={s.btn}>Book a free 1:1 consultation</Cal></div>
         </div>
-        <ul className={s.logos}>{d.logos.map((l) => <li key={l.alt}><img src={l.src} alt={l.alt} width="120" height="30" /></li>)}</ul>
+        <ul className={s.logos}>{d.logos.map((l) => <li key={l.alt}><img src={l.src} alt={l.alt} width={l.w} height={l.h} style={l.scale ? { '--k': l.scale } : undefined} /></li>)}</ul>
       </header>
 
       <section className={s.intro}><p className={s.introP}>{d.hero.sub}</p></section>
