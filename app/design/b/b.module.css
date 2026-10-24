@@ -87,9 +87,9 @@
 .baHead span{font-family:var(--mono);font-weight:700;font-size:13px;padding:12px 0;border-bottom:2px solid var(--k)}
 .baRow{border-bottom:2px solid var(--k);transition:background .15s}
 .baRow span{padding:16px 16px 16px 0;font-size:clamp(16px,1.5vw,21px);font-weight:600;line-height:1.25;transition:all .2s}
-.baRow span:first-child{color:#777}
+.baRow span:first-child{color:#595959}
 .baRow:hover,.baRow:focus{background:var(--k)}
-.baRow:hover span:first-child,.baRow:focus span:first-child{color:#666;text-decoration:line-through;padding-left:12px}
+.baRow:hover span:first-child,.baRow:focus span:first-child{color:#9a9a9a;text-decoration:line-through;padding-left:12px}
 .baRow:hover span:last-child,.baRow:focus span:last-child{color:var(--o)}
 
 .tiers{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--k)}
