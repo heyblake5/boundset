@@ -4,5 +4,5 @@ import path from 'path'
 const raw = readFileSync(path.join(process.cwd(), 'app/design/c2/brand/lockup.svg'), 'utf8')
 const inner = raw.replace(/^<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '').replace(/<rect width="100%" height="100%"[^>]*\/>/, '')
 export default function Logo({ className }) {
-  return <svg className={className} viewBox="700 690 9760 1500" role="img" aria-label="Boundset" dangerouslySetInnerHTML={{ __html: inner }} />
+  return <svg className={className} viewBox="801 699 9933 1506" role="img" aria-label="Boundset" dangerouslySetInnerHTML={{ __html: inner }} />
 }

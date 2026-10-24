@@ -184,6 +184,7 @@
 .doc :global(.s){stroke:currentColor;stroke-width:1;fill:none;opacity:.45}
 .doc :global(.dash){stroke-dasharray:3 3}
 .doc :global(.a),.doc :global(.af){fill:var(--sig);opacity:.9}
+.doc :global(.ink){fill:var(--ink)}
 .doc :global(.a2){stroke:var(--sig);opacity:.9}
 .art:hover .doc,.art:focus-visible .doc,.art[data-open] .doc{transform:translateY(-4px);border-color:var(--hair2);color:var(--bone)}
 .artT{font-size:16px;font-weight:500;letter-spacing:-.011em;line-height:1.35}
@@ -212,5 +213,5 @@
 @media(min-width:901px){.tGroup:nth-of-type(2),.tGroup:nth-of-type(3){grid-template-columns:1fr 1fr}}
 @media(max-width:900px){.track{row-gap:var(--s4)}.rail{height:40px;position:sticky;top:80px;z-index:2;background:var(--ink);box-shadow:0 0 0 8px var(--ink)}.tGroup{grid-column:1/-1!important}}
 .lockLink{display:block;line-height:0;border-radius:2px}
-.lock{display:block;height:26px;width:auto;aspect-ratio:9760/1500}
+.lock{display:block;height:26px;width:auto;aspect-ratio:9933/1506}
 @media(max-width:560px){.lock{height:22px}}
