@@ -526,11 +526,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 py-20 md:py-32 relative z-10">
           <div className="max-w-3xl">
             <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }} className="text-brand font-medium mb-6 uppercase tracking-wide text-sm">POSITIONING FOR STARTUPS</motion.p>
-            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="text-4xl md:text-6xl lg:text-7xl font-serif text-stone-900 leading-[1.1] mb-8">Nail your positioning so your product sells itself.</motion.h1>
-            <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="text-xl md:text-2xl text-stone-600 leading-relaxed mb-10 max-w-2xl">A 2-week sprint for seed-stage startups and beyond. You'll walk away with your positioning locked, messaging documented, and copy ready to use across your site, sales calls, and outreach.</motion.p>
+            <motion.h1 initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }} className="text-4xl md:text-6xl lg:text-7xl font-serif text-stone-900 leading-[1.1] mb-8">Nail your positioning so your product sells itself.</motion.h1>
+            <motion.p initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="text-xl md:text-2xl text-stone-600 leading-relaxed mb-10 max-w-2xl">A 2-week sprint for seed-stage startups and beyond. You'll walk away with your positioning locked, messaging documented, and copy ready to use across your site, sales calls, and outreach.</motion.p>
             
             {/* UPDATED: Hero CTAs — primary + secondary quiz CTA */}
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex flex-wrap items-center gap-4 mb-20">
+            <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex flex-wrap items-center gap-4 mb-20">
               <button data-cal-link="heyblake/positioning" data-cal-namespace="positioning" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' className="inline-flex items-center justify-center px-8 py-4 bg-brand text-white font-medium rounded-full hover:bg-brand/90 transition-all duration-300 text-lg cursor-pointer">Book a free 1:1 consultation</button>
               <a href="/quiz" className="inline-flex items-center justify-center px-8 py-4 bg-transparent text-brand font-medium rounded-full border-2 border-brand hover:bg-brand/5 transition-all duration-300 text-lg">
                 Get your positioning score

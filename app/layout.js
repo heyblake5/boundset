@@ -28,6 +28,11 @@ export const metadata = {
   },
 }
 
+const ORG_LD = [
+  { '@context': 'https://schema.org', '@type': 'Organization', '@id': 'https://boundset.com/#org', name: 'Boundset', url: 'https://boundset.com', logo: 'https://boundset.com/logo.svg', email: 'blake@boundset.com', founder: { '@type': 'Person', name: 'Blake Emal' }, sameAs: ['https://twitter.com/heyblake', 'https://linkedin.com/in/blakeemal'] },
+  { '@context': 'https://schema.org', '@type': 'WebSite', '@id': 'https://boundset.com/#site', name: 'Boundset', url: 'https://boundset.com', publisher: { '@id': 'https://boundset.com/#org' } },
+]
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -40,7 +45,8 @@ export default function RootLayout({ children }) {
           {`window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()`}
         </Script>
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_LD) }} />{children}</body>
     </html>
   )
 }

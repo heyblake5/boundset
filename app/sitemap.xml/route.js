@@ -1,0 +1,3 @@
+import { urlset, index } from '../../lib/sitemap'
+export const dynamic = 'force-static'
+export function GET() { return index() }
