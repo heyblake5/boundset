@@ -49,6 +49,7 @@ export default function Nav({ logo }) {
               {m.label}<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true" className={s.chev}><path d="M2 3.75 5 6.75l3-3" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </button>
             <div id={`m-${m.id}`} className={`${s.panel} ${m.id === 'tools' ? s.panelWide : ''}`}>
+              {m.heading && <p className={s.pHead}>{m.heading}</p>}
               <ul className={s.pList}>
                 {m.links.map((l) => (
                   <li key={l.href} className={l.all ? s.pAll : undefined}><a href={l.href} className={s.pLink} tabIndex={hyd && open !== m.id ? -1 : undefined} onClick={() => setOpen(null)}>
@@ -67,7 +68,7 @@ export default function Nav({ logo }) {
       <div id="sheet" className={s.sheet}>
         {MENU.map((m) => (
           <section key={m.id} className={s.sGroup} aria-labelledby={`s-${m.id}`}>
-            <p id={`s-${m.id}`} className={s.sLabel}>{m.label}</p>
+            <p id={`s-${m.id}`} className={s.sLabel}>{m.heading ? `${m.label} · ${m.heading}` : m.label}</p>
             <ul>{m.links.map((l) => <li key={l.href}><a href={l.href} className={s.sLink} tabIndex={sheet ? 0 : -1} onClick={() => setSheet(false)}>{l.icon && <Icon name={l.icon} size={20} className={s.sIco} />}{l.name}</a></li>)}</ul>
           </section>
         ))}

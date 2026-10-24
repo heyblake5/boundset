@@ -1,4 +1,5 @@
 import { SITE, PAGES, SRC } from '../../lib/content'
+import { toMarkdown } from '../../lib/guides'
 export const dynamic = 'force-static'
 const block = ({ title, path, data: d }) => {
   const out = [`# ${title}`, `URL: ${SITE}${path}`, '', d.answer]
@@ -10,5 +11,5 @@ const block = ({ title, path, data: d }) => {
   return out.join('\n')
 }
 export function GET() {
-  return new Response(PAGES.filter((p) => p.data).map(block).join('\n\n---\n\n') + '\n', { headers: { 'Content-Type': 'text/plain; charset=utf-8' } })
+  return new Response(PAGES.filter((p) => p.guide || p.data).map((p) => p.guide ? toMarkdown(p.guide) : block(p)).join('\n\n---\n\n') + '\n', { headers: { 'Content-Type': 'text/plain; charset=utf-8' } })
 }

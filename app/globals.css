@@ -26,3 +26,12 @@ body {
 .bg-brand .focus-ring:focus-visible { outline-color: #fff; }
 .skip-link { position: absolute; left: -9999px; top: 0; }
 .skip-link:focus { left: 1rem; top: 1rem; z-index: 100; background: #fff; color: #1B4332; padding: .5rem 1rem; border-radius: 999px; }
+
+/* Guide workbook print view: "Print my answers" adds html.wbp, so only #wbPrint (the user's answers) prints. */
+#wbPrint{display:none}
+@media print{
+  html.wbp body *{visibility:hidden}
+  html.wbp #wbPrint,html.wbp #wbPrint *{visibility:visible}
+  html.wbp #wbPrint{display:block;position:absolute;left:0;top:0;width:100%;background:#fff;color:#000}
+  html.wbp #wbPrint pre{white-space:pre-wrap;font:12pt/1.5 Georgia,serif;color:#000}
+}
