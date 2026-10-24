@@ -7,6 +7,7 @@ import Footer from '../../app/design/c2/Footer'
 import Inline from './Inline'
 import Workbook from './Workbook'
 import { guide, related, wordCount, plain, SITE, BOOK } from '../../lib/guides'
+import CopyButton from '../CopyButton'
 
 const fmt = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).replace(',', '')
 const OG = '/brand/og-mark-1200x630.png'
@@ -75,39 +76,44 @@ function Block({ b, i, ex }) {
     case 'code': return <pre className={g.pre}><code>{b.text}</code></pre>
     case 'table': return <div className={g.tableWrap} tabIndex={0} role="region" aria-label={b.head.join(', ')}><table className={g.table}><thead><tr>{b.head.map((h) => <th key={h} scope="col">{h}</th>)}</tr></thead><tbody>{b.rows.map((r, j) => <tr key={j}>{r.map((x, k) => k ? <td key={k}><Inline text={x} /></td> : <th key={k} scope="row"><Inline text={x} /></th>)}</tr>)}</tbody></table></div>
     case 'cta': return <p className={g.cta}><a href={BOOK} className={c.btn}>{b.text}</a></p>
+    case 'steps': return <ol className={g.steps}>{b.items.map(([t, d], j) => <li key={j}><span className={g.stepN} aria-hidden="true">{String(j + 1).padStart(2, '0')}</span><div><p className={g.stepT}>{t}</p><p>{d}</p></div></li>)}</ol>
+    case 'cards': return <ol className={g.cards}>{b.items.map(([t, q], j) => <li key={t} className={j === b.items.length - 1 && b.items.length % 2 ? g.cardWide : undefined}><h2 id={b.ids[j]} className={g.cardH}>{t}</h2><p>{q}</p></li>)}</ol>
+    case 'actions': return <p className={g.actions}><CopyButton text={b.copy} className={c.btnSm} />{b.links.map(([h, t]) => <a key={h} href={h} className={g.ghost}>{t}</a>)}</p>
     case 'exercise': return <Exercise e={b} n={ex.indexOf(b) + 1} total={ex.length} />
     default: return null
   }
 }
 
 function Toc({ p, mobile }) {
-  const list = <ol className={g.tocList}>{p.toc.map((t) => <li key={t.id}><a href={`#${t.id}`} data-toc={t.id}>{t.text}</a></li>)}<li><a href="#faq" data-toc="faq">FAQs</a></li></ol>
+  const list = <ol className={g.tocList}>{p.toc.map((t) => <li key={t.id}><a href={`#${t.id}`} data-toc={t.id}>{t.text}</a></li>)}{!!p.faq?.length && <li><a href="#faq" data-toc="faq">FAQs</a></li>}</ol>
   return mobile
     ? <details className={g.tocM}><summary>On this page</summary>{list}</details>
     : <nav className={g.toc} aria-label="On this page"><p className={g.tocH}>On this page</p>{list}</nav>
 }
 
-export default function GuidePage({ slug }) {
-  const p = guide(slug), rel = related(p), wc = wordCount(p), mins = Math.max(1, Math.round(wc / 230))
+export default function GuidePage({ slug }) { const p = guide(slug); return <DocPage p={p} data={ld(p)} rel={related(p)} /> }
+
+export function DocPage({ p, data, rel = [] }) {
+  const wc = wordCount(p), mins = Math.max(1, Math.round(wc / 230)), wb = p.exercises?.length > 0
   return (
     <div className={`${c.root} ${g.root} ${serif.variable} ${sans.variable}`}>
       <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld(p)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
       <a href="#main" className={g.skip}>Skip to content</a>
       <Nav logo={<Logo className={c.lock} />} />
       <main id="main" className={g.wrap}>
-        <article className={g.grid} data-guide={p.slug} data-title={p.h1}>
+        <article className={`${g.grid} ${p.toc.length > 2 ? '' : g.solo}`} data-guide={p.slug} data-title={p.h1}>
           <header className={g.head}>
             <nav aria-label="Breadcrumb" className={g.crumb}><a href="/">Boundset</a><span aria-hidden="true">/</span><span aria-current="page">{p.h1}</span></nav>
             <h1 className={g.h1}>{p.h1}</h1>
             <p className={g.byline}>By Blake Emal · Updated <time dateTime={p.updated}>{fmt(p.updated)}</time> · {mins} min read</p>
             <p className={g.def}>{p.definition}</p>
           </header>
-          <aside className={g.side}><Toc p={p} /></aside>
+          {p.toc.length > 2 && <aside className={g.side}><Toc p={p} /></aside>}
           <div className={g.body}>
-            <Toc p={p} mobile />
-            <section className={g.keys} aria-labelledby="key-takeaways"><h2 id="key-takeaways" className={g.keysH}>Key takeaways</h2><ul>{p.takeaways.map((t) => <li key={t}>{t}</li>)}</ul></section>
-            <section className={g.wb} aria-labelledby="wb-h" data-wb>
+            {p.toc.length > 2 && <Toc p={p} mobile />}
+            {!!p.takeaways?.length && <section className={g.keys} aria-labelledby="key-takeaways"><h2 id="key-takeaways" className={g.keysH}>Key takeaways</h2><ul>{p.takeaways.map((t) => <li key={t}>{t}</li>)}</ul></section>}
+            {wb && <section className={g.wb} aria-labelledby="wb-h" data-wb>
               <h2 id="wb-h" className={g.wbH}>Your workbook</h2>
               <div className={g.meter}><progress max={p.exercises.length} value="0" data-meter aria-labelledby="wb-h wb-count" /><span id="wb-count" data-count>0 of {p.exercises.length} exercises done</span></div>
               <div className={g.wbBtns}>
@@ -115,17 +121,18 @@ export default function GuidePage({ slug }) {
                 <button type="button" className={g.ghost} data-act="print">Print my answers</button>
                 <button type="button" className={g.ghost} data-act="reset">Reset</button>
               </div>
-            </section>
+            </section>}
             {p.body.map((b, i) => <Block key={i} b={b} i={i} ex={p.exercises} />)}
-            <section aria-labelledby="faq" className={g.faq}>
+            {!!p.faq?.length && <section aria-labelledby="faq" className={g.faq}>
               <h2 id="faq" className={g.h2}>FAQs</h2>
               {p.faq.map(({ q, a }) => <details key={q} className={g.faqItem}><summary><h3 className={g.faqQ}>{q}</h3></summary><p><Inline text={a} /></p></details>)}
-            </section>
+            </section>}
             {!!rel.length && <nav aria-labelledby="related" className={g.related}><h2 id="related" className={g.h2s}>Related guides and tools</h2><ul>{rel.map((r) => <li key={r.path}><a href={r.path}>{r.name}</a></li>)}</ul></nav>}
-            <section aria-labelledby="sources" className={g.sources}><h2 id="sources" className={g.h2s}>Sources</h2><ol>{p.sources.map((s) => <li key={s.url}><a href={s.url} target="_blank" rel="noopener noreferrer">{s.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</a></li>)}</ol></section>
+            {!!p.sources?.length && <section aria-labelledby="sources" className={g.sources}><h2 id="sources" className={g.h2s}>Sources</h2><ol>{p.sources.map((s) => <li key={s.url}><a href={s.url} target="_blank" rel="noopener noreferrer">{s.label || s.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</a></li>)}</ol></section>}
           </div>
         </article>
-        <div id="wbPrint" />
+        {p.close && <section className={g.close} aria-labelledby="close-h"><h2 id="close-h" className={g.closeH}>{p.close}</h2><a href={BOOK} className={c.btn}>Book a call</a></section>}
+        {wb && <div id="wbPrint" />}
       </main>
       <Footer />
       <Workbook slug={p.slug} />

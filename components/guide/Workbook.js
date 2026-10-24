@@ -47,7 +47,12 @@ export default function Workbook({ slug }) {
         l.href = u; l.download = `${slug}-workbook.md`; document.body.appendChild(l); l.click(); l.remove(); setTimeout(() => URL.revokeObjectURL(u), 1000)
       } else if (act === 'print') {
         const box = document.getElementById('wbPrint'); box.textContent = ''
-        const pre = document.createElement('pre'); pre.textContent = answers(); box.appendChild(pre)
+        const el = (tag, text) => { const n = document.createElement(tag); n.textContent = text; box.appendChild(n); return n }
+        el('h1', `${document.querySelector('[data-guide]')?.dataset.title || slug}: my workbook`)
+        exs.forEach((ex, i) => {
+          el('h2', `${i + 1}. ${ex.querySelector('h3').textContent}`); el('p', ex.querySelector('p:nth-of-type(2)')?.textContent || '').className = 'q'
+          for (const t of $$('textarea', ex)) { el('h3', t.dataset.label); el('p', t.value.trim() || '(blank)').className = 'a' }
+        })
         document.documentElement.classList.add('wbp'); window.print()
       } else if (act === 'reset') {
         if (!confirm('Clear all your answers on this page?')) return

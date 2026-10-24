@@ -12,6 +12,8 @@
   .side{display:block;grid-column:1;grid-row:2}
   .body{grid-column:2;grid-row:2}
   .tocM{display:none}
+  .solo{grid-template-columns:minmax(0,68ch);justify-content:center}
+  .solo .head,.solo .body{grid-column:1}
 }
 .crumb{display:flex;flex-wrap:wrap;gap:10px;font-size:14px;color:var(--mute);margin-bottom:var(--s3)}
 .crumb a{text-decoration:none}.crumb a:hover{color:var(--bone)}
@@ -105,3 +107,20 @@
 .sources{font-size:14px}
 .sources li,.sources a{color:var(--mute)!important;word-break:break-word}
 .print{display:none}
+
+/* answer / compare / template blocks */
+.steps{list-style:none;display:grid;gap:12px;margin:var(--s2) 0 var(--s4)}
+.steps li{display:flex;gap:var(--s3);padding:var(--s3);border:1px solid var(--hair);border-radius:14px;background:var(--ink2);transition:border-color var(--t) var(--ease)}
+.steps li:hover{border-color:var(--hair2)}
+.steps p{margin:0;color:#D6D2CA}
+.stepN{flex:none;font-family:var(--serif),Georgia,serif;font-size:28px;line-height:1;color:var(--sig);font-variant-numeric:tabular-nums}
+.stepT{color:var(--bone)!important;font-weight:500;margin-bottom:4px!important}
+.cards{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:var(--s2) 0 var(--s4)}
+.cards li{min-height:150px;padding:var(--s3);border:1px dashed var(--hair2);border-radius:14px;background:var(--ink2)}
+.cards li.cardWide{grid-column:1/-1;border-color:var(--sig);border-style:solid}
+.cards p{color:#D6D2CA;margin-top:8px}
+.cardH{font-family:var(--serif),Georgia,serif;font-size:24px;line-height:1.15;letter-spacing:-.015em;scroll-margin-top:96px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:var(--s3) 0}
+.actions .ghost{text-decoration:none!important;min-height:44px}
+.close{grid-column:1/-1;margin:var(--s12) auto 0;max-width:1240px;padding:var(--s12) 0 0;border-top:1px solid var(--hair);text-align:center;display:grid;justify-items:center;gap:var(--s4)}
+.closeH{font-family:var(--serif),Georgia,serif;font-weight:400;font-size:clamp(36px,5vw,72px);line-height:1.02;letter-spacing:-.03em;max-width:16ch}
