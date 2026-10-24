@@ -168,3 +168,49 @@
 .foot{display:flex;justify-content:space-between;align-items:center;padding:var(--s4) var(--pad);border-top:1px solid var(--hair)}
 
 @media(prefers-reduced-motion:reduce){.root *,.root *::before,.root *::after{transition-duration:.01ms!important;animation:none!important}}
+
+/* ---- v2: deliverables as artifacts ---- */
+.stack{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3);padding:var(--s3) 0;position:relative}
+.stack+.stack{border-top:1px solid var(--hair)}
+.stack::before{content:"";position:absolute;left:0;top:-1px;height:1px;width:calc((var(--g) + 1) * 33.333%);background:var(--sig)}
+.art{position:relative;display:grid;grid-template-rows:auto auto auto;align-content:start;padding:var(--s2);border-radius:6px;cursor:pointer;outline-offset:2px!important;
+  transition:background-color var(--t) var(--ease)}
+.art:hover,.art:focus-visible,.art[data-open]{background:var(--ink2)}
+.doc{display:grid;place-items:center;width:100%;aspect-ratio:4/3;overflow:hidden;margin-bottom:var(--s2);border-radius:4px;background:#121210;border:1px solid var(--hair);
+  color:var(--mute);fill:currentColor;transition:transform .6s var(--ease),border-color var(--t) var(--ease),color var(--t) var(--ease)}
+.doc svg{width:50%;height:auto;display:block;overflow:visible}
+.doc :global(.o){fill:none;stroke:currentColor;stroke-width:1.2;opacity:.7}
+.doc :global(.f){fill:currentColor;opacity:.22}
+.doc :global(.s){stroke:currentColor;stroke-width:1;fill:none;opacity:.45}
+.doc :global(.dash){stroke-dasharray:3 3}
+.doc :global(.a),.doc :global(.af){fill:var(--sig);opacity:.9}
+.doc :global(.a2){stroke:var(--sig);opacity:.9}
+.art:hover .doc,.art:focus-visible .doc,.art[data-open] .doc{transform:translateY(-4px);border-color:var(--hair2);color:var(--bone)}
+.artT{font-size:16px;font-weight:500;letter-spacing:-.011em;line-height:1.35}
+.artD{display:grid;grid-template-rows:1fr;transition:grid-template-rows .5s var(--ease)}
+.artD>p{overflow:hidden;color:var(--mute);font-size:15px;line-height:1.55;padding-top:var(--s1);transition:opacity .4s var(--ease)}
+:global(html.js) .artD{grid-template-rows:0fr}
+:global(html.js) .artD>p{opacity:0}
+:global(html.js) .art:hover .artD,:global(html.js) .art:focus-visible .artD,:global(html.js) .art[data-open] .artD{grid-template-rows:1fr}
+:global(html.js) .art:hover .artD>p,:global(html.js) .art:focus-visible .artD>p,:global(html.js) .art[data-open] .artD>p{opacity:1}
+@media(hover:none){:global(html.js) .art:hover .artD{grid-template-rows:0fr}:global(html.js) .art:hover .artD>p{opacity:0}:global(html.js) .art[data-open] .artD{grid-template-rows:1fr}:global(html.js) .art[data-open] .artD>p{opacity:1}}
+@media(max-width:900px){.stack{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s1)}.art{padding:var(--s1)}}
+
+/* ---- v2: timeline track ---- */
+.track{display:grid;grid-template-columns:2fr repeat(5,1fr) .5fr repeat(5,1fr) .5fr 2fr;column-gap:6px;row-gap:var(--s6)}
+.rail{grid-column:1/-1;display:grid;grid-template-columns:subgrid;height:56px}
+.rail i{display:block;border-radius:3px;transition:background-color var(--t) var(--ease),transform .5s var(--ease)}
+.bDay{background:var(--ink2);border:1px solid var(--hair)}
+.bDay[data-m]{background:color-mix(in srgb,var(--sig) 14%,var(--ink2));border-color:color-mix(in srgb,var(--sig) 55%,transparent)}
+.bPre{background:repeating-linear-gradient(135deg,var(--hair) 0 1px,transparent 1px 7px);border:1px solid var(--hair)}
+.bAfter{background:linear-gradient(90deg,var(--hair2),transparent);border-radius:3px 0 0 3px}
+.rail i[data-hot]{background:var(--sig);border-color:var(--sig);transform:translateY(-4px)}
+.tGroup{list-style:none;display:grid;gap:var(--s3);align-content:start;padding-right:var(--s2)}
+.tItem{position:relative;padding-left:var(--s2);border-left:1px solid var(--hair);transition:border-color var(--t) var(--ease);cursor:default}
+.tItem[data-hot]{border-left-color:var(--sig)}
+.tItem[data-hot] .h4{color:var(--bone)}
+@media(min-width:901px){.tGroup:nth-of-type(2),.tGroup:nth-of-type(3){grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.track{row-gap:var(--s4)}.rail{height:40px;position:sticky;top:80px;z-index:2;background:var(--ink);box-shadow:0 0 0 8px var(--ink)}.tGroup{grid-column:1/-1!important}}
+.lockLink{display:block;line-height:0;border-radius:2px}
+.lock{display:block;height:26px;width:auto;aspect-ratio:9760/1500}
+@media(max-width:560px){.lock{height:22px}}

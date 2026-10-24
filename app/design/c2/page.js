@@ -9,13 +9,18 @@ import Quiz from './Quiz'
 import Tiers from './Tiers'
 import Picker from './Picker'
 import Nav from './Nav'
+import Logo from './Logo'
+import Thumb, { kinds } from './Thumb'
+import Open from './Open'
+import Track from './Track'
 
 // Newsreader (OFL), instanced to wght 400 with the opsz axis kept at 24–72 so every
 // display size gets its true optical cut; Latin subset, 22KB. Inter (OFL) wght 400–500, 17KB.
 // Both built from the Google Fonts variable files by fonts/README.
 const serif = localFont({ src: './fonts/newsreader-display.woff2', weight: '400', variable: '--serif', display: 'swap', adjustFontFallback: 'Times New Roman', declarations: [{ prop: 'font-variation-settings', value: 'normal' }] })
 const sans = localFont({ src: './fonts/inter-text.woff2', weight: '400 500', variable: '--sans', display: 'swap', adjustFontFallback: 'Arial' })
-export const metadata = { title: 'Boundset · Direction C2 · Stronghold', robots: { index: false, follow: false } }
+export const metadata = { title: 'Boundset · Direction C2 · Stronghold', robots: { index: false, follow: false },
+  icons: { icon: [{ url: '/brand/favicon.svg', type: 'image/svg+xml' }, { url: '/brand/favicon-32.png', sizes: '32x32', type: 'image/png' }, { url: '/brand/favicon-16.png', sizes: '16x16', type: 'image/png' }], apple: '/brand/apple-touch-icon.png' } }
 
 export default function C2() {
   return (
@@ -23,7 +28,7 @@ export default function C2() {
       <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
       <Nav /><Scroll />
       <nav className={s.nav} data-nav>
-        <a href="/design/c2" className={s.logo}>boundset</a>
+        <a href="/design/c2" className={s.lockLink} aria-label="Boundset home"><Logo className={s.lock} /></a>
         <div className={s.navR}><a href="/quiz" className={s.navLink}>Take the quiz</a><Cal className={s.btnSm}>Book a call</Cal></div>
       </nav>
 
@@ -45,22 +50,22 @@ export default function C2() {
 
       <section className={s.sec}>
         <h2 className={s.h2}>{d.deliverablesH2}</h2>
-        <ol className={s.index}>
-          {d.deliverables.map((x) => <li key={x.title}><h3 className={s.h3}>{x.title}</h3><p className={s.small}>{x.desc}</p></li>)}
-        </ol>
+        <Open />
+        {[[0, 1, 9, 5], [2, 3, 4, 8], [6, 7, 10, 11]].map((g, gi) => (
+          <ol key={gi} className={s.stack} style={{ '--g': gi }}>
+            {g.map((i) => { const x = d.deliverables[i]; return (
+              <li key={x.title} className={s.art} data-art tabIndex={0}>
+                <Thumb kind={kinds[i]} className={s.doc} />
+                <h3 className={s.artT}>{x.title}</h3>
+                <div className={s.artD}><p>{x.desc}</p></div>
+              </li>) })}
+          </ol>
+        ))}
       </section>
 
       <section className={s.sec} id="how">
         <h2 className={s.h2}>{d.timelineH2}</h2>
-        <ol className={s.tl}>
-          {d.phases.map((ph) => (
-            <li key={ph} className={s.tlPhase} data-p>
-              <ol className={s.tlItems}>
-                {d.milestones.filter((m) => m.phase === ph).map((m) => <li key={m.title}><h3 className={s.h4}>{m.title}</h3><p className={s.small}>{m.desc}</p></li>)}
-              </ol>
-            </li>
-          ))}
-        </ol>
+        <Track />
       </section>
 
       <section className={s.sec}>
@@ -128,7 +133,7 @@ export default function C2() {
         <h2 className={s.h2xl}>{d.finalCta.h2}</h2>
         <Cal className={s.btn}>Book your call</Cal>
       </section>
-      <footer className={s.foot}><span className={s.logo}>boundset</span><a href="mailto:blake@boundset.com" className={s.navLink}>blake@boundset.com</a></footer>
+      <footer className={s.foot}><Logo className={s.lock} /><a href="mailto:blake@boundset.com" className={s.navLink}>blake@boundset.com</a></footer>
     </main>
   )
 }
