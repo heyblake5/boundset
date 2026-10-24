@@ -49,8 +49,8 @@
 .h1{font-size:1em;line-height:.96;letter-spacing:-.035em;font-weight:400}
 .ctas{margin-top:var(--s6);font-size:16px}
 .logos{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:var(--s4) var(--s8);list-style:none;margin-top:var(--s12);padding-top:var(--s4);border-top:1px solid var(--hair);pointer-events:none}
-.logos img{height:24px;width:auto;filter:brightness(0) invert(1);opacity:.62}
-@media(max-width:700px){.hero{padding-top:var(--s12)}.logos{gap:var(--s3) var(--s4);margin-top:var(--s8)}.logos img{height:20px}}
+.logos img{height:calc(24px*var(--k,1));width:auto;filter:brightness(0) invert(1);opacity:.62}
+@media(max-width:700px){.hero{padding-top:var(--s12)}.logos{gap:var(--s3) var(--s4);margin-top:var(--s8)}.logos img{height:calc(20px*var(--k,1))}}
 
 .intro{padding:var(--sec) var(--pad) 0;max-width:1440px;margin:0 auto}
 .introP{font-size:clamp(28px,3.3vw,48px);line-height:1.18;letter-spacing:-.022em;max-width:22em;text-wrap:balance}

@@ -8,6 +8,7 @@ export const metadata = {
   keywords: ['startup positioning', 'B2B SaaS messaging', 'positioning consultant', 'startup messaging', 'product positioning'],
   authors: [{ name: 'Blake Emal' }],
   creator: 'Boundset',
+  verification: { google: 'MaJoNVVnv2xNFkPhQDXejztea13AfQLdVDZFJnefSZ8' },
   openGraph: {
     title: 'Boundset | Positioning & Messaging for Startups',
     description: 'Stop rewriting your homepage. Get positioning that lasts, messaging that converts, and copy ready to use. 2-week sprints for B2B SaaS founders.',
