@@ -1,0 +1,4 @@
+Built with fontTools from the Google Fonts variable woff2 files (both SIL OFL):
+  Newsreader: instantiateVariableFont(wght=400, opsz=(24,72)), subset U+0020-007E + smart quotes/dashes/ellipsis/nbsp
+  Inter:      instantiateVariableFont(wght=(400,500)), same subset
+Features kept: kern liga clig calt onum lnum tnum case ccmp locl mark mkmk
