@@ -54,11 +54,11 @@ export default function C2() {
         {[[0, 1, 9, 5], [2, 3, 4, 8], [6, 7, 10, 11]].map((g, gi) => (
           <ol key={gi} className={s.stack} style={{ '--g': gi }}>
             {g.map((i) => { const x = d.deliverables[i]; return (
-              <li key={x.title} className={s.art} data-art tabIndex={0}>
+              <li key={x.title}><div className={s.art} data-art tabIndex={0}>
                 <Thumb kind={kinds[i]} className={s.doc} />
                 <h3 className={s.artT}>{x.title}</h3>
                 <div className={s.artD}><p>{x.desc}</p></div>
-              </li>) })}
+              </div></li>) })}
           </ol>
         ))}
       </section>
