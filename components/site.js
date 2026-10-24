@@ -1,6 +1,11 @@
 // Shared chrome for the new content pages (quiz, case studies, comparison pages).
 // Server components: no client JS needed except the tracked links below.
 import TrackedLink from './TrackedLink'
+import c from '../app/design/c2/c2.module.css'
+import { serif, sans } from '../app/design/c2/fonts'
+import Nav from '../app/design/c2/Nav'
+import Logo from '../app/design/c2/Logo'
+import Footer from '../app/design/c2/Footer'
 
 export const BOOK_CALL_URL = 'https://cal.com/heyblake/positioning'
 
@@ -73,12 +78,14 @@ export function SiteFooter() {
   )
 }
 
+// Content pages share the C2 nav, footer and fonts. Body copy and layout stay as they were.
 export function PageShell({ children }) {
   return (
-    <div className="min-h-screen flex flex-col bg-stone-50 text-stone-900">
-      <SiteHeader />
+    <div className={`min-h-screen flex flex-col bg-stone-50 text-stone-900 font-sans ${serif.variable} ${sans.variable}`}>
+      <a href="#main" className="skip-link">Skip to content</a>
+      <div className={c.root} style={{ overflow: 'visible', height: 72 }}><Nav logo={<Logo className={c.lock} />} /></div>
       <main id="main" className="flex-1">{children}</main>
-      <SiteFooter />
+      <div className={c.root}><Footer /></div>
     </div>
   )
 }

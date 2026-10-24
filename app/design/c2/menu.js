@@ -1,10 +1,10 @@
 import { TOOLS } from '../../free-tools/tools'
-export const HOME = '/design/c2'
+import { SHOW_WORKSHOP } from './workshop'
+export const HOME = '/'
 export const MENU = [
   { id: 'sprint', label: 'Sprint', links: [
-    { href: `${HOME}#included`, name: 'Stake and Stronghold' }, { href: `${HOME}#how`, name: 'Timeline' },
-    { href: `${HOME}#pricing`, name: 'Pricing' }, { href: `${HOME}#workshop`, name: 'Workshop' }, { href: `${HOME}#faq`, name: 'FAQs' } ] },
-  { id: 'work', label: 'Work', links: [ { href: '/case-studies', name: 'Case studies' }, { href: '/case-studies/originalvoices', name: 'OriginalVoices' } ] },
+    { href: `/#included`, name: 'Stake and Stronghold' }, { href: `/#how`, name: 'Timeline' },
+    { href: `/#pricing`, name: 'Pricing' }, ...(SHOW_WORKSHOP ? [{ href: `/#workshop`, name: 'Workshop' }] : []), { href: `/#faq`, name: 'FAQs' } ] },
   { id: 'resources', label: 'Resources', links: [
     { href: '/positioning', name: 'Positioning guide' }, { href: '/answers/positioning-vs-messaging', name: 'Positioning vs messaging' },
     { href: '/april-dunford-alternatives', name: 'April Dunford alternatives' }, { href: '/positioning-sprint-cost', name: 'Positioning sprint cost' },

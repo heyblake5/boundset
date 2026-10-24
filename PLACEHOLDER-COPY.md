@@ -5,13 +5,13 @@ No stats, proof, prices or client names were invented. Prices shown are the exis
 
 ## Homepage (app/design/c2/page.js)
 - Workshop button label: "Buy the workshop"
-- Workshop button URL: `NEXT_PUBLIC_WORKSHOP_LINK` env var. **Not set: falls back to `#workshop` (in-page anchor).** No Stripe payment link for "Boundset Positioning Workshop" exists yet in High Noon LLC (checked read-only Oct 24). Heath owns creating it.
+- Workshop button URL: Stripe payment link https://pay.pagetear.com/b/28EdR9eVle3l51Y8q45sA0G hardcoded in app/design/c2/workshop.js (NEXT_PUBLIC_WORKSHOP_LINK overrides).
 - Workshop headline, subtext and 3 checks are approved copy from handoffs/quill-atlas.md + heath.md (not placeholders).
 - FAQ headline "FAQs about the sprint" is Blake's exact wording (not a placeholder).
 
 ## Navigation labels (app/design/c2/menu.js)
-- Area names: Sprint, Work, Resources, Free Tools (Free Tools is Blake's wording)
-- Link names: "Stake and Stronghold", "Timeline", "Pricing", "Workshop", "FAQs", "Case studies", "OriginalVoices", "Positioning guide", "Positioning vs messaging", "April Dunford alternatives", "Positioning sprint cost", "Agency vs fractional PMM", "Positioning canvas", "All free tools"
+- Area names: Sprint, Resources, Free Tools (Free Tools is Blake's wording)
+- Link names: "Stake and Stronghold", "Timeline", "Pricing", "Workshop", "FAQs", "Positioning guide", "Positioning vs messaging", "April Dunford alternatives", "Positioning sprint cost", "Agency vs fractional PMM", "Positioning canvas", "All free tools"
 
 ## Free tools (app/free-tools/)
 - Index H1 "Free tools"; index meta description: "Free browser-based tools for founders working on positioning and messaging. No signup."

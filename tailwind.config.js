@@ -11,7 +11,8 @@ module.exports = {
         brand: '#1B4332',
       },
       fontFamily: {
-        serif: ['Georgia', 'Times New Roman', 'serif'],
+        serif: ['var(--serif)', 'Georgia', 'Times New Roman', 'serif'],
+        sans: ['var(--sans)', 'system-ui', 'sans-serif'],
       },
     },
   },

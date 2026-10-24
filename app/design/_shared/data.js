@@ -4,8 +4,6 @@ export const hero = {
 }
 export const logos = [
   { src: '/logo-provable.svg', alt: 'Provable' },
-  { src: '/logo-athena.svg', alt: 'Athena' },
-  { src: '/logo-gamma.svg', alt: 'Gamma' },
   { src: '/logo-originalvoices.svg', alt: 'OriginalVoices' },
 ]
 export const quiz = {
