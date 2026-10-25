@@ -22,7 +22,7 @@
 .def{margin-top:var(--s4);font-family:var(--serif),Georgia,serif;font-size:clamp(21px,2vw,25px);line-height:1.45;letter-spacing:-.01em;padding:var(--s3);border:1px solid var(--hair2);border-left:3px solid var(--sig);border-radius:4px 14px 14px 4px;background:var(--ink2)}
 .body>p,.body li,.faq p{color:#D6D2CA}
 .body>p{margin:0 0 1.15em}
-.body a,.faq a{color:var(--bone);text-decoration:underline;text-decoration-color:rgba(255,91,56,.7);text-underline-offset:3px;text-decoration-thickness:1px}
+.body a,.faq a{color:var(--bone);text-decoration:underline;text-decoration-color:rgba(54,214,143,.7);text-underline-offset:3px;text-decoration-thickness:1px}
 .body a:hover,.faq a:hover{text-decoration-color:var(--sig)}
 .body strong{font-weight:500;color:var(--bone)}
 .h2,.h2s{font-family:var(--serif),Georgia,serif;font-weight:400;letter-spacing:-.02em;line-height:1.1;scroll-margin-top:96px}

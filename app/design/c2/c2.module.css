@@ -1,6 +1,6 @@
 /* Tokens: 8px rhythm, one easing, one ink/bone palette, one signal colour for claimed ground. */
 .root{
-  --ink:#0C0C0B;--ink2:#141412;--bone:#EDEAE3;--mute:#A19C92;--dim:#6E6A63;--hair:rgba(237,234,227,.11);--hair2:rgba(237,234,227,.22);--sig:#FF5B38;
+  --ink:#0C0C0B;--ink2:#141412;--bone:#EDEAE3;--mute:#A19C92;--dim:#6E6A63;--hair:rgba(237,234,227,.11);--hair2:rgba(237,234,227,.22);--sig:#36D68F;
   --ease:cubic-bezier(.22,1,.36,1);--t:.4s;
   --s1:8px;--s2:16px;--s3:24px;--s4:32px;--s6:48px;--s8:64px;--s12:96px;--s16:128px;--s20:160px;
   --pad:clamp(20px,5vw,72px);--sec:clamp(96px,13vw,192px);

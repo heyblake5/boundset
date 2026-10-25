@@ -31,6 +31,8 @@ export const metadata = {
   },
 }
 
+export const viewport = { themeColor: '#0C0C0B', colorScheme: 'dark' }
+
 // Analytics off unless NEXT_PUBLIC_PLAUSIBLE_DOMAIN is set; event calls check typeof window.plausible first.
 const PLAUSIBLE = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN
 

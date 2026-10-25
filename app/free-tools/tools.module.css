@@ -54,8 +54,8 @@ select.in{appearance:none;background-image:linear-gradient(45deg,transparent 50%
 .checks{list-style:none;display:grid}
 .checks li{display:grid;grid-template-columns:20px 1fr auto;gap:12px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--hair);font-size:15px}
 .ok,.warn{width:8px;height:8px;border-radius:50%;align-self:center}
-.ok{background:var(--bone)}
-.warn{background:var(--sig)}
+.ok{background:var(--sig)}
+.warn{background:transparent;box-shadow:inset 0 0 0 1.5px var(--mute)}
 .val{color:var(--mute);font-variant-numeric:tabular-nums}
 .score{font-family:var(--serif),Georgia,serif;font-size:clamp(64px,7vw,104px);line-height:1;letter-spacing:-.04em;font-variant-numeric:lining-nums tabular-nums}
 .of{font-size:.35em;color:var(--mute);letter-spacing:0}
