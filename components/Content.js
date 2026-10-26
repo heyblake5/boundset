@@ -8,7 +8,7 @@ export function Ld({ data }) {
 export function pageLd(p, type = 'Article') {
   const url = SITE + p.path
   const out = [
-    { '@context': 'https://schema.org', '@type': type, headline: p.title, name: p.title, url, dateModified: UPDATED, description: p.answer,
+    { '@context': 'https://schema.org', '@type': type, headline: p.title, name: p.title, url, dateModified: p.updated || UPDATED, description: p.answer,
       author: { '@type': 'Person', name: 'Blake Emal', url: SITE }, publisher: { '@id': SITE + '/#org' } },
     { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Boundset', item: SITE },
