@@ -1,5 +1,4 @@
 import './globals.css'
-import Script from 'next/script'
 
 export const metadata = {
   metadataBase: new URL('https://boundset.com'),
@@ -33,8 +32,9 @@ export const metadata = {
 
 export const viewport = { themeColor: '#0C0C0B', colorScheme: 'dark' }
 
-// Analytics off unless NEXT_PUBLIC_PLAUSIBLE_DOMAIN is set; event calls check typeof window.plausible first.
-const PLAUSIBLE = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN
+// Plausible loads on production deployments only; event calls check typeof window.plausible first.
+const PLAUSIBLE = process.env.VERCEL_ENV === 'production'
+const PLAUSIBLE_STUB = 'window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()'
 
 const ORG_LD = [
   { '@context': 'https://schema.org', '@type': 'Organization', '@id': 'https://boundset.com/#org', name: 'Boundset', url: 'https://boundset.com', logo: 'https://boundset.com/brand/icon-512.png', email: 'blake@boundset.com', founder: { '@type': 'Person', name: 'Blake Emal' }, sameAs: ['https://twitter.com/heyblake', 'https://linkedin.com/in/blakeemal'] },
@@ -45,7 +45,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {PLAUSIBLE && <Script defer data-domain={PLAUSIBLE} src="https://plausible.io/js/script.js" strategy="afterInteractive" />}
+        {PLAUSIBLE && (
+          <>
+            <script async src="https://plausible.io/js/pa--rAGPBkKVDnMKpIcGWDrv.js" />
+            <script dangerouslySetInnerHTML={{ __html: PLAUSIBLE_STUB }} />
+          </>
+        )}
       </head>
       <body className="antialiased">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_LD) }} />{children}</body>
