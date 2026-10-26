@@ -29,7 +29,7 @@ export default function C() {
       <Reveal /><Scroll /><Spot />
       <nav className={s.nav}>
         <a href="/design/c" className={s.logo}>boundset</a>
-        <div className={s.navR}><a href="/quiz" className={s.navLink}>Take the quiz</a><Cal className={s.btnSm}>Book a call</Cal></div>
+        <div className={s.navR}><Cal className={s.btnSm}>Book a call</Cal></div>
       </nav>
 
       <header className={s.hero} data-spot>
@@ -37,7 +37,7 @@ export default function C() {
         <div className={s.heroIn}>
           <h1 className={s.h1}>{words.map((w, i) => <span key={i}><span className={s.wm}><span className={s.w} style={{ '--i': i }}>{i === 5 || i === 6 ? <em>{w}</em> : w}</span></span>{' '}</span>)}</h1>
           <p className={s.lede}>{d.hero.sub}</p>
-          <div className={s.ctas}><Cal className={s.btn}>Book a free 1:1 consultation</Cal><a href="/quiz" className={s.link}>Get your positioning score</a></div>
+          <div className={s.ctas}><Cal className={s.btn}>Book a free 1:1 consultation</Cal></div>
         </div>
         <ul className={s.logos}>{d.logos.map((l) => <li key={l.alt}><img src={l.src} alt={l.alt} width="120" height="30" /></li>)}</ul>
       </header>

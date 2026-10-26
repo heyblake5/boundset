@@ -19,14 +19,14 @@ export default function A() {
       <Reveal /><Scroll />
       <nav className={s.nav}>
         <a href="/design/a" className={s.logo}>boundset</a>
-        <div className={s.navR}><a href="/quiz" className={s.navLink}>Take the quiz</a><Cal className={s.btnSm}>Book a call</Cal></div>
+        <div className={s.navR}><Cal className={s.btnSm}>Book a call</Cal></div>
       </nav>
 
       <header className={s.hero}>
         <div className={s.heroText}>
           <h1 className={s.h1}>{d.hero.h1}</h1>
           <p className={s.lede}>{d.hero.sub}</p>
-          <div className={s.ctas}><Cal className={s.btn}>Book a free 1:1 consultation</Cal><a href="/quiz" className={s.btnGhost}>Get your positioning score</a></div>
+          <div className={s.ctas}><Cal className={s.btn}>Book a free 1:1 consultation</Cal></div>
         </div>
         <TerritoryMap />
         <ul className={s.logos}>{d.logos.map((l) => <li key={l.alt}><img src={l.src} alt={l.alt} width="120" height="30" /></li>)}</ul>

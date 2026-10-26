@@ -20,14 +20,14 @@ export default function B() {
       <Reveal /><Scroll />
       <nav className={s.nav}>
         <a href="/design/b" className={s.logo}>boundset</a>
-        <div className={s.navR}><a href="/quiz" className={s.navLink}>Take the quiz</a><Cal className={s.navCta}>Book a call</Cal></div>
+        <div className={s.navR}><Cal className={s.navCta}>Book a call</Cal></div>
       </nav>
 
       <header className={s.hero}>
         <h1 className={s.h1}>{d.hero.h1.split(' ').map((w, i) => <span key={i}><span className={s.hw}>{w}</span>{' '}</span>)}</h1>
         <div className={s.heroGrid}>
           <p className={s.lede}>{d.hero.sub}</p>
-          <div className={s.ctas}><Cal className={s.btn}>Book a free 1:1 consultation <span aria-hidden="true">→</span></Cal><a href="/quiz" className={s.btnLine}>Get your positioning score</a></div>
+          <div className={s.ctas}><Cal className={s.btn}>Book a free 1:1 consultation <span aria-hidden="true">→</span></Cal></div>
         </div>
         <ul className={s.logos}>{d.logos.map((l) => <li key={l.alt}><img src={l.src} alt={l.alt} width="120" height="30" /></li>)}</ul>
       </header>

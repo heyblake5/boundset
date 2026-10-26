@@ -1,4 +1,4 @@
-// Shared chrome for the new content pages (quiz, case studies, comparison pages).
+// Shared chrome for the new content pages (case studies, comparison pages).
 // Server components: no client JS needed except the tracked links below.
 import TrackedLink from './TrackedLink'
 import c from '../app/design/c2/c2.module.css'
@@ -47,7 +47,7 @@ export function SiteHeader() {
       <nav aria-label="Main" className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
         <a href="/" className="font-serif text-2xl text-brand font-semibold tracking-tight focus-ring rounded">boundset</a>
         <div className="flex items-center gap-3">
-          <a href="/quiz" className="hidden sm:inline-flex px-5 py-2.5 rounded-full font-medium text-sm border border-brand text-brand hover:bg-brand/5 transition-colors focus-ring">Take the quiz</a>
+          <a href="/free-tools" className="hidden sm:inline-flex px-5 py-2.5 rounded-full font-medium text-sm border border-brand text-brand hover:bg-brand/5 transition-colors focus-ring">Free Tools</a>
           <TrackedLink href={BOOK_CALL_URL} event="Book call click" className="px-5 py-2.5 rounded-full font-medium text-sm bg-brand text-white hover:bg-brand/90 transition-colors focus-ring">Book a call</TrackedLink>
         </div>
       </nav>
