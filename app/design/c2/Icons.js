@@ -25,6 +25,11 @@ const P = {
   debt: <><rect x="4.75" y="4.75" width="14.5" height="14.5" rx="2" /><path d="m8.5 12.25 2.25 2.25 4.75-5" {...A} /></>,
   roi: <><path d="M4.75 19.25h14.5" /><path d="M7.25 16v-3M12 16V9.5" /><path d="M16.75 16V5.75" {...A} /></>,
   pitch: <><rect x="9" y="3.75" width="6" height="10" rx="3" /><path d="M6.25 11.25a5.75 5.75 0 0 0 11.5 0M12 17v3.25" /><path d="M9.5 20.25h5" {...A} /></>,
+  teardown: <><path d="M5.75 4.75h12.5v14.5H5.75z" /><path d="M8.75 8.75h6.5M8.75 12h3" /><path d="m12.25 15.75 4 0" {...A} /></>,
+  copyIcon: <><rect x="8.75" y="8.75" width="10.5" height="10.5" rx="1.5" /><path d="M15.25 5.75v-.5a.5.5 0 0 0-.5-.5h-9.5a.5.5 0 0 0-.5.5v9.5a.5.5 0 0 0 .5.5h.5" /></>,
+  check: <><path d="m6.5 12.5 3.5 3.5 7.5-8" {...A} /></>,
+  arrow: <><path d="M5.75 12h12.5M13.25 7l5 5-5 5" /></>,
+  retry: <><path d="M18.25 12a6.25 6.25 0 1 1-1.83-4.42" /><path d="M18.25 4.75v3.5h-3.5" {...A} /></>,
   canvasTool: <><rect x="3.75" y="4.75" width="16.5" height="14.5" rx="1.5" /><path d="M9.25 4.75v14.5M9.25 12h11" /><path d="M5.75 8.25h1.5" {...A} /></>,
 }
 export default function Icon({ name, className, size = 24 }) {
