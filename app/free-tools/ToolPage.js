@@ -1,6 +1,8 @@
 import t from './tools.module.css'
 import Icon from '../design/c2/Icons'
 import Cal from '../design/_shared/Cal'
+import TrackedLink from '../../components/TrackedLink'
+import { WORKSHOP_LINK, SHOW_WORKSHOP } from '../design/c2/workshop'
 import { TOOLS, bySlug } from './tools'
 const SITE = 'https://boundset.com'
 export const toolMeta = (slug) => { const x = bySlug(slug); return { title: `${x.name} | Free tool | Boundset`, description: x.desc, alternates: { canonical: `/free-tools/${slug}` }, openGraph: { title: x.name, description: x.desc, url: `/free-tools/${slug}` } } }
@@ -23,6 +25,14 @@ export default function ToolPage({ slug, children }) {
         <h2 id="more-h" className={t.h2}>More free tools</h2>
         <ul className={t.grid}>{related.map((r) => <li key={r.slug}><a href={`/free-tools/${r.slug}`} className={t.cardL}><span className={t.ico}><Icon name={r.icon} /></span><span className={t.cName}>{r.name}</span></a></li>)}</ul>
         <p className={t.moreRow}><a href="/free-tools" className={t.textLink}>All free tools →</a><Cal className={t.btnSm}>Book a call</Cal></p>
+        {SHOW_WORKSHOP && (
+          <p className="mt-6 text-white/85">
+            Want to do it yourself with an expert alongside?{' '}
+            <TrackedLink href={WORKSHOP_LINK} event="Workshop click" className="underline underline-offset-4 text-white focus-ring rounded">
+              Start with the $2,000 workshop
+            </TrackedLink>
+          </p>
+        )}
       </section>
     </>
   )
