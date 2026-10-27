@@ -1,6 +1,7 @@
 // Shared chrome for the new content pages (case studies, comparison pages).
 // Server components: no client JS needed except the tracked links below.
 import TrackedLink from './TrackedLink'
+import { WORKSHOP_LINK, SHOW_WORKSHOP } from '../app/design/c2/workshop'
 import c from '../app/design/c2/c2.module.css'
 import { serif, sans } from '../app/design/c2/fonts'
 import Nav from '../app/design/c2/Nav'
@@ -109,6 +110,14 @@ export function CloseCta({ headline, body }) {
         <h2 className="text-3xl md:text-5xl font-serif leading-tight mb-6 balance">{headline}</h2>
         {body && <p className="text-xl text-white/85 mb-10">{body}</p>}
         <BookCallButton variant="light" />
+        {SHOW_WORKSHOP && (
+          <p className="mt-6 text-white/85">
+            Want to do it yourself with an expert alongside?{' '}
+            <TrackedLink href={WORKSHOP_LINK} event="Workshop click" className="underline underline-offset-4 text-white focus-ring rounded">
+              Start with the $2,000 workshop
+            </TrackedLink>
+          </p>
+        )}
       </div>
     </section>
   )
