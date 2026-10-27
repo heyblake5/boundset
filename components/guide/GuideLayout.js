@@ -133,20 +133,18 @@ export function DocPage({ p, data, rel = [] }) {
             {!!p.sources?.length && <section aria-labelledby="sources" className={g.sources}><h2 id="sources" className={g.h2s}>Sources</h2><ol>{p.sources.map((s) => <li key={s.url}><a href={s.url} target="_blank" rel="noopener noreferrer">{s.label || s.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</a></li>)}</ol></section>}
           </div>
         </article>
-        {p.close && (
-          <section className={g.close} aria-labelledby="close-h">
-            <h2 id="close-h" className={g.closeH}>{p.close}</h2>
-            <a href={BOOK} className={c.btn}>Book a call</a>
-            {SHOW_WORKSHOP && (
-              <p className="mt-6 text-white/85">
-                Want to do it yourself with an expert alongside?{' '}
-                <TrackedLink href={WORKSHOP_LINK} event="Workshop click" className="underline underline-offset-4 text-white focus-ring rounded">
-                  Start with the $2,000 workshop
-                </TrackedLink>
-              </p>
-            )}
-          </section>
-        )}
+        <section className={g.close} aria-labelledby={p.close ? 'close-h' : undefined}>
+          {p.close && <h2 id="close-h" className={g.closeH}>{p.close}</h2>}
+          <a href={BOOK} className={c.btn}>Book a call</a>
+          {SHOW_WORKSHOP && (
+            <p className="mt-6 text-white/85">
+              Want to do it yourself with an expert alongside?{' '}
+              <TrackedLink href={WORKSHOP_LINK} event="Workshop click" className="underline underline-offset-4 text-white focus-ring rounded">
+                Start with the $2,000 workshop
+              </TrackedLink>
+            </p>
+          )}
+        </section>
         {wb && <div id="wbPrint" />}
       </main>
       <Footer />
