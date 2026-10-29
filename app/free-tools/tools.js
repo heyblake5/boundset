@@ -13,3 +13,5 @@ export const TOOLS = [
 ]
 export const CANVAS = { href: '/templates/positioning-canvas', name: 'Positioning canvas', icon: 'canvasTool' }
 export const bySlug = (s) => TOOLS.find((t) => t.slug === s)
+// The teardown lives at /teardown (not under /free-tools) and is listed first on /free-tools.
+export const TEARDOWN_TOOL = { href: '/teardown', name: 'Positioning teardown', icon: 'teardown' }
