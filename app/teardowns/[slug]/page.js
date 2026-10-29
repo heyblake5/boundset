@@ -5,10 +5,15 @@ import RunYours from '../../../components/teardown/RunYours'
 import TrackedLink from '../../../components/TrackedLink'
 import Icon from '../../design/c2/Icons'
 import s from '../../../components/teardown/td.module.css'
-import { BOOK_CALL_URL, withPlaceholders } from '../../../components/site'
+import { BOOK_CALL_URL } from '../../../components/site'
 import { COPY } from '../../../components/teardown/copy'
 import { TEARDOWNS, TEARDOWNS_PUBLIC, teardownBySlug, footerLine } from '../../../lib/teardowns'
 import { toResult, teardownLd } from '../../../components/teardown/ld'
+function footerParts(line, url) {
+  const [before, rest] = line.split(url)
+  const [mid, end] = rest.split(COPY.mailto)
+  return <>{before}<a href={url} rel="nofollow noopener">{url}</a>{mid}<a href={`mailto:${COPY.mailto}`}>{COPY.mailto}</a>{end}</>
+}
 export const dynamicParams = false
 export function generateStaticParams() { return TEARDOWNS.map((t) => ({ slug: t.slug })) }
 export async function generateMetadata({ params }) {
@@ -30,12 +35,12 @@ export default async function Page({ params }) {
       <section className={s.sec}><h2 className={s.h2}>{COPY.works}</h2><ul className={s.list}>{t.works.map((w) => <li key={w}><Icon name="check" size={18} />{w}</li>)}</ul></section>
       <Blocks r={toResult(t)} pageLines={words} sideLabel={COPY.theirWords} />
       <section className={s.sec}><h2 className={s.h2}>{COPY.faq}</h2><dl className={s.faq}>{t.faq.map((f) => <div key={f.q}><dt>{f.q}</dt><dd>{f.a}</dd></div>)}</dl></section>
+      <p className={s.closer}>Read <a href={t.related[0][0]}>{t.related[0][1]}</a> or <a href={t.related[1][0]}>{t.related[1][1]}</a>.</p>
       <section className={s.sec}><h2 className={s.h2}>{COPY.runYours}</h2><RunYours slug={t.slug} /></section>
       <div className={s.after}>
-        <nav aria-label={COPY.related} className={s.rel}>{t.related.map(([h, l]) => <a key={h} href={h}>{l}</a>)}</nav>
         <TrackedLink href={book} event="Book call" props={{ src: `teardown-page:${t.slug}` }} className={s.btn}>{COPY.book}</TrackedLink>
       </div>
-      <p className={s.foot}>{footerLine(t).split(t.url).map((part, i) => <span key={i}>{i > 0 && <a href={t.url} rel="nofollow noopener">{t.url}</a>}{withPlaceholders(part)}</span>)}</p>
+      <p className={s.foot}>{footerParts(footerLine(t), t.url)}</p>
     </article></Shell>
   )
 }

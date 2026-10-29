@@ -1,35 +1,34 @@
-// Every user-visible string on the teardown pages. Mirrored in TEARDOWN-COPY.md for Quill.
-// Spec strings are verbatim from growth/teardown/spec-for-atlas.md. [BRACKETED] = placeholder, not final.
+// Every user-visible string on the teardown pages.
 export const COPY = {
-  h1: 'Your homepage should say who it\u2019s for and what it beats',
+  h1: "Your homepage should say who it's for and what it beats",
   placeholder: 'yourcompany.com',
-  inputLabel: 'Website URL', // aria-label only
-  submitLabel: 'Run teardown', // aria-label only [PLACEHOLDER]
-  blocks: { says_it_is: 'What it says it is', for_whom: 'Who it\u2019s for', up_against: 'What it\u2019s up against', strongest_claim: 'Strongest claim', gaps: '3 gaps', rewrite: 'Rewritten hero line' },
+  inputLabel: 'Website URL',
+  submitLabel: 'Run teardown',
+  blocks: { says_it_is: 'What it says it is', for_whom: "Who it's for", up_against: "What it's up against", strongest_claim: 'Strongest claim', gaps: '3 gaps', rewrite: 'Rewritten hero line' },
   theirPage: 'Their page',
-  copyRewrite: 'Copy rewrite', // aria-label only [PLACEHOLDER]
-  copied: 'Copied', // aria-live only [PLACEHOLDER]
+  copyRewrite: 'Copy rewrite',
+  copied: 'Copied',
   emailHeading: 'Send this to my inbox',
-  emailLabel: 'Email', // aria-label only
-  emailSubmit: 'Send', // aria-label only [PLACEHOLDER]
+  emailLabel: 'Email',
+  emailSubmit: 'Send',
   emailSent: (e) => `Sent to ${e}`,
-  book: 'Book a 15-minute call',
-  retry: 'Try again', // aria-label only [PLACEHOLDER]
+  book: 'Book a 15 minute call',
+  retry: 'Try again',
   errors: {
-    blocked: 'We couldn\u2019t read that page.',
-    thin: 'That page renders without readable text. Try the full URL.',
-    rate: 'You\u2019ve run three today.', rateLink: 'Email us the URL instead?',
-    capacity: 'We\u2019re at capacity this month',
-    model: 'We couldn\u2019t read that page.', // spec: model failure "shows the error state"; no separate line given [PLACEHOLDER]
-    unavailable: '[TEARDOWN UNAVAILABLE LINE NEEDED]',
+    blocked: "We couldn't read that page. Try the full URL, starting with https.",
+    thin: 'We found no text on that page. Try the full URL.',
+    rate: "You've run three teardowns today. Email the URL to blake@boundset.com instead.",
+    daily: "We've hit today's limit. Try again tomorrow.",
+    monthly: "We've hit this month's limit. Email the URL to blake@boundset.com instead.",
+    burst: 'Too many requests. Try again in a minute.',
+    model: 'Something broke on our end. Try again in a minute.',
+    unavailable: 'Teardowns are off right now. Email the URL to blake@boundset.com instead.',
   },
   mailto: 'blake@boundset.com',
-  // teardown pages
-  indexTitle: 'Homepage positioning teardowns', // [PLACEHOLDER] page H1
-  works: 'What works', // [PLACEHOLDER] heading, from template "what works"
-  theirWords: 'Their words', // spec §5 "their words"
-  faq: 'FAQ', // [PLACEHOLDER]
-  runYours: 'Run yours',
-  related: 'Related', // [PLACEHOLDER]
+  indexTitle: 'Homepage positioning teardowns',
+  works: 'What works',
+  theirWords: 'Their words',
+  faq: 'FAQ',
+  runYours: 'Tear down your homepage',
   crumbHome: 'Home', crumbIndex: 'Teardowns',
 }

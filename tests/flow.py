@@ -11,7 +11,7 @@ with sync_playwright() as p:
         ctx = b.new_context(viewport={'width': w, 'height': h}, device_scale_factor=2 if w == 390 else 1, extra_http_headers={'x-forwarded-for': f'10.9.{w % 250}.1'})
         if MODE == 'off':
             pg2 = ctx.new_page(); pg2.goto(f'http://localhost:{PORT}/teardown'); pg2.wait_for_load_state('networkidle')
-            res[tag] = {'unavailable_line': pg2.locator('text=TEARDOWN UNAVAILABLE LINE NEEDED').count(), 'submit_disabled': pg2.get_attribute('button[type=submit]', 'aria-disabled')}
+            res[tag] = {'unavailable_line': pg2.locator('text=Teardowns are off right now').count(), 'submit_disabled': pg2.get_attribute('button[type=submit]', 'aria-disabled')}
             pg2.screenshot(path=f'{OUT}unavailable-{tag}.png', full_page=True); ctx.close(); continue
         pg = ctx.new_page(); errs = []
         pg.on('pageerror', lambda e: errs.append(str(e)))
@@ -24,11 +24,11 @@ with sync_playwright() as p:
         pg.fill('input[name=url]', f'example-{tag}.com'); pg.click('button[type=submit]')
         pg.wait_for_selector('text=Welcome to agentic revenue.')
         pg.wait_for_timeout(500); pg.screenshot(path=f'{OUT}reading-{tag}.png', full_page=True)
-        pg.wait_for_selector('text=Book a 15-minute call', timeout=15000)
+        pg.wait_for_selector('text=Book a 15 minute call', timeout=15000)
         pg.hover('li:has-text("The best line sits in an H3")')
         hit = pg.locator('mark', has_text='Speed to lead, every time.').count()
         pg.screenshot(path=f'{OUT}result-{tag}.png', full_page=True)
-        href = pg.get_attribute('a:has-text("Book a 15-minute call")', 'href')
+        href = pg.get_attribute('a:has-text("Book a 15 minute call")', 'href')
         email_form = pg.locator('text=Send this to my inbox').count()
         res[tag] = {'pageerrors': errs, 'hover_highlight': hit, 'book_href': href, 'email_form_shown': email_form}
         pg3 = ctx.new_page(); pg3.goto('http://localhost:4102/teardowns/attio'); pg3.wait_for_load_state('networkidle')

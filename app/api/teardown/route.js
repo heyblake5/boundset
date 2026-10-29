@@ -1,5 +1,6 @@
 import { teardown } from '../../../lib/teardown/run'
 import { modelStatus } from '../../../lib/teardown/model'
+import { admitBurst } from '../../../lib/teardown/limits'
 export const runtime = 'nodejs'
 export const maxDuration = 60
 export const dynamic = 'force-dynamic'
@@ -16,7 +17,9 @@ export async function POST(req) {
     async start(ctl) {
       const emit = (e) => ctl.enqueue(enc.encode(JSON.stringify(e) + '\n'))
       try {
-        if (bot) emit({ type: 'error', reason: 'blocked' })
+        const burst = admitBurst(ipOf(req))
+        if (burst) emit({ type: 'error', reason: burst })
+        else if (bot) emit({ type: 'error', reason: 'blocked' })
         else await teardown({ url: body.url, ip: ipOf(req), emit })
       } catch { emit({ type: 'error', reason: 'model' }) }
       ctl.close()

@@ -9,6 +9,14 @@ import { COPY } from './copy'
 import { track } from './track'
 import { UrlForm } from './UrlForm'
 
+const NO_RETRY = new Set(['rate', 'daily', 'monthly', 'burst'])
+function mailText(text, host) {
+  const mail = COPY.mailto
+  const i = text.indexOf(mail)
+  if (i < 0) return text
+  return <>{text.slice(0, i)}<a href={`mailto:${mail}?subject=${encodeURIComponent('Teardown: ' + (host || ''))}`}>{mail}</a>{text.slice(i + mail.length)}</>
+}
+
 export default function Tool({ available, emailOn, bookUrl, samples }) {
   const t0 = useRef(0), [initialUrl, setInit] = useState('')
   useEffect(() => { t0.current = Date.now(); const q = new URLSearchParams(location.search).get('url'); if (q) setInit(q.slice(0, 300)) }, [])
@@ -51,10 +59,10 @@ export default function Tool({ available, emailOn, bookUrl, samples }) {
             <m.div key="form" layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, scale: .98 }}>
               <UrlForm key={initialUrl} onSubmit={run} disabled={phase === 'unavailable'} initial={initialUrl || last?.url?.replace(/^https:\/\//, '').replace(/\/$/, '') || ''} />
               <div ref={live} aria-live="polite">
-                {phase === 'unavailable' && <p className={s.line}>{COPY.errors.unavailable}</p>}
+                {phase === 'unavailable' && <p className={s.line}>{mailText(COPY.errors.unavailable, host)}</p>}
                 {phase === 'error' && <p className={s.line}>
-                  {err === 'rate' ? <>{COPY.errors.rate} <a href={`mailto:${COPY.mailto}?subject=${encodeURIComponent('Teardown: ' + (host || ''))}`}>{COPY.errors.rateLink}</a></> : (COPY.errors[err] || COPY.errors.blocked)}
-                  {err !== 'rate' && err !== 'capacity' && <button type="button" className={s.icoBtn} aria-label={COPY.retry} onClick={() => run(last.url, last.hp)}><Icon name="retry" size={20} /></button>}
+                  {mailText(COPY.errors[err] || COPY.errors.blocked, host)}
+                  {!NO_RETRY.has(err) && <button type="button" className={s.icoBtn} aria-label={COPY.retry} onClick={() => run(last.url, last.hp)}><Icon name="retry" size={20} /></button>}
                 </p>}
               </div>
             </m.div>

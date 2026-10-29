@@ -1,5 +1,6 @@
 import { PageShell, CloseCta } from './site'
 import { SITE, UPDATED, SRC } from '../lib/content'
+import { pageDescription } from '../lib/sources'
 
 export function Ld({ data }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
@@ -19,7 +20,8 @@ export function pageLd(p, type = 'Article') {
 }
 
 export function meta(p) {
-  return { title: `${p.title} | Boundset`, description: p.answer.slice(0, 158), alternates: { canonical: p.path }, openGraph: { title: p.title, description: p.answer.slice(0, 158), url: p.path, type: 'article' } }
+  const description = pageDescription(p, p.path || p.title)
+  return { title: `${p.title} | Boundset`, description, alternates: { canonical: p.path }, openGraph: { title: p.title, description, url: p.path, type: 'article' } }
 }
 
 export function Sources({ keys }) {

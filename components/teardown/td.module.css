@@ -78,6 +78,9 @@
 .faq{display:grid;border-top:1px solid var(--hair)}
 .faq div{padding:var(--s3) 0;border-bottom:1px solid var(--hair)}
 .faq dt{font-weight:500}.faq dd{color:var(--mute);margin-top:6px}
+.closer{margin-top:var(--s6);font-size:17px;line-height:1.5;max-width:40em}
+.closer a{color:var(--bone)}
 .foot{margin-top:var(--s8);font-size:14px;color:var(--mute)}
+.foot a{color:var(--mute)}
 .rel{display:flex;flex-wrap:wrap;gap:var(--s3)}
 .rel a{color:var(--bone)}

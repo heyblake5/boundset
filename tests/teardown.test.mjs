@@ -7,6 +7,7 @@ import { extract, corpus } from '../lib/teardown/extract.js'
 import { guard } from '../lib/teardown/schema.js'
 import { FIXTURE_HTML, FIXTURE_RESULT } from '../lib/teardown/fixtures.js'
 import * as L from '../lib/teardown/limits.js'
+import { emailEnabled, postalAddress } from '../lib/teardown/email-gate.js'
 
 const blocked = async (p) => assert.rejects(p, (e) => e.reason === 'blocked')
 const pub = async () => [{ address: '93.184.216.34', family: 4 }]
@@ -101,10 +102,10 @@ test('limits: 3 per IP per 24h, then rate', () => {
 test('limits: global 15/day then capacity; monthly 300 then capacity', () => {
   L._reset(); const t = Date.UTC(2026, 9, 26, 12)
   for (let i = 0; i < 15; i++) { assert.equal(L.admit(`2.0.0.${i}`, t), null); L.charge(`2.0.0.${i}`, t) }
-  assert.equal(L.admit('3.3.3.3', t), 'capacity')
+  assert.equal(L.admit('3.3.3.3', t), 'daily')
   assert.equal(L.admit('3.3.3.3', t + 864e5), null) // next day resets daily
   L._reset(); L._state.month['2026-10'] = 300
-  assert.equal(L.admit('4.4.4.4', t), 'capacity')
+  assert.equal(L.admit('4.4.4.4', t), 'monthly')
   assert.equal(L.CFG().monthly, 300); assert.equal(L.CFG().daily, 15)
 })
 test('limits: host cache 7 days, results 30 days, IP never stored raw', () => {
@@ -113,6 +114,36 @@ test('limits: host cache 7 days, results 30 days, IP never stored raw', () => {
   assert.equal(L.cached('attio.com', t + 6 * 864e5), 'abc'); assert.equal(L.cached('attio.com', t + 8 * 864e5), null)
   assert.ok(L.load('abc', t + 29 * 864e5)); assert.equal(L.load('abc', t + 31 * 864e5), null)
   L.charge('9.9.9.9', t); assert.ok(![...L._state.ip.keys()].some((k) => k.includes('9.9.9.9')))
+})
+test('limits: 5 per IP per minute, then burst', () => {
+  L._reset(); const t = Date.UTC(2026, 9, 26, 12)
+  for (let i = 0; i < 5; i++) assert.equal(L.admitBurst('8.8.8.8', t), null)
+  assert.equal(L.admitBurst('8.8.8.8', t), 'burst')
+  assert.equal(L.admitBurst('8.8.4.4', t), null)
+  assert.equal(L.admitBurst('8.8.8.8', t + 60_000), null)
+  assert.ok(![...L._state.burst.keys()].some((k) => k.includes('8.8.8.8')))
+})
+test('email capture stays off without a real postal address', () => {
+  const keys = ['TEARDOWN_EMAIL_ENABLED', 'TEARDOWN_POSTAL_ADDRESS', 'RESEND_API_KEY', 'TEARDOWN_FROM_EMAIL']
+  const prev = Object.fromEntries(keys.map((k) => [k, process.env[k]]))
+  try {
+    for (const k of keys) delete process.env[k]
+    assert.equal(emailEnabled(), false)
+    process.env.TEARDOWN_EMAIL_ENABLED = '1'
+    process.env.RESEND_API_KEY = 'test'
+    process.env.TEARDOWN_FROM_EMAIL = 'blake@boundset.com'
+    process.env.TEARDOWN_POSTAL_ADDRESS = 'High Noon LLC, [ADDRESS NEEDED]'
+    assert.equal(postalAddress(), '')
+    assert.equal(emailEnabled(), false)
+    process.env.TEARDOWN_POSTAL_ADDRESS = 'High Noon LLC, 1 Main St, Austin TX 78701'
+    assert.equal(emailEnabled(), true)
+    assert.match(postalAddress(), /1 Main St/)
+  } finally {
+    for (const k of keys) {
+      if (prev[k] === undefined) delete process.env[k]
+      else process.env[k] = prev[k]
+    }
+  }
 })
 test('email: 1 per id, 5 per IP per day', () => {
   L._reset()
