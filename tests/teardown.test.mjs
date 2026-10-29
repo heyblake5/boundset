@@ -7,6 +7,7 @@ import { extract, corpus } from '../lib/teardown/extract.js'
 import { guard } from '../lib/teardown/schema.js'
 import { FIXTURE_HTML, FIXTURE_RESULT } from '../lib/teardown/fixtures.js'
 import * as L from '../lib/teardown/limits.js'
+import { modelStatus } from '../lib/teardown/model.js'
 import { emailEnabled, postalAddress } from '../lib/teardown/email-gate.js'
 
 const blocked = async (p) => assert.rejects(p, (e) => e.reason === 'blocked')
@@ -122,6 +123,23 @@ test('limits: 5 per IP per minute, then burst', () => {
   assert.equal(L.admitBurst('8.8.4.4', t), null)
   assert.equal(L.admitBurst('8.8.8.8', t + 60_000), null)
   assert.ok(![...L._state.burst.keys()].some((k) => k.includes('8.8.8.8')))
+})
+test('model: off without credentials, kill switch wins', () => {
+  const keys = ['TEARDOWN_MOCK', 'TEARDOWN_DISABLED', 'AI_GATEWAY_API_KEY', 'VERCEL_OIDC_TOKEN', 'VERCEL_ENV']
+  const prev = Object.fromEntries(keys.map((k) => [k, process.env[k]]))
+  try {
+    for (const k of keys) delete process.env[k]
+    assert.equal(modelStatus().available, false)
+    process.env.AI_GATEWAY_API_KEY = 'test'
+    assert.equal(modelStatus().available, true)
+    process.env.TEARDOWN_DISABLED = '1'
+    assert.equal(modelStatus().available, false)
+  } finally {
+    for (const k of keys) {
+      if (prev[k] === undefined) delete process.env[k]
+      else process.env[k] = prev[k]
+    }
+  }
 })
 test('email capture stays off without a real postal address', () => {
   const keys = ['TEARDOWN_EMAIL_ENABLED', 'TEARDOWN_POSTAL_ADDRESS', 'RESEND_API_KEY', 'TEARDOWN_FROM_EMAIL']
