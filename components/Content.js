@@ -10,7 +10,7 @@ export function pageLd(p, type = 'Article') {
   const url = SITE + p.path
   const out = [
     { '@context': 'https://schema.org', '@type': type, headline: p.title, name: p.title, url, dateModified: p.updated || UPDATED, description: p.answer,
-      author: { '@type': 'Person', name: 'Blake Emal', url: SITE }, publisher: { '@id': SITE + '/#org' } },
+      author: { '@id': SITE + '/about#blake' }, publisher: { '@id': SITE + '/#org' } },
     { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Boundset', item: SITE },
       { '@type': 'ListItem', position: 2, name: p.title, item: url } ] },
@@ -43,7 +43,7 @@ export function Article({ p, type, children, close = 'Talk through your position
         <header className="px-6 pt-16 md:pt-28 pb-10">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-serif text-stone-900 leading-[1.05] tracking-tight balance">{p.title}</h1>
-            <p className="mt-6 text-sm text-stone-500">By Blake Emal · <time dateTime={UPDATED}>Oct 23, 2026</time></p>
+            <p className="mt-6 text-sm text-stone-500">By <a href="/about" rel="author">Blake Emal</a> · <time dateTime={UPDATED}>Oct 23, 2026</time></p>
             <p className="mt-10 text-xl md:text-2xl text-stone-800 leading-relaxed border-l-4 border-brand pl-6">{p.answer}</p>
           </div>
         </header>

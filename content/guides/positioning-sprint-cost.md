@@ -68,7 +68,7 @@ Nice to have: ______
 
 ## What Boundset costs and what you get
 
-Boundset costs $7,500 for the Stake sprint or $12,000 for Stronghold. Both run as a two week sprint for seed stage startups and beyond. Stake covers your core messaging and homepage. Stronghold adds more pages and assets plus a year of coaching.
+Boundset costs $7,500 for the Stake sprint or $12,000 for Stronghold. See the Boundset sprint for deliverables, timeline and both prices. Both run as a two week sprint for seed stage startups and beyond. Stake covers your core messaging and homepage. Stronghold adds more pages and assets plus a year of coaching.
 
 ### Stake
 Stake costs $7,500.
@@ -206,6 +206,7 @@ A: It varies by provider, so ask before you sign. A Boundset sprint takes about 
 ## INTERNAL LINKS
 | Path | Anchor text | Where it goes in the body |
 |---|---|---|
+| /sprint | the Boundset sprint | "What Boundset costs and what you get" |
 | /april-dunford-alternatives | April Dunford alternatives guide | End of "What positioning sprints cost" |
 | /positioning-agency-vs-fractional-pmm | fractional product marketer | "When a sprint is the wrong buy" |
 | /free-tools/sprint-roi-calculator | free sprint ROI calculator | After positioning-sprint-cost-ex-3 |

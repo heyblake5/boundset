@@ -4,6 +4,7 @@ import { SHOW_WORKSHOP } from './workshop'
 export const HOME = '/'
 export const MENU = [
   { id: 'sprint', label: 'Sprint', links: [
+    { href: '/sprint', name: 'Positioning sprint' },
     { href: `/#included`, name: 'Stake and Stronghold' }, { href: `/#how`, name: 'Timeline' },
     { href: `/#pricing`, name: 'Pricing' }, ...(SHOW_WORKSHOP ? [{ href: `/#workshop`, name: 'Workshop' }] : []), { href: `/#faq`, name: 'FAQs' } ] },
   { id: 'resources', label: 'Resources', heading: 'Guides', links: [...GUIDE_NAV.map(({ href, name }) => ({ href, name })), { href: '/answers', name: 'All answers', all: true }, { href: '/compare', name: 'Compare', all: true }] },
