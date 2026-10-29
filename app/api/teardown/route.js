@@ -5,13 +5,6 @@ export const runtime = 'nodejs'
 export const maxDuration = 60
 export const dynamic = 'force-dynamic'
 const ipOf = (req) => (req.headers.get('x-forwarded-for') || '').split(',')[0].trim() || req.headers.get('x-real-ip') || 'unknown'
-// Preview-only probe. Production ignores it. Removed once the free-tier default is chosen.
-const MODEL_ID = /^[a-z0-9][a-z0-9.-]*\/[a-z0-9][a-z0-9._:-]{0,80}$/i
-const previewModel = (body) => {
-  if (process.env.VERCEL_ENV !== 'preview') return undefined
-  const m = typeof body.model === 'string' ? body.model.trim() : ''
-  return MODEL_ID.test(m) ? m : undefined
-}
 
 export function GET() { return Response.json({ available: modelStatus().available }) }
 
@@ -27,7 +20,7 @@ export async function POST(req) {
         const burst = admitBurst(ipOf(req))
         if (burst) emit({ type: 'error', reason: burst })
         else if (bot) emit({ type: 'error', reason: 'blocked' })
-        else await teardown({ url: body.url, ip: ipOf(req), emit, model: previewModel(body) })
+        else await teardown({ url: body.url, ip: ipOf(req), emit })
       } catch { emit({ type: 'error', reason: 'model' }) }
       ctl.close()
     },
