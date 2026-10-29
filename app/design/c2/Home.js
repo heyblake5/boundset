@@ -13,15 +13,14 @@ import Icon from './Icons'
 import Open from './Open'
 import Stack from './Stack'
 import Buy from './Buy'
-import { SHOW_WORKSHOP } from './workshop'
+import { SHOW_WORKSHOP, WORKSHOP } from './workshop'
 import Footer from './Footer'
 
 // Headlines carry no periods or commas (Blake, Oct 24). Applied at render so shared data stays intact.
 const H = (t) => t.replace(/[.,]/g, '')
 const ICONS = ['workshop', 'grid', 'matrix', 'usecase', 'mvm', 'canvas', 'copy', 'wire', 'voice', 'audit', 'asset', 'slack']
 const GROUPS = [[0, 1, 9, 5], [2, 3, 4, 8], [6, 7, 10, 11]] // strategy · messaging · assets
-// Workshop offer copy: quill-atlas.md / heath.md (approved Oct 21).
-const WORKSHOP = { h: 'Start with the workshop', sub: '$2,000, credited in full to the sprint if you continue within 30 days.', items: ['Research', '90-minute positioning workshop', 'Written positioning brief'] }
+// Workshop offer copy: quill-atlas.md / heath.md (approved Oct 21). Shared with /sprint.
 
 
 const FAQ_LD = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: Object.values(d.faqs).flat().map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }
@@ -42,7 +41,7 @@ export default function C2() {
         <ul className={s.logos}>{d.logos.map((l) => <li key={l.alt}><img src={l.src} alt={l.alt} width={l.w} height={l.h} style={l.scale ? { '--k': l.scale } : undefined} /></li>)}</ul>
       </header>
 
-      <section className={s.intro}><p className={s.introP}>{d.hero.sub}</p></section>
+      <section className={s.intro}><p className={s.introP}>{d.hero.sub}</p><p className={s.more}><a href="/sprint">See the full sprint</a></p></section>
 
       <section className={s.sec} id="included">
         <h2 className={s.h2}>{H(d.deliverablesH2)}</h2>

@@ -7,6 +7,7 @@ import Footer from '../../app/design/c2/Footer'
 import Inline from './Inline'
 import Workbook from './Workbook'
 import { guide, related, wordCount, plain, SITE, BOOK } from '../../lib/guides'
+import { SPRINT_OFFERS } from '../../lib/sprintCopy'
 import CopyButton from '../CopyButton'
 
 const fmt = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).replace(',', '')
@@ -24,7 +25,7 @@ function ld(p) {
   const out = [
     { '@context': 'https://schema.org', '@type': 'Article', '@id': url + '#article', headline: p.h1, description: p.description, url, mainEntityOfPage: url,
       datePublished: p.updated, dateModified: p.updated, image: SITE + OG, wordCount: wordCount(p), inLanguage: 'en',
-      author: { '@type': 'Person', name: 'Blake Emal', url: SITE }, publisher: { '@id': SITE + '/#org' },
+      author: { '@id': SITE + '/about#blake' }, publisher: { '@id': SITE + '/#org' },
       citation: p.sources.map((s) => s.url), hasPart: p.exercises.map((e) => ({ '@type': 'CreativeWork', name: e.title, url: `${url}#${e.id}`, isAccessibleForFree: true })) },
     { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Boundset', item: SITE + '/' }, { '@type': 'ListItem', position: 2, name: p.h1, item: url }] },
@@ -37,8 +38,7 @@ function ld(p) {
     out.push({ '@context': 'https://schema.org', '@type': 'HowTo', name: 'How to do positioning step by step', step: steps((b) => b.type === 'h3' && /^Step \d+ /.test(b.text), (t) => t.replace(/^Step \d+ /, '')) })
   }
   if (p.slug === 'positioning-canvas') out.push({ '@context': 'https://schema.org', '@type': 'HowTo', name: p.h1, step: steps((b) => b.type === 'h2' && /^Box \d+ /.test(b.text), (t) => t.replace(/^Box \d+ /, '')) })
-  if (p.slug === 'positioning-sprint-cost') out.push({ '@context': 'https://schema.org', '@type': 'Service', name: 'Boundset positioning sprint', provider: { '@id': SITE + '/#org' }, url: SITE + '/',
-    offers: [['Stake', 7500], ['Stronghold', 12000]].map(([n, v]) => ({ '@type': 'Offer', name: n, price: v, priceCurrency: 'USD', url: SITE + '/#pricing' })) })
+  if (p.slug === 'positioning-sprint-cost') out.push({ '@context': 'https://schema.org', '@type': 'Service', name: 'Boundset positioning sprint', provider: { '@id': SITE + '/#org' }, url: SITE + '/sprint', offers: SPRINT_OFFERS })
   return out
 }
 
@@ -106,7 +106,7 @@ export function DocPage({ p, data, rel = [] }) {
           <header className={g.head}>
             <nav aria-label="Breadcrumb" className={g.crumb}><a href="/">Boundset</a><span aria-hidden="true">/</span><span aria-current="page">{p.h1}</span></nav>
             <h1 className={g.h1}>{p.h1}</h1>
-            <p className={g.byline}>By Blake Emal · Updated <time dateTime={p.updated}>{fmt(p.updated)}</time> · {mins} min read</p>
+            <p className={g.byline}>By <a href="/about" rel="author">Blake Emal</a> · Updated <time dateTime={p.updated}>{fmt(p.updated)}</time> · {mins} min read</p>
             <p className={g.def}>{p.definition}</p>
           </header>
           {p.toc.length > 2 && <aside className={g.side}><Toc p={p} /></aside>}

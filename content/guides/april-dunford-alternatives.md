@@ -120,7 +120,7 @@ Boundset is a two week positioning sprint for seed stage startups and beyond. It
 | Stage | Past early release, mainly B2B | Has a product and customers | Has a product and customers |
 | Support after | Advisory sessions on the larger tier | Ongoing Slack access | One year of async coaching in Slack |
 
-Choose April Dunford if your leadership team needs her in the room and you can wait for a slot. Choose Boundset if you need positioning and finished copy in two weeks at a startup budget. Reading Obviously Awesome first helps with either.
+Choose April Dunford if your leadership team needs her in the room and you can wait for a slot. Choose Boundset's sprint if you need positioning and finished copy in two weeks at a startup budget. Reading Obviously Awesome first helps with either.
 
 [EXERCISE april-dunford-alternatives-ex-3]
 **Title:** Run a quick positioning gut check
@@ -169,6 +169,7 @@ A: Boundset's guides and positioning canvas use the five components from Obvious
 ## INTERNAL LINKS
 | Path | Anchor text | Where it goes in the body |
 |---|---|---|
+| /sprint | Boundset's sprint | "Where Boundset fits" |
 | /positioning | this site's guides | "What April Dunford offers" first paragraph |
 | /positioning-sprint-cost | positioning sprint cost guide | "Positioning sprint" H3 |
 | /positioning-agency-vs-fractional-pmm | positioning agency vs fractional PMM | End of "The main alternatives compared" |

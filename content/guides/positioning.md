@@ -431,12 +431,13 @@ A: Review positioning when something it depends on changes. Triggers include a n
 | /free-tools/messaging-hierarchy-builder | messaging hierarchy builder | After positioning-ex-9 |
 | /positioning-agency-vs-fractional-pmm | positioning agencies vs fractional PMMs | "Who needs positioning work" closing paragraph |
 | /april-dunford-alternatives | April Dunford alternatives | "Who needs positioning work" closing paragraph |
+| /sprint | two week sprint | "Get positioning and copy done in two weeks" |
 | /positioning-sprint-cost | positioning sprint cost | "Who needs positioning work" closing paragraph |
 | /#pricing | Stake and Stronghold | CTA section package list |
 | /#book | Book a 15 minute call | Primary CTA (site BOOK_CALL_URL is https://cal.com/heyblake/positioning) |
 | /free-tools | free Boundset tools | FAQ "Can I do positioning myself" |
 
-All paths exist in /workspace/boundset-redesign/app/ (anchors #pricing and #book exist in app/page.js). There is no standalone sprint page route; the CTA points to the homepage booking section.
+All paths exist in /workspace/boundset-redesign/app/ (anchors #pricing and #book exist on the homepage). The sprint page is /sprint.
 
 ## SCHEMA NOTES
 - Article (or TechArticle) for the page. Headline = H1. Description = meta description. Author and dates left to Atlas.

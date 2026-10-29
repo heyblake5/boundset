@@ -180,6 +180,7 @@ A: Put every quote against the same list. Ask what files you get, who does the w
 ## INTERNAL LINKS
 | Path | Anchor text | Where it goes in the body |
 |---|---|---|
+| /sprint | Boundset is a positioning sprint | "Where Boundset fits" |
 | /positioning-sprint-cost | positioning sprint cost guide | After the comparison table |
 | /positioning | positioning | "Why many teams do positioning first" first sentence |
 | /april-dunford-alternatives | April Dunford alternatives | Optional, end of "How to choose between them" |

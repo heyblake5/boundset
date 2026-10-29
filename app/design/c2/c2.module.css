@@ -54,6 +54,8 @@
 
 .intro{padding:var(--sec) var(--pad) 0;max-width:1440px;margin:0 auto}
 .introP{font-size:clamp(28px,3.3vw,48px);line-height:1.18;letter-spacing:-.022em;max-width:22em;text-wrap:balance}
+.more{margin-top:var(--s4);font-size:18px}
+.more a{text-decoration:underline;text-decoration-color:rgba(54,214,143,.7);text-underline-offset:3px}
 
 .sec,.split{padding:var(--sec) var(--pad) 0;max-width:1440px;margin:0 auto}
 .h2{font-size:clamp(40px,5.2vw,80px);line-height:1;letter-spacing:-.03em;max-width:13em;margin-bottom:var(--s12)}
@@ -140,7 +142,8 @@
 
 .final{padding:var(--sec) var(--pad);max-width:1440px;margin:0 auto}
 .h2xl{font-size:clamp(44px,7vw,120px);line-height:.98;letter-spacing:-.035em;max-width:12em;margin-bottom:var(--s8)}
-.foot{display:flex;justify-content:space-between;align-items:center;padding:var(--s4) var(--pad);border-top:1px solid var(--hair)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:var(--s3) var(--s6);flex-wrap:wrap;padding:var(--s4) var(--pad);border-top:1px solid var(--hair)}
+.footNav{display:flex;gap:var(--s4)}
 
 @media(prefers-reduced-motion:reduce){.root *,.root *::before,.root *::after{transition-duration:.01ms!important;animation:none!important}}
 

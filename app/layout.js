@@ -37,7 +37,13 @@ const PLAUSIBLE = process.env.VERCEL_ENV === 'production'
 const PLAUSIBLE_STUB = 'window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()'
 
 const ORG_LD = [
-  { '@context': 'https://schema.org', '@type': 'Organization', '@id': 'https://boundset.com/#org', name: 'Boundset', url: 'https://boundset.com', logo: 'https://boundset.com/brand/icon-512.png', email: 'blake@boundset.com', founder: { '@type': 'Person', name: 'Blake Emal' }, sameAs: ['https://twitter.com/heyblake', 'https://linkedin.com/in/blakeemal'] },
+  { '@context': 'https://schema.org', '@type': 'Organization', '@id': 'https://boundset.com/#org', name: 'Boundset', legalName: 'High Noon LLC', url: 'https://boundset.com', logo: 'https://boundset.com/brand/icon-512.png', email: 'blake@boundset.com',
+    description: 'Boundset runs two week positioning and messaging sprints for seed-stage startups and beyond.',
+    founder: { '@id': 'https://boundset.com/about#blake' } },
+  { '@context': 'https://schema.org', '@type': 'Person', '@id': 'https://boundset.com/about#blake', name: 'Blake Emal', url: 'https://boundset.com/about', image: 'https://boundset.com/brand/blake.jpg', jobTitle: 'Founder of Boundset',
+    worksFor: { '@id': 'https://boundset.com/#org', name: 'Boundset' },
+    knowsAbout: ['Product positioning', 'B2B messaging', 'Homepage copywriting', 'Product marketing'],
+    sameAs: ['https://x.com/heyblake'] },
   { '@context': 'https://schema.org', '@type': 'WebSite', '@id': 'https://boundset.com/#site', name: 'Boundset', url: 'https://boundset.com', publisher: { '@id': 'https://boundset.com/#org' } },
 ]
 
