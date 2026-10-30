@@ -131,3 +131,15 @@
 .actions .ghost{text-decoration:none!important;min-height:44px}
 .close{grid-column:1/-1;margin:var(--s12) auto 0;max-width:1240px;padding:var(--s12) 0 0;border-top:1px solid var(--hair);text-align:center;display:grid;justify-items:center;gap:var(--s4)}
 .closeH{font-family:var(--serif),Georgia,serif;font-weight:400;font-size:clamp(36px,5vw,72px);line-height:1.02;letter-spacing:-.03em;max-width:16ch}
+/* URL handoff: same pill as the teardown field, sized to the answer column. Fixed height so it does not shift. */
+.handoff{margin:0}
+.handoffForm{margin:0}
+.handoffField{display:flex;align-items:center;gap:8px;height:72px;padding:0 8px 0 24px;border:1px solid var(--hair2);border-radius:999px;background:var(--ink2);transition:border-color .3s var(--ease)}
+.handoffField:focus-within{border-color:var(--bone)}
+.handoffField[data-bad]{border-color:#ff6b6b;animation:handoffShake .4s var(--ease)}
+@keyframes handoffShake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.handoffIn{flex:1;min-width:0;font:inherit;font-size:clamp(18px,2vw,22px);color:var(--bone);background:none;border:0;outline:none}
+.handoffIn::placeholder{color:#8a857c}
+.handoffGo{flex:none;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;border:0;background:var(--bone);color:var(--ink);cursor:pointer;transition:background-color .2s,transform .2s var(--ease)}
+.handoffGo:hover{background:#fff}
+.handoffGo:active{transform:scale(.96)}

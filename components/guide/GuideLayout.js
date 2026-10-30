@@ -9,6 +9,7 @@ import Workbook from './Workbook'
 import { guide, related, wordCount, plain, SITE, BOOK } from '../../lib/guides'
 import { SPRINT_OFFERS } from '../../lib/sprintCopy'
 import CopyButton from '../CopyButton'
+import TeardownHandoff from './TeardownHandoff'
 
 const fmt = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).replace(',', '')
 const OG = '/brand/og-mark-1200x630.png'
@@ -129,6 +130,7 @@ export function DocPage({ p, data, rel = [] }) {
             </section>}
             {!!rel.length && <nav aria-labelledby="related" className={g.related}><h2 id="related" className={g.h2s}>Related guides and tools</h2><ul>{rel.map((r) => <li key={r.path}><a href={r.path}>{r.name}</a></li>)}</ul></nav>}
             {!!p.sources?.length && <section aria-labelledby="sources" className={g.sources}><h2 id="sources" className={g.h2s}>Sources</h2><ol>{p.sources.map((s) => <li key={s.url}><a href={s.url} target="_blank" rel="noopener noreferrer">{s.label || s.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</a></li>)}</ol></section>}
+            {p.close && (p.kind === 'answer' || p.kind === 'compare') && <TeardownHandoff page={p.route} />}
           </div>
         </article>
         {p.close && <section className={g.close} aria-labelledby="close-h"><h2 id="close-h" className={g.closeH}>{p.close}</h2><a href={BOOK} className={c.btn}>Book a call</a></section>}
