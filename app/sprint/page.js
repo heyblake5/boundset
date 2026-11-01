@@ -4,6 +4,7 @@ import Cal from '../design/_shared/Cal'
 import Buy from '../design/c2/Buy'
 import { WORKSHOP } from '../design/c2/workshop'
 import PageFrame, { Crumb, TocSide, TocMobile } from '../../components/guide/PageFrame'
+import FixCard from '../../components/FixCard'
 import * as d from '../design/_shared/data'
 import {
   SPRINT_TITLE, SPRINT_DESCRIPTION, SPRINT_H1, SPRINT_OPENING, WORKSHOP_COPY, FIT, CHOOSE, QUOTE, QUOTE_BY, SPRINT_OFFERS,
@@ -12,12 +13,13 @@ import {
 const URL = 'https://boundset.com/sprint'
 const TOC = [
   ['stake', 'What you get with Stake'],
+  ['client', 'What a client said'],
+  ['fix', 'What a fix looks like'],
   ['stronghold', 'What Stronghold adds'],
   ['timeline', 'How the two weeks run'],
   ['workshop', 'Start with the workshop if you want to test the fit first'],
   ['fit', 'Who the sprint is for'],
   ['choose', 'Consultant, agency or sprint'],
-  ['client', 'What a client said'],
   ['faq', 'FAQs about the sprint'],
 ]
 const faqs = Object.values(d.faqs).flat()
@@ -69,6 +71,11 @@ export default function Sprint() {
           <ul className={g.ul}>
             {d.deliverables.map((x) => <li key={x.title}><strong>{x.title}.</strong> {x.desc}</li>)}
           </ul>
+          <h2 id="client" className={`${g.h2} ${g.h2Near}`}>What a client said</h2>
+          <blockquote className={g.quote}><p>{QUOTE}</p></blockquote>
+          <p className={g.who}>{QUOTE_BY}</p>
+          <h2 id="fix" className={`${g.h2} ${g.h2Near}`}>What a fix looks like</h2>
+          <FixCard />
 
           <h2 id="stronghold" className={g.h2}>What Stronghold adds</h2>
           <p className={g.price}>{stronghold.price}</p>
@@ -95,10 +102,6 @@ export default function Sprint() {
           <h2 id="choose" className={g.h2}>Consultant, agency or sprint</h2>
           <p>{CHOOSE}</p>
           <p>Read <a href="/compare/positioning-consultant-vs-agency">positioning consultant vs agency</a>, <a href="/april-dunford-alternatives">April Dunford alternatives</a> and <a href="/positioning-sprint-cost">what a positioning sprint costs</a>.</p>
-
-          <h2 id="client" className={g.h2}>What a client said</h2>
-          <blockquote className={g.quote}><p>{QUOTE}</p></blockquote>
-          <p className={g.who}>{QUOTE_BY}</p>
 
           <section aria-labelledby="faq" className={g.faq}>
             <h2 id="faq" className={g.h2}>FAQs about the sprint</h2>

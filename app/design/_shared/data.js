@@ -4,10 +4,7 @@ export const hero = {
 }
 export const logos = [
   { src: '/logo-provable.svg', alt: 'Provable', w: 195, h: 30 },
-  { src: '/logo-athena.svg', alt: 'Athena', w: 185, h: 30 },
-  { src: '/logo-gamma.svg', alt: 'Gamma', w: 175, h: 30 },
   { src: '/logo-originalvoices.svg', alt: 'OriginalVoices', w: 229, h: 31 },
-  { src: '/logo-salus.svg', alt: 'Salus', w: 2617, h: 548, scale: 1.18 },
 ]
 export const quiz = {
   h2: 'Red flags in your current strategy',

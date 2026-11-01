@@ -34,6 +34,7 @@
 .body strong{font-weight:500;color:var(--bone)}
 .h2,.h2s{font-family:var(--serif),Georgia,serif;font-weight:400;letter-spacing:-.02em;line-height:1.1;scroll-margin-top:96px}
 .h2{font-size:clamp(30px,3vw,42px);margin:var(--s12) 0 var(--s3)}
+.h2Near{margin-top:var(--s4)}
 .h2s{font-size:26px;margin:var(--s8) 0 var(--s2)}
 .h3{font-size:20px;font-weight:500!important;letter-spacing:-.012em;margin:var(--s6) 0 var(--s1);scroll-margin-top:96px}
 .anchor{display:inline-grid;place-items:center;width:28px;height:28px;margin-left:8px;vertical-align:middle;color:var(--dim);border-radius:6px;opacity:0;transition:opacity .2s,color .2s}
@@ -131,6 +132,8 @@
 .actions .ghost{text-decoration:none!important;min-height:44px}
 .close{grid-column:1/-1;margin:var(--s12) auto 0;max-width:1240px;padding:var(--s12) 0 0;border-top:1px solid var(--hair);text-align:center;display:grid;justify-items:center;gap:var(--s4)}
 .closeH{font-family:var(--serif),Georgia,serif;font-weight:400;font-size:clamp(36px,5vw,72px);line-height:1.02;letter-spacing:-.03em;max-width:16ch}
+.offer{margin:0;max-width:28em;color:var(--mute);font-size:16px;line-height:1.5}
+.offerA{color:var(--bone)!important;text-decoration:underline;text-decoration-color:rgba(54,214,143,.7);text-underline-offset:3px}
 /* URL handoff: same pill as the teardown field, sized to the answer column. Fixed height so it does not shift. */
 .handoff{margin:0}
 .handoffForm{margin:0}

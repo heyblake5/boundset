@@ -10,6 +10,8 @@ import { guide, related, wordCount, plain, SITE, BOOK } from '../../lib/guides'
 import { SPRINT_OFFERS } from '../../lib/sprintCopy'
 import CopyButton from '../CopyButton'
 import TeardownHandoff from './TeardownHandoff'
+import Buy from '../../app/design/c2/Buy'
+import { SHOW_WORKSHOP } from '../../app/design/c2/workshop'
 
 const fmt = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).replace(',', '')
 const OG = '/brand/og-mark-1200x630.png'
@@ -133,7 +135,11 @@ export function DocPage({ p, data, rel = [] }) {
             {p.close && (p.kind === 'answer' || p.kind === 'compare') && <TeardownHandoff page={p.route} />}
           </div>
         </article>
-        {p.close && <section className={g.close} aria-labelledby="close-h"><h2 id="close-h" className={g.closeH}>{p.close}</h2><a href={BOOK} className={c.btn}>Book a call</a></section>}
+        <section className={g.close} aria-labelledby={p.close ? 'close-h' : undefined}>
+          {p.close && <h2 id="close-h" className={g.closeH}>{p.close}</h2>}
+          <a href={BOOK} className={c.btn}>Book a call</a>
+          {SHOW_WORKSHOP && <p className={g.offer}>Want to do it yourself with an expert alongside? <Buy className={g.offerA}>Start with the $2,000 workshop</Buy></p>}
+        </section>
         {wb && <div id="wbPrint" />}
       </main>
       <Footer />

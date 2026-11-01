@@ -2,7 +2,7 @@ import c from '../design/c2/c2.module.css'
 import g from '../../components/guide/guide.module.css'
 import Cal from '../design/_shared/Cal'
 import PageFrame, { Crumb, TocSide, TocMobile } from '../../components/guide/PageFrame'
-import { ABOUT_TITLE, ABOUT_DESCRIPTION, ABOUT_H1, ABOUT_OPENING, ABOUT_BACKGROUND, QUOTE, QUOTE_BY, WRITING, ELSEWHERE, BLAKE_ID } from '../../lib/aboutCopy'
+import { ABOUT_TITLE, ABOUT_DESCRIPTION, ABOUT_H1, ABOUT_OPENING, ABOUT_BACKGROUND, ABOUT_RANGE, QUOTE, QUOTE_BY, WRITING, ELSEWHERE, BLAKE_ID } from '../../lib/aboutCopy'
 
 const URL = 'https://boundset.com/about'
 const TOC = [
@@ -46,6 +46,7 @@ export default function About() {
           <TocMobile items={TOC} />
           <h2 id="background" className={g.h2}>What I did before Boundset</h2>
           <p>{ABOUT_BACKGROUND}</p>
+          <p>{ABOUT_RANGE}</p>
           <h2 id="client" className={g.h2}>What a client said</h2>
           <blockquote className={g.quote}><p>{QUOTE}</p></blockquote>
           <p className={g.who}>{QUOTE_BY}</p>

@@ -23,6 +23,8 @@
 .more{margin-top:var(--s16);padding-top:var(--s6);border-top:1px solid var(--hair)}
 .moreRow{display:flex;justify-content:space-between;align-items:center;gap:var(--s3);margin-top:var(--s4);flex-wrap:wrap}
 .textLink{color:var(--mute)!important;text-decoration:none}.textLink:hover{color:var(--bone)!important}
+.offer{margin-top:var(--s3);max-width:36em;color:var(--mute);font-size:16px;line-height:1.5}
+.offerA{color:var(--bone)!important;text-decoration:underline;text-decoration-color:rgba(54,214,143,.7);text-underline-offset:3px}
 .btnSm{display:inline-flex;align-items:center;height:44px;padding:0 20px;border-radius:999px;background:var(--bone);color:var(--ink)!important;text-decoration:none;font-weight:500;font-size:15px}
 .btnSm:hover{background:#fff}
 @media(max-width:900px){.grid{grid-template-columns:1fr}}

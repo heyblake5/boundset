@@ -15,6 +15,7 @@ import Stack from './Stack'
 import Buy from './Buy'
 import { SHOW_WORKSHOP, WORKSHOP } from './workshop'
 import Footer from './Footer'
+import FixCard from '../../../components/FixCard'
 
 // Headlines carry no periods or commas (Blake, Oct 24). Applied at render so shared data stays intact.
 const H = (t) => t.replace(/[.,]/g, '')
@@ -38,7 +39,16 @@ export default function C2() {
           <h1 className={s.h1}>{H(d.hero.h1)}</h1>
           <div className={s.ctas} data-hero-cta><Cal className={s.btn}>Book a free 1:1 consultation</Cal></div>
         </div>
-        <ul className={s.logos}>{d.logos.map((l) => <li key={l.alt}><img src={l.src} alt={l.alt} width={l.w} height={l.h} style={l.scale ? { '--k': l.scale } : undefined} /></li>)}</ul>
+        <div className={s.proof}>
+          <figure>
+            <blockquote>
+              <p className={s.proofLead}>It&apos;s surprisingly difficult to succinctly explain what you do.</p>
+              <p className={s.proofNext}>In no time at all Blake sent us the copy and positioning we&apos;ve been looking for.</p>
+            </blockquote>
+            <figcaption className={s.proofWho}>David Dobrin, CEO, OriginalVoices</figcaption>
+          </figure>
+          <ul className={s.proofLogos}>{d.logos.map((l) => <li key={l.alt}><img src={l.src} alt={l.alt} width={l.w} height={l.h} /></li>)}</ul>
+        </div>
       </header>
 
       <section className={s.intro}><p className={s.introP}>{d.hero.sub}</p><p className={s.more}><a href="/sprint">See the full sprint</a></p></section>
@@ -59,6 +69,11 @@ export default function C2() {
             </ol>
           ))}
         </div>
+      </section>
+
+      <section className={s.sec} id="fix" aria-labelledby="fix-h">
+        <h2 id="fix-h" className={s.h2}>{H('What a fix looks like')}</h2>
+        <FixCard />
       </section>
 
       <section className={`${s.sec} ${s.tlSec}`} id="how">
