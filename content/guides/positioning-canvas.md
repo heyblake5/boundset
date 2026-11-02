@@ -5,7 +5,7 @@ updated: 2026-10-24
 ---
 ## META
 - Meta title (<=60 chars): Free Positioning Canvas Template With Worked Example
-- Meta description (<=155 chars): A free one page positioning canvas. Fill in five boxes plus a summary line, with a worked example and a prompt for each box. Copy it or fill it here.
+- Meta description (<=155 chars): A free product positioning canvas on one page. Fill in five boxes plus a summary line, with a worked example and a prompt for each box.
 - Word count: 2348 total file, 1439 in BODY
 
 ## H1
