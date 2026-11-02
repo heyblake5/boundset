@@ -2,7 +2,7 @@ import t from './tools.module.css'
 import Icon from '../design/c2/Icons'
 import { TOOLS, CANVAS, TEARDOWN_TOOL } from './tools'
 const SITE = 'https://boundset.com'
-export const metadata = { title: 'Free positioning and messaging tools | Boundset', description: 'Free browser-based tools for founders working on positioning and messaging. No signup.', alternates: { canonical: '/free-tools' } }
+export const metadata = { title: 'Free positioning and messaging tools | Boundset', description: 'Free positioning tools for B2B startups: a positioning statement generator, category picker, headline tester, value prop scorer and more. No signup.', alternates: { canonical: '/free-tools' } }
 export default function FreeTools() {
   const all = [TEARDOWN_TOOL, ...TOOLS.map((x) => ({ href: `/free-tools/${x.slug}`, name: x.name, icon: x.icon })), CANVAS]
   const ld = { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Free tools', itemListElement: all.map((x, i) => ({ '@type': 'ListItem', position: i + 1, url: SITE + x.href, name: x.name })) }

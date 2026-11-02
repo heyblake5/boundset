@@ -233,7 +233,7 @@ Many teams also write a short positioning statement as an internal check. The co
 For ______ who ______, ______ is a ______ that ______. Unlike ______, we ______.
 [/EXERCISE]
 
-The free positioning statement generator builds this sentence from your inputs. The positioning canvas template gives you the full one page version.
+The free positioning statement generator builds this sentence from your inputs. The positioning canvas template gives you the full one page version. The [product positioning canvas](/templates/positioning-canvas) is that one page.
 
 ## How positioning turns into messaging
 

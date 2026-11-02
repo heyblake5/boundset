@@ -76,7 +76,7 @@ What to ask a fractional PMM:
 
 ## When a positioning sprint is the right choice
 
-A positioning sprint is the right choice when your story is unclear and you need it fixed quickly. A sprint has a fixed scope and an end date. Some sprints stop at strategy. Others include messaging and finished copy your team can use right away.
+A positioning sprint is the right choice when your story is unclear and you need it fixed quickly. A sprint has a fixed scope and an end date. Some sprints stop at strategy. Others include messaging and finished copy your team can use right away. The page on [positioning sprint vs hiring a PMM](/compare/positioning-sprint-vs-hiring-a-pmm) compares a project that ends with a role that stays.
 
 Strong sprint fits:
 
