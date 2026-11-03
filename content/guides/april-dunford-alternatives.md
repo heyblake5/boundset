@@ -1,18 +1,18 @@
 ---
 slug: april-dunford-alternatives
 route: /april-dunford-alternatives
-updated: 2026-10-24
+updated: 2026-11-03
 ---
 ## META
-- Meta title (<=60 chars): April Dunford Alternatives for Startup Positioning
-- Meta description (<=155 chars): April Dunford wrote the book on positioning. Compare her workshop with other ways startups get positioning done.
-- Word count: 2294 total file, 1300 in BODY
+- Meta title (<=60 chars): April Dunford alternatives for startups
+- Meta description (<=155 chars): April Dunford alternatives for startups include her books, a positioning sprint, a fractional product marketer, and an agency. Choose by stage and budget.
+- Word count: see body
 
 ## H1
-April Dunford alternatives for startup positioning
+April Dunford alternatives for startups
 
 ## DEFINITION (40-60 words)
-April Dunford is a positioning consultant and the author of Obviously Awesome. Her flagship offer is a facilitated three day Positioning + Sales Pitch Workshop, listed at $50,000 or $80,000 by company size. Alternatives for startups include using her books yourself, a fixed price positioning sprint, a fractional product marketer or an agency.
+April Dunford alternatives for startups include her books, a fixed price positioning sprint, a fractional product marketer, and an agency. She is a positioning consultant and the author of Obviously Awesome. Her site lists a three day Positioning + Sales Pitch Workshop at $50,000 or $80,000 by company size.
 
 ## KEY TAKEAWAYS
 - April Dunford's method is the most widely used positioning framework for B2B tech. Her site says Obviously Awesome has sold over 100,000 copies.
@@ -106,6 +106,18 @@ Options left: ______
 First pick and why: ______
 [/EXERCISE]
 
+## How to choose by stage and budget
+
+Stage and budget are the practical filters. The picks in this table are judgments. They use the stage notes and the prices each provider publishes. Those prices were checked in October 2026.
+
+| Your situation | A reasonable pick |
+|---|---|
+| You are pre launch, or the product is a very early release | Read Obviously Awesome. Her contact page says she does not work with pre launch or very early release products. |
+| You are seed stage, you have customers, and a $50,000 workshop is outside the budget | A positioning sprint, or the book if the founders can facilitate it. Published sprint prices we checked run from $2,400 to $7,500. Boundset lists $7,500 and $12,000. |
+| You are a growth stage B2B company, and the leadership team can spend three days | Her workshop. Her site lists $50,000 for companies with 10 to 50 people and $80,000 for 50 to 1,000+ people. She is generally booked a few months ahead. |
+| The positioning is written down, and you need launches every month | A fractional product marketer. Ask for the hours and the monthly fee. |
+| You need a new brand and a site designed and built | An agency. Write the positioning down first, so the design has a stable brief. |
+
 ## Where Boundset fits
 
 Boundset is a two week positioning sprint for seed stage startups and beyond. It works from the same five components April Dunford teaches and adds the copy. You leave with positioning locked and messaging documented, plus homepage copy and a wireframe ready to hand to your designer.
@@ -145,6 +157,15 @@ The free positioning debt check gives you a quick score.
 3. april-dunford-alternatives-ex-3 Run a quick positioning gut check (section: Where Boundset fits)
 
 ## FAQ
+**Q: What are April Dunford alternatives for startups?**
+A: Her books, a fixed price positioning sprint, a fractional product marketer, and an agency. Her workshop is still an option when the company matches what her site publishes: growth stage or larger, mainly B2B, and able to book a three day workshop listed at $50,000 or $80,000.
+
+**Q: How should a startup choose among these alternatives?**
+A: Use stage and budget. Her contact page points pre launch teams to Obviously Awesome. A seed team with customers and a smaller budget can use the book or a sprint. Published sprint prices checked in October 2026 run from $2,400 to $7,500, and Boundset lists $7,500 and $12,000. Her workshop fits a growth stage B2B team that can spend $50,000 or $80,000 and wait for a slot.
+
+**Q: Is a positioning sprint an alternative to April Dunford?**
+A: It is a different scope at a published startup price. Her workshop is three days with her, listed at $50,000 or $80,000. A sprint is a fixed project over a few weeks. Published examples checked in October 2026 include Rethink GTM at $2,400 and SF Marketing Agency at $7,500. Boundset is $7,500 or $12,000 and includes homepage copy.
+
 **Q: How much does April Dunford charge?**
 A: Her consultant page lists the Positioning + Sales Pitch Workshop at $50,000 for companies with 10 to 50 people and $80,000 for companies with 50 to 1,000+ people. The larger tier adds advisory sessions. Prices were checked on aprildunford.com in October 2026, so confirm on her site before planning a budget.
 
@@ -181,7 +202,7 @@ All paths exist in /workspace/boundset-redesign/app/.
 
 ## SCHEMA NOTES
 - Article. Headline = H1. Author and dates left to Atlas. Show "Prices checked October 2026" near both tables.
-- FAQPage from the 7 FAQ pairs.
+- FAQPage from the FAQ pairs.
 - Do not use Review or Product schema for April Dunford or other providers. Keep it a neutral comparison.
 - Link her name to https://www.aprildunford.com/consultant on first mention and the book to https://www.aprildunford.com/books.
 
