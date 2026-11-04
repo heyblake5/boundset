@@ -8,6 +8,7 @@ import Blocks from './Blocks'
 import { COPY } from './copy'
 import { track } from './track'
 import { UrlForm } from './UrlForm'
+import { withParams } from '../../lib/bookHref'
 
 const NO_RETRY = new Set(['rate', 'daily', 'monthly', 'burst'])
 function mailText(text, host) {
@@ -75,7 +76,7 @@ export default function Tool({ available, emailOn, bookUrl, samples }) {
               {phase === 'result' && (
                 <>
                   <p className={s.invite}>
-                    <TrackedLink href={`${book}&src=teardown-result`} event="Teardown Book Click" props={{ src: 'teardown-result' }}>{COPY.bookWalk}</TrackedLink>
+                    <TrackedLink href={withParams(book, { src: 'teardown-result' })} event="Book call" props={{ src: 'teardown-result' }}>{COPY.bookWalk}</TrackedLink>
                   </p>
                   <div className={s.after}>
                     {emailOn ? <Email id={done.id} book={book} /> : <span />}
