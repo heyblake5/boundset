@@ -56,6 +56,9 @@
 .pageText mark{background:color-mix(in srgb,var(--sig) 26%,transparent);color:var(--bone);border-radius:3px}
 .skel{height:14px;border-radius:7px;background:linear-gradient(90deg,var(--hair) 0,var(--hair2) 50%,var(--hair) 100%);background-size:200% 100%;animation:sk 1.4s linear infinite;margin-top:12px}
 @keyframes sk{to{background-position:-200% 0}}
+.invite{margin-top:var(--s6);max-width:22em;font-family:var(--serif),Georgia,serif;font-size:clamp(22px,2.6vw,32px);line-height:1.3;letter-spacing:-.02em}
+.invite a{color:var(--bone);text-decoration:underline;text-decoration-color:rgba(54,214,143,.85);text-underline-offset:5px;text-decoration-thickness:1.5px}
+.invite a:hover{text-decoration-color:var(--bone)}
 .after{display:flex;flex-wrap:wrap;gap:var(--s4);align-items:flex-end;justify-content:space-between;margin-top:var(--s6);padding-top:var(--s6);border-top:1px solid var(--hair)}
 .email{flex:1;min-width:280px;max-width:520px}
 .email .field{height:60px}

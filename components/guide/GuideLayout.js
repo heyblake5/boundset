@@ -7,9 +7,11 @@ import Footer from '../../app/design/c2/Footer'
 import Inline from './Inline'
 import Workbook from './Workbook'
 import { guide, related, wordCount, plain, SITE, BOOK } from '../../lib/guides'
+import { BOOK_CALL_URL } from '../site'
 import { SPRINT_OFFERS } from '../../lib/sprintCopy'
 import CopyButton from '../CopyButton'
 import TeardownHandoff from './TeardownHandoff'
+import RedesignCheck from './RedesignCheck'
 
 const fmt = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).replace(',', '')
 const OG = '/brand/og-mark-1200x630.png'
@@ -81,6 +83,7 @@ function Block({ b, i, ex }) {
     case 'cards': return <ol className={g.cards}>{b.items.map(([t, q], j) => <li key={t} className={j === b.items.length - 1 && b.items.length % 2 ? g.cardWide : undefined}><h2 id={b.ids[j]} className={g.cardH}>{t}</h2><p>{q}</p></li>)}</ol>
     case 'actions': return <p className={g.actions}><CopyButton text={b.copy} className={c.btnSm} />{b.links.map(([h, t]) => <a key={h} href={h} className={g.ghost}>{t}</a>)}</p>
     case 'exercise': return <Exercise e={b} n={ex.indexOf(b) + 1} total={ex.length} />
+    case 'redesign-check': return <RedesignCheck bookUrl={BOOK_CALL_URL} />
     default: return null
   }
 }

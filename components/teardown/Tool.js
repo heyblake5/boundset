@@ -73,10 +73,15 @@ export default function Tool({ available, emailOn, bookUrl, samples }) {
                 : <div aria-hidden="true"><div className={s.skel} style={{ width: 220 }} /><div className={s.skel} style={{ width: '60%', height: 28 }} /></div>}
               <Blocks r={r} pageLines={phase === 'result' ? lines : null} onCopy={() => track('Teardown copy rewrite')} />
               {phase === 'result' && (
-                <div className={s.after}>
-                  {emailOn ? <Email id={done.id} book={book} /> : <span />}
-                  <TrackedLink href={book} event="Book call" props={{ src: 'teardown-tool' }} className={s.btn}>{COPY.book}</TrackedLink>
-                </div>
+                <>
+                  <p className={s.invite}>
+                    <TrackedLink href={`${book}&src=teardown-result`} event="Teardown Book Click" props={{ src: 'teardown-result' }}>{COPY.bookWalk}</TrackedLink>
+                  </p>
+                  <div className={s.after}>
+                    {emailOn ? <Email id={done.id} book={book} /> : <span />}
+                    <TrackedLink href={book} event="Book call" props={{ src: 'teardown-tool' }} className={s.btn}>{COPY.book}</TrackedLink>
+                  </div>
+                </>
               )}
             </m.div>
           )}

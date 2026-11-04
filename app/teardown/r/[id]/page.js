@@ -17,6 +17,9 @@ export default async function Page({ params }) {
     <Shell><div className={s.page}>
       <p className={s.title}>{rec.page.title}</p>{rec.page.h1 && <h1 className={s.pH1}>{rec.page.h1}</h1>}
       <Blocks r={rec.result} pageLines={rec.page.text.split('\n').map((l) => l.replace(/^H[1-3]: /, ''))} />
+      <p className={s.invite}>
+        <TrackedLink href={`${book}&src=teardown-result`} event="Teardown Book Click" props={{ src: 'teardown-result' }}>{COPY.bookWalk}</TrackedLink>
+      </p>
       <div className={s.after}><span /><TrackedLink href={book} event="Book call" props={{ src: 'teardown-tool' }} className={s.btn}>{COPY.book}</TrackedLink></div>
     </div></Shell>
   )
