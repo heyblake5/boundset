@@ -145,3 +145,20 @@
 .handoffGo{flex:none;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;border:0;background:var(--bone);color:var(--ink);cursor:pointer;transition:background-color .2s,transform .2s var(--ease)}
 .handoffGo:hover{background:#fff}
 .handoffGo:active{transform:scale(.96)}
+/* Redesign or reposition? Five yes/no questions, scored in the browser. */
+.check{margin:0}
+.checkLead{margin:0 0 var(--s4);color:#D6D2CA}
+.checkList{list-style:none;display:grid;gap:12px;margin:0;padding:0}
+.checkQ{width:100%;min-inline-size:0;margin:0;padding:var(--s3);border:1px solid var(--hair);border-radius:14px;background:var(--ink2)}
+.checkLegend{display:block;padding:0;margin:0 0 var(--s2);font-family:var(--serif),Georgia,serif;font-size:clamp(22px,2.2vw,28px);font-weight:400;line-height:1.25;letter-spacing:-.02em;color:var(--bone)}
+.checkYn{display:flex;flex-wrap:wrap;gap:8px}
+.checkOpt{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;border:1px solid var(--hair2);border-radius:999px;cursor:pointer;color:var(--bone)}
+.checkOpt input{width:18px;height:18px;margin:0;accent-color:currentColor;flex:none}
+.checkOpt[data-on]{background:var(--bone);color:var(--ink);border-color:var(--bone)}
+.checkOut{margin-top:var(--s4);display:grid;justify-items:start;gap:var(--s3)}
+.checkOut:empty{display:none;margin:0}
+.checkOut p{margin:0;color:#D6D2CA}
+@media(max-width:560px){
+  .checkYn{display:grid;grid-template-columns:1fr 1fr}
+  .checkOpt{justify-content:center}
+}
