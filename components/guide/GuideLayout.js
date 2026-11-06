@@ -7,7 +7,9 @@ import Footer from '../../app/design/c2/Footer'
 import Inline from './Inline'
 import Workbook from './Workbook'
 import { guide, related, wordCount, plain, SITE, BOOK } from '../../lib/guides'
+import { withParams } from '../../lib/bookHref'
 import { BOOK_CALL_URL } from '../site'
+import TrackedLink from '../TrackedLink'
 import { SPRINT_OFFERS } from '../../lib/sprintCopy'
 import CopyButton from '../CopyButton'
 import TeardownHandoff from './TeardownHandoff'
@@ -142,7 +144,7 @@ export function DocPage({ p, data, rel = [] }) {
             )}
           </div>
         </article>
-        {p.close && <section className={g.close} aria-labelledby="close-h"><h2 id="close-h" className={g.closeH}>{p.close}</h2><a href={BOOK} className={c.btn}>Book a call</a></section>}
+        {p.close && <section className={g.close} aria-labelledby="close-h"><h2 id="close-h" className={g.closeH}>{p.close}</h2>{p.bookSrc ? <TrackedLink href={withParams(BOOK_CALL_URL, { src: p.bookSrc })} event="Book call" props={{ src: p.bookSrc }} className={c.btn}>Book a call</TrackedLink> : <a href={BOOK} className={c.btn}>Book a call</a>}</section>}
         {wb && <div id="wbPrint" />}
       </main>
       <Footer />
