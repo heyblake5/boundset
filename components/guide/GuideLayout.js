@@ -83,7 +83,7 @@ function Block({ b, i, ex }) {
     case 'cta': return <p className={g.cta}><a href={BOOK} className={c.btn}>{b.text}</a></p>
     case 'steps': return <ol className={g.steps}>{b.items.map(([t, d], j) => <li key={j}><span className={g.stepN} aria-hidden="true">{String(j + 1).padStart(2, '0')}</span><div><p className={g.stepT}>{t}</p><p>{d}</p></div></li>)}</ol>
     case 'cards': return <ol className={g.cards}>{b.items.map(([t, q], j) => <li key={t} className={j === b.items.length - 1 && b.items.length % 2 ? g.cardWide : undefined}><h2 id={b.ids[j]} className={g.cardH}>{t}</h2><p>{q}</p></li>)}</ol>
-    case 'actions': return <p className={g.actions}><CopyButton text={b.copy} className={c.btnSm} />{b.links.map(([h, t]) => <a key={h} href={h} className={g.ghost}>{t}</a>)}</p>
+    case 'actions': return <p className={g.actions}><CopyButton text={b.copy} label={b.label || 'Copy template'} className={c.btnSm} />{(b.links || []).map(([h, t]) => <a key={h} href={h} className={g.ghost}>{t}</a>)}</p>
     case 'exercise': return <Exercise e={b} n={ex.indexOf(b) + 1} total={ex.length} />
     case 'redesign-check': return <RedesignCheck bookUrl={BOOK_CALL_URL} />
     default: return null
@@ -136,7 +136,7 @@ export function DocPage({ p, data, rel = [] }) {
             {!!rel.length && <nav aria-labelledby="related" className={g.related}><h2 id="related" className={g.h2s}>Related guides and tools</h2><ul>{rel.map((r) => <li key={r.path}><a href={r.path}>{r.name}</a></li>)}</ul></nav>}
             {!!p.sources?.length && <section aria-labelledby="sources" className={g.sources}><h2 id="sources" className={g.h2s}>Sources</h2><ol>{p.sources.map((s) => <li key={s.url}><a href={s.url} target="_blank" rel="noopener noreferrer">{s.label || s.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</a></li>)}</ol></section>}
             {p.close && (p.kind === 'answer' || p.kind === 'compare') && <TeardownHandoff page={p.route} />}
-            {p.close && (p.kind === 'answer' || p.kind === 'compare') && (
+            {p.close && (p.kind === 'answer' || p.kind === 'compare') && !p.noQuote && (
               <figure className={g.said}>
                 <blockquote className={g.quote}><p>In no time at all Blake sent us the copy and positioning we've been looking for.</p></blockquote>
                 <figcaption className={g.who}>David Dobrin, CEO, OriginalVoices</figcaption>
