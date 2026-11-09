@@ -1,7 +1,7 @@
 ---
 slug: positioning-vs-messaging
 route: /answers/positioning-vs-messaging
-updated: 2026-10-24
+updated: 2026-11-09
 ---
 ## META
 - Meta title (<=60 chars): Positioning vs Messaging and Why the Order Matters
@@ -65,7 +65,7 @@ A messaging document usually includes:
 - Boilerplate in short and long versions
 - A list of phrases the team should stop using
 
-Dunford writes that she builds a messaging document that references the positioning template and goes a level deeper, with value statements for different personas and boilerplate for marketing and sales.
+Dunford writes that she builds a messaging document that references the positioning template and goes a level deeper, with value statements for different personas and boilerplate for marketing and sales. The one-page layout, with the core message and the pillars, is a message house template.
 
 [EXERCISE positioning-vs-messaging-ex-1]
 **Title:** Sort your current materials
@@ -115,7 +115,7 @@ You can also take the free positioning debt check for a quick score.
 
 ## How to turn positioning into messaging
 
-To turn positioning into messaging, take each positioning component and write the buyer facing version for a specific place. Work from the top of the messaging hierarchy down. Start with the line that names the category and value, then add supporting points and proof.
+To turn positioning into messaging, take each positioning component and write the buyer facing version for a specific place. Work from the top of the messaging hierarchy down. Start with the line that names the category and value, then add supporting points and proof. The lines for each buyer go in a [messaging matrix](/answers/messaging-matrix-template).
 
 | Positioning component | Messaging it feeds |
 |---|---|
@@ -150,7 +150,7 @@ The free messaging hierarchy builder and headline tester help with this step.
 
 ## Where value propositions and taglines fit
 
-Value propositions and taglines are messaging. They come from positioning. A value proposition states the value a specific buyer gets. A tagline is a short line, usually used on the homepage or in brand materials. Both should trace back to the value and best fit customer you chose in positioning.
+Value propositions and taglines are messaging. They come from positioning. A value proposition states the value a specific buyer gets. A tagline is a short line, usually used on the homepage or in brand materials. The name, the look, and the voice are a separate job from the market choice. That split is branding vs positioning. Both the value proposition and the tagline should trace back to the value and best fit customer you chose in positioning.
 
 The positioning statement is the one exception that sits on the positioning side. It is a fill in the blank summary for internal use. Keep it off the homepage.
 
@@ -200,6 +200,8 @@ A: Messaging can change often. Teams adjust headlines and emails by channel and 
 | Path | Anchor text | Where it goes in the body |
 |---|---|---|
 | /positioning | complete guide to product positioning | End of "What positioning covers" |
+| /answers/message-house-template | message house template | End of "What messaging covers" |
+| /answers/positioning-vs-branding | branding vs positioning | "Where value propositions and taglines fit" |
 | /free-tools/positioning-debt-check | free positioning debt check | After positioning-vs-messaging-ex-2 |
 | /free-tools/messaging-hierarchy-builder | free messaging hierarchy builder | After positioning-vs-messaging-ex-3 |
 | /free-tools/headline-tester | headline tester | After positioning-vs-messaging-ex-3 |
