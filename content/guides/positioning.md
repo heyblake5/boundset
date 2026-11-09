@@ -1,7 +1,7 @@
 ---
 slug: positioning
 route: /positioning
-updated: 2026-10-24
+updated: 2026-11-09
 ---
 ## META
 - Meta title (<=60 chars): What Is Product Positioning and How to Do It Step by Step
@@ -51,7 +51,7 @@ Positioning is often confused with things that sit near it. Here is how they dif
 | Positioning statement | A fill in the blank summary of positioning | Your team, as a check | When positioning changes |
 | Value proposition | The specific value a buyer gets, stated for them | Buyers | Often, by persona |
 
-For a deeper comparison, read the guide on positioning vs messaging.
+For a deeper comparison, read the guide on positioning vs messaging. The split between the market choice and the name, the look, and the voice is branding vs positioning.
 
 ## Why positioning matters for startups
 
@@ -237,7 +237,7 @@ The free positioning statement generator builds this sentence from your inputs. 
 
 ## How positioning turns into messaging
 
-Positioning becomes messaging when you turn each component into words for a specific reader. The positioning document stays internal. The messaging document takes it one level deeper, with value statements for each buyer persona and approved lines for each channel. Dunford describes the messaging document as something that references the positioning, not a replacement for it.
+Positioning becomes messaging when you turn each component into words for a specific reader. The positioning document stays internal. The messaging document takes it one level deeper, with value statements for each buyer persona and approved lines for each channel. Dunford describes the messaging document as something that references the positioning, not a replacement for it. The file of those approved lines is a messaging framework.
 
 A simple order to follow:
 
@@ -421,6 +421,8 @@ A: Review positioning when something it depends on changes. Triggers include a n
 | Path | Anchor text | Where it goes in the body |
 |---|---|---|
 | /answers/positioning-vs-messaging | positioning vs messaging | End of "What positioning is not" |
+| /answers/positioning-vs-branding | branding vs positioning | End of "What positioning is not" |
+| /answers/what-is-a-messaging-framework | messaging framework | End of the first paragraph in "How positioning turns into messaging" |
 | /free-tools/positioning-debt-check | free positioning debt check | After positioning-ex-1 |
 | /free-tools/competitive-alternatives-mapper | free competitive alternatives mapper | After positioning-ex-3 |
 | /free-tools/icp-sketcher | free ICP sketcher | After positioning-ex-6 |
