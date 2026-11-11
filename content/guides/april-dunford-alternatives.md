@@ -1,7 +1,8 @@
 ---
 slug: april-dunford-alternatives
 route: /april-dunford-alternatives
-updated: 2026-11-03
+updated: 2026-11-11
+bookSrc: april-dunford-alternatives
 ---
 ## META
 - Meta title (<=60 chars): April Dunford alternatives for startups
@@ -149,6 +150,19 @@ Do the founders agree: ______
 
 The free positioning debt check gives you a quick score.
 
+## How to decide
+
+Decide from four lines you can write today. Write what you can spend, the date the story has to be ready, whether paying customers already use the product, and whether you need finished homepage copy.
+
+- The book is often enough when the founders name the same customer, the same alternative, and the same category, and they can run the room.
+- Her workshop fits when the leadership team can spend three days in the room, the product is past an early release, and the next open date works for the deadline you wrote down.
+- Outside help with an end date is the usual fit when paying customers exist and the founders still describe different products. Positioning sprint vs positioning workshop compares a short session with a project that also writes the homepage.
+- Ask who will facilitate, what file you leave with, and who signs the customer. Take those questions from how to hire a positioning consultant.
+- Who can help a startup with positioning names the book, the sprint, and ongoing help.
+- A team that can gather its own deal notes can run the process from the book. DIY positioning vs hiring a consultant is that choice.
+
+Run the free homepage teardown when you want a read on the live page before you hire. Book a 15 minute call when the founders already disagree on the customer.
+
 **Primary CTA:** Book a 15 minute call
 
 ## WORKBOOK SUMMARY
@@ -187,6 +201,21 @@ A: A positioning sprint is the most common lower cost option. Published startup 
 **Q: Does Boundset use April Dunford's method?**
 A: Boundset's guides and positioning canvas use the five components from Obviously Awesome, credited to her. The sprint adds messaging and copy on top of positioning. That includes a messaging matrix and homepage copy with variants, plus an activation asset such as a cold email sequence.
 
+**Q: What should I prepare before the first call with a positioning consultant?**
+A: Bring a product demo, one recorded sales call, the current homepage, and a short list of what buyers use instead. A consultant can start from those four items. You can collect them from recent deals today.
+
+**Q: Who has to approve the positioning?**
+A: The person who owns the sales story has to be able to sign the customer, the alternative, and the category. At a startup that person is usually a founder. A signature from that person is what keeps the next sales call on the same story.
+
+**Q: Do I need finished homepage copy, or only the decision?**
+A: Write that down before you ask for proposals. A decision-only engagement leaves the homepage to your team. A Boundset sprint includes the decision and the homepage copy, and it runs two weeks. When you also need a designed site, plan the designer after the copy is signed.
+
+**Q: How soon can the work start?**
+A: Ask each person for the next open start date. Some consultants are booked a few months ahead. A sprint has a fixed length once it starts. Boundset's sprint runs two weeks.
+
+**Q: How do I compare two proposals this week?**
+A: Compare the file you leave with, who does the work, the hours you will spend, and the end date. A workshop, a sprint, a fractional marketer, and an agency can all use the word positioning and still sell different files.
+
 ## INTERNAL LINKS
 | Path | Anchor text | Where it goes in the body |
 |---|---|---|
@@ -196,7 +225,12 @@ A: Boundset's guides and positioning canvas use the five components from Obvious
 | /positioning-agency-vs-fractional-pmm | positioning agency vs fractional PMM | End of "The main alternatives compared" |
 | /templates/positioning-canvas | positioning canvas | FAQ "Does Boundset use April Dunford's method" |
 | /free-tools/positioning-debt-check | free positioning debt check | After april-dunford-alternatives-ex-3 |
-| /#book | Book a 15 minute call | Primary CTA |
+| /compare/positioning-sprint-vs-positioning-workshop | Positioning sprint vs positioning workshop | How to decide |
+| /answers/how-to-hire-a-positioning-consultant | How to hire a positioning consultant | How to decide |
+| /answers/who-can-help-a-startup-with-positioning | Who can help a startup with positioning | How to decide |
+| /compare/diy-positioning-vs-consultant | DIY positioning vs hiring a consultant | How to decide |
+| /teardown | homepage teardown | Before the primary CTA |
+| /#book | Book a 15 minute call | Primary CTA. Href is https://cal.com/heyblake/positioning?src=april-dunford-alternatives |
 
 All paths exist in /workspace/boundset-redesign/app/.
 
