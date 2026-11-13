@@ -1,0 +1,101 @@
+row,stage,category,customer,alternative,outcome,proof,plain
+1,Seed,N,N,N,N,N,Y
+2,Seed,N,N,N,N,N,Y
+3,Seed,N,Y,N,Y,Y,Y
+4,Series A,Y,Y,Y,N,N,Y
+5,Seed,Y,Y,Y,N,N,Y
+6,Seed,Y,N,N,N,Y,N
+7,Seed,N,N,N,N,N,Y
+8,Series A,Y,N,N,N,N,Y
+9,Seed,Y,N,N,N,N,Y
+10,Seed,N,N,Y,N,Y,N
+11,Series A,Y,Y,Y,Y,Y,Y
+12,Series A,Y,Y,Y,N,N,Y
+13,Series A,Y,Y,N,N,Y,Y
+14,Series A,Y,N,N,N,Y,Y
+15,Series A,Y,Y,Y,N,Y,Y
+16,Series A,Y,N,Y,Y,N,Y
+17,Seed,Y,Y,N,Y,Y,Y
+18,Series A,Y,N,N,Y,Y,Y
+19,Series A,Y,N,N,Y,Y,Y
+20,Seed,Y,N,N,Y,N,Y
+21,Seed,Y,Y,N,Y,N,Y
+22,Seed,Y,N,Y,N,Y,Y
+23,Series A,Y,Y,N,N,Y,Y
+24,Seed,Y,N,N,N,N,Y
+25,Series A,Y,Y,N,N,Y,N
+26,Series A,Y,Y,N,Y,N,Y
+27,Series A,Y,Y,N,N,Y,Y
+28,Series A,N,Y,N,Y,N,Y
+29,Series A,Y,N,N,Y,N,Y
+30,Seed,Y,Y,N,Y,N,Y
+31,Seed,Y,N,N,N,N,Y
+32,Seed,Y,N,N,Y,N,Y
+33,Seed,N,N,N,N,N,N
+34,Seed,Y,Y,N,N,Y,Y
+35,Series A,Y,Y,N,N,N,Y
+36,Seed,Y,N,N,Y,Y,Y
+37,Seed,Y,N,Y,Y,Y,Y
+38,Series A,Y,N,Y,Y,Y,Y
+39,Seed,N,Y,N,N,N,N
+40,Seed,N,N,N,N,N,N
+41,Seed,Y,N,Y,N,N,Y
+42,Seed,Y,Y,N,N,N,N
+43,Series A,Y,Y,N,Y,Y,Y
+44,Series A,Y,Y,N,N,Y,Y
+45,Seed,Y,Y,N,N,N,N
+46,Seed,Y,Y,Y,N,Y,Y
+47,Seed,Y,N,N,N,N,Y
+48,Seed,Y,Y,N,Y,N,Y
+49,Series A,N,Y,N,N,N,N
+50,Series A,Y,N,N,N,N,Y
+51,Series A,Y,N,N,N,N,Y
+52,Seed,Y,N,N,N,N,Y
+53,Seed,Y,N,N,N,N,Y
+54,Seed,Y,N,N,N,N,Y
+55,Seed,N,N,N,N,N,N
+56,Series A,Y,Y,N,N,Y,N
+57,Seed,Y,N,N,N,N,Y
+58,Series A,Y,N,Y,N,Y,Y
+59,Seed,Y,N,N,N,N,Y
+60,Seed,Y,Y,N,N,N,Y
+61,Series A,Y,N,N,N,Y,N
+62,Seed,Y,N,N,N,Y,Y
+63,Seed,Y,Y,N,Y,N,Y
+64,Seed,Y,Y,N,Y,Y,Y
+65,Series A,Y,Y,N,N,Y,Y
+66,Seed,Y,Y,Y,N,Y,Y
+67,Series A,Y,N,N,N,N,Y
+68,Seed,Y,Y,N,N,Y,Y
+69,Seed,Y,Y,N,Y,Y,Y
+70,Seed,Y,Y,N,Y,Y,Y
+71,Series A,N,N,N,N,Y,N
+72,Series A,Y,Y,N,N,N,Y
+73,Series A,Y,N,N,Y,N,Y
+74,Series A,Y,N,N,N,Y,N
+75,Seed,N,N,N,N,N,N
+76,Seed,Y,Y,Y,N,N,Y
+77,Series A,Y,Y,N,Y,N,Y
+78,Seed,Y,Y,Y,N,N,Y
+79,Series A,Y,Y,N,N,N,Y
+80,Series A,Y,Y,N,N,N,Y
+81,Series A,Y,Y,N,Y,N,N
+82,Series A,N,N,N,N,N,N
+83,Series A,Y,Y,N,N,N,Y
+84,Series A,Y,N,N,N,N,Y
+85,Series A,Y,N,Y,N,N,N
+86,Series A,Y,Y,N,Y,N,N
+87,Series A,Y,N,N,Y,N,Y
+88,Series A,Y,Y,N,Y,Y,Y
+89,Seed,N,N,N,N,N,Y
+90,Series A,Y,N,Y,N,N,Y
+91,Series A,Y,Y,N,N,N,Y
+92,Seed,Y,N,Y,N,N,Y
+93,Series A,Y,N,N,N,N,Y
+94,Series A,Y,Y,N,N,N,Y
+95,Series A,Y,N,Y,N,N,Y
+96,Series A,Y,Y,N,N,N,Y
+97,Seed,Y,Y,N,Y,N,Y
+98,Seed,Y,Y,N,N,N,Y
+99,Seed,Y,N,Y,N,N,Y
+100,Seed,Y,N,N,Y,N,Y
