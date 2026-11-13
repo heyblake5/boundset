@@ -25,7 +25,7 @@ A positioning sprint is a fixed scope, fixed price project that sets a company's
 
 ## What positioning sprints cost
 
-Positioning sprints for startups usually cost a few thousand dollars and run two to four weeks. The prices below come from each provider's own public page, checked in October 2026. Prices change, so confirm on the provider's site before you decide.
+Positioning sprints for startups usually cost a few thousand dollars and run two to four weeks. The prices below come from each provider's own public page, checked in October 2026. Prices change, so confirm on the provider's site before you decide. The wider set of options is on what positioning costs.
 
 | Provider | Published price | Length | What the page says is included |
 |---|---|---|---|
@@ -207,6 +207,7 @@ A: It varies by provider, so ask before you sign. A Boundset sprint takes about 
 | Path | Anchor text | Where it goes in the body |
 |---|---|---|
 | /sprint | the Boundset sprint | "What Boundset costs and what you get" |
+| /positioning-cost | what positioning costs | "What positioning sprints cost" |
 | /april-dunford-alternatives | April Dunford alternatives guide | End of "What positioning sprints cost" |
 | /positioning-agency-vs-fractional-pmm | fractional product marketer | "When a sprint is the wrong buy" |
 | /free-tools/sprint-roi-calculator | free sprint ROI calculator | After positioning-sprint-cost-ex-3 |
