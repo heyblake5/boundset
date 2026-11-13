@@ -9,6 +9,10 @@ export const metadata = {
 }
 
 export default function Guides() {
-  const items = guides().map((g) => ({ href: g.route, name: g.h1 }))
+  const items = [
+    ...guides().map((g) => ({ href: g.route, name: g.h1 })),
+    { href: '/positioning-cost', name: 'What positioning work costs' },
+    { href: '/messaging-strategy', name: 'How to build a messaging strategy' },
+  ]
   return <Shell><IndexList title="Guides" items={items} /></Shell>
 }
