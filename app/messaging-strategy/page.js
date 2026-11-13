@@ -1,4 +1,8 @@
 import PageFrame, { Crumb } from '../../components/guide/PageFrame'
+import TeardownHandoff from '../../components/guide/TeardownHandoff'
+import TrackedLink from '../../components/TrackedLink'
+import { BOOK_CALL_URL } from '../../components/site'
+import { withParams } from '../../lib/bookHref'
 import g from '../../components/guide/guide.module.css'
 import c from '../design/c2/c2.module.css'
 import m from './msg.module.css'
@@ -6,6 +10,8 @@ import CopyButton from '../../components/CopyButton'
 import { H1, TITLE, DESCRIPTION, OPENING, CHECKED, DAYS, MATRIX_HEADERS, MATRIX_TSV, MATRIX_CSV, QUOTE, QUOTE_BY, messageLd } from '../../lib/messagingStrategy'
 
 const URL = 'https://boundset.com/messaging-strategy'
+const BOOK_SRC = 'messaging-strategy'
+const bookHref = withParams(BOOK_CALL_URL, { src: BOOK_SRC })
 const csvHref = 'data:text/csv;charset=utf-8,' + encodeURIComponent(MATRIX_CSV)
 
 export const metadata = {
@@ -102,8 +108,12 @@ export default function MessagingStrategy() {
           </nav>
 
           <p className={g.cta}><a href="/sprint" className={c.btn}>See the sprint</a></p>
+          <TeardownHandoff page="/messaging-strategy" />
         </div>
       </article>
+      <section className={g.close}>
+        <TrackedLink href={bookHref} event="Book call" props={{ src: BOOK_SRC }} className={c.btn}>Book a call</TrackedLink>
+      </section>
     </PageFrame>
   )
 }

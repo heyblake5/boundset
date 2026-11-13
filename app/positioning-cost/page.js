@@ -1,4 +1,8 @@
 import PageFrame, { Crumb } from '../../components/guide/PageFrame'
+import TeardownHandoff from '../../components/guide/TeardownHandoff'
+import TrackedLink from '../../components/TrackedLink'
+import { BOOK_CALL_URL } from '../../components/site'
+import { withParams } from '../../lib/bookHref'
 import g from '../../components/guide/guide.module.css'
 import c from '../design/c2/c2.module.css'
 import s from './cost.module.css'
@@ -6,6 +10,8 @@ import CostChart from './CostChart'
 import { H1, TITLE, DESCRIPTION, OPENING, CHECKED, CHECKED_LABEL, FAQ, sourceList, costLd } from '../../lib/positioningCost'
 
 const URL = 'https://boundset.com/positioning-cost'
+const BOOK_SRC = 'positioning-cost'
+const bookHref = withParams(BOOK_CALL_URL, { src: BOOK_SRC })
 
 export const metadata = {
   title: TITLE,
@@ -64,8 +70,12 @@ export default function PositioningCost() {
           </section>
 
           <p className={g.cta}><a href="/sprint" className={c.btn}>See the sprint</a></p>
+          <TeardownHandoff page="/positioning-cost" />
         </div>
       </article>
+      <section className={g.close}>
+        <TrackedLink href={bookHref} event="Book call" props={{ src: BOOK_SRC }} className={c.btn}>Book a call</TrackedLink>
+      </section>
     </PageFrame>
   )
 }
