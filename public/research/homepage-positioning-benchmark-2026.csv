@@ -4,11 +4,11 @@ row,stage,category,customer,alternative,outcome,proof,plain
 3,Seed,N,Y,N,Y,Y,Y
 4,Series A,Y,Y,Y,N,N,Y
 5,Seed,Y,Y,Y,N,N,Y
-6,Seed,Y,N,N,N,Y,Y
+6,Seed,Y,N,N,N,Y,N
 7,Seed,N,N,N,N,N,Y
 8,Series A,Y,N,N,N,N,Y
 9,Seed,Y,N,N,N,N,Y
-10,Seed,N,N,Y,N,Y,Y
+10,Seed,N,N,Y,N,Y,N
 11,Series A,Y,Y,Y,Y,Y,Y
 12,Series A,Y,Y,Y,N,N,Y
 13,Series A,Y,Y,N,N,Y,Y
@@ -23,7 +23,7 @@ row,stage,category,customer,alternative,outcome,proof,plain
 22,Seed,Y,N,Y,N,Y,Y
 23,Series A,Y,Y,N,N,Y,Y
 24,Seed,Y,N,N,N,N,Y
-25,Series A,Y,Y,N,N,Y,Y
+25,Series A,Y,Y,N,N,Y,N
 26,Series A,Y,Y,N,Y,N,Y
 27,Series A,Y,Y,N,N,Y,Y
 28,Series A,N,Y,N,Y,N,Y
@@ -31,19 +31,19 @@ row,stage,category,customer,alternative,outcome,proof,plain
 30,Seed,Y,Y,N,Y,N,Y
 31,Seed,Y,N,N,N,N,Y
 32,Seed,Y,N,N,Y,N,Y
-33,Seed,N,N,N,N,N,Y
+33,Seed,N,N,N,N,N,N
 34,Seed,Y,Y,N,N,Y,Y
 35,Series A,Y,Y,N,N,N,Y
 36,Seed,Y,N,N,Y,Y,Y
 37,Seed,Y,N,Y,Y,Y,Y
-38,Series A,Y,Y,Y,Y,Y,Y
-39,Seed,N,Y,N,N,N,Y
+38,Series A,Y,N,Y,Y,Y,Y
+39,Seed,N,Y,N,N,N,N
 40,Seed,N,N,N,N,N,N
 41,Seed,Y,N,Y,N,N,Y
 42,Seed,Y,Y,N,N,N,N
 43,Series A,Y,Y,N,Y,Y,Y
 44,Series A,Y,Y,N,N,Y,Y
-45,Seed,Y,Y,N,N,N,Y
+45,Seed,Y,Y,N,N,N,N
 46,Seed,Y,Y,Y,N,Y,Y
 47,Seed,Y,N,N,N,N,Y
 48,Seed,Y,Y,N,Y,N,Y
@@ -54,9 +54,9 @@ row,stage,category,customer,alternative,outcome,proof,plain
 53,Seed,Y,N,N,N,N,Y
 54,Seed,Y,N,N,N,N,Y
 55,Seed,N,N,N,N,N,N
-56,Series A,Y,Y,N,N,Y,Y
+56,Series A,Y,Y,N,N,Y,N
 57,Seed,Y,N,N,N,N,Y
-58,Series A,Y,Y,Y,N,Y,Y
+58,Series A,Y,N,Y,N,Y,Y
 59,Seed,Y,N,N,N,N,Y
 60,Seed,Y,Y,N,N,N,Y
 61,Series A,Y,N,N,N,Y,N
@@ -71,21 +71,21 @@ row,stage,category,customer,alternative,outcome,proof,plain
 70,Seed,Y,Y,N,Y,Y,Y
 71,Series A,N,N,N,N,Y,N
 72,Series A,Y,Y,N,N,N,Y
-73,Series A,Y,Y,N,Y,N,Y
-74,Series A,Y,N,N,N,Y,Y
+73,Series A,Y,N,N,Y,N,Y
+74,Series A,Y,N,N,N,Y,N
 75,Seed,N,N,N,N,N,N
 76,Seed,Y,Y,Y,N,N,Y
 77,Series A,Y,Y,N,Y,N,Y
 78,Seed,Y,Y,Y,N,N,Y
 79,Series A,Y,Y,N,N,N,Y
 80,Series A,Y,Y,N,N,N,Y
-81,Series A,Y,Y,N,Y,N,Y
-82,Series A,N,N,N,N,N,Y
+81,Series A,Y,Y,N,Y,N,N
+82,Series A,N,N,N,N,N,N
 83,Series A,Y,Y,N,N,N,Y
 84,Series A,Y,N,N,N,N,Y
-85,Series A,Y,N,Y,N,N,Y
-86,Series A,Y,Y,N,Y,N,Y
-87,Series A,Y,Y,N,Y,N,Y
+85,Series A,Y,N,Y,N,N,N
+86,Series A,Y,Y,N,Y,N,N
+87,Series A,Y,N,N,Y,N,Y
 88,Series A,Y,Y,N,Y,Y,Y
 89,Seed,N,N,N,N,N,Y
 90,Series A,Y,N,Y,N,N,Y
@@ -97,5 +97,5 @@ row,stage,category,customer,alternative,outcome,proof,plain
 96,Series A,Y,Y,N,N,N,Y
 97,Seed,Y,Y,N,Y,N,Y
 98,Seed,Y,Y,N,N,N,Y
-99,Seed,Y,Y,Y,N,N,Y
+99,Seed,Y,N,Y,N,N,Y
 100,Seed,Y,N,N,Y,N,Y

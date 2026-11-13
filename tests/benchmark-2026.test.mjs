@@ -30,8 +30,9 @@ test('public file has scores only, and the totals match', () => {
   assert.equal(col(6), byId.proof)
   assert.equal(col(7), byId.plain)
   assert.equal(BENCHMARK.n, 100)
-  assert.equal(BENCHMARK.agreement.agreed, 59)
   assert.equal(BENCHMARK.seed + BENCHMARK.seriesA, 100)
+  assert.equal(byId.plain, 81)
+  assert.equal(byId.customer, 49)
 })
 
 test('the public csv has no names or urls, and the check date is November 12', () => {
@@ -47,6 +48,8 @@ test('new copy has no em dash, names the AI reviewer, and does not name old empl
   assert.doesNotMatch(page, /Copy\.ai|Riverside|MarketerHire/)
   assert.match(page, /3x Head of Marketing/)
   assert.match(page, /an AI model/)
-  assert.match(page, /loosest check/)
+  assert.match(page, /human spot-check of 10 rows/)
+  assert.match(page, /literal words/)
+  assert.doesNotMatch(page, /loosest check/)
   assert.match(page, /Dataset/)
 })

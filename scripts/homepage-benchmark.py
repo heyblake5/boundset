@@ -135,9 +135,9 @@ def main():
     # Public module: totals only. No company names.
     checks = [
         {'id': 'plain', 'name': 'Plain', 'n': totals[5],
-         'q': 'The headline plus the line under it say what the product does in plain words.',
-         'pass': 'Those two lines name the job in words a stranger can repeat. They do not have to name the customer, the alternative, or a result.',
-         'fail': 'Those two lines are a new phrase, and they never say what the product does.'},
+         'q': 'The headline plus the line under it say what the product does in literal words, with no metaphor or slogan.',
+         'pass': 'Those two lines name the job in literal words, such as an API for a named kind of payment.',
+         'fail': 'Those two lines are a metaphor or a slogan, such as a living replica or beating someone at their own game.'},
         {'id': 'category', 'name': 'Category', 'n': totals[0],
          'q': 'The headline or the line under it names a category a buyer would search for.',
          'pass': 'The first line uses a noun a buyer already types, such as a kind of software or a kind of platform, and stops.',
