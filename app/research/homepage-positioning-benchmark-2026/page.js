@@ -1,8 +1,14 @@
 import PageFrame, { Crumb } from '../../../components/guide/PageFrame'
+import TrackedLink from '../../../components/TrackedLink'
+import { BOOK_CALL_URL } from '../../../components/site'
+import { withParams } from '../../../lib/bookHref'
 import g from '../../../components/guide/guide.module.css'
 import c from '../../design/c2/c2.module.css'
 import s from './benchmark.module.css'
 import { BENCHMARK as B } from '../../../lib/benchmark2026'
+
+const BOOK_SRC = 'benchmark-2026'
+const bookHref = withParams(BOOK_CALL_URL, { src: BOOK_SRC })
 
 const PATH = '/research/homepage-positioning-benchmark-2026'
 const URL = 'https://boundset.com' + PATH
@@ -100,6 +106,9 @@ export default function Page() {
           </nav>
         </div>
       </article>
+      <section className={g.close}>
+        <TrackedLink href={bookHref} event="Book call" props={{ src: BOOK_SRC }} className={c.btn}>Book a call</TrackedLink>
+      </section>
     </PageFrame>
   )
 }
