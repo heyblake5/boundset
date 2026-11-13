@@ -335,7 +335,7 @@ Any company that sells to buyers with other options needs positioning. It matter
 | Seed to Series A, scaling sales | High. New hires and channels need one story | A sprint that produces positioning and the copy built on it |
 | Later stage, many teams | Ongoing. Positioning needs an owner | An in house product marketer, a facilitated workshop or a consultant |
 
-You can do positioning yourself with this guide and the free tools. Outside help is worth it when the founding team disagrees or when you need finished copy fast. Compare your options in the guides on positioning agencies vs fractional PMMs, April Dunford alternatives and positioning sprint cost.
+You can do positioning yourself with this guide and the free tools. Outside help is worth it when the founding team disagrees or when you need finished copy fast. Compare your options in the guides on positioning agencies vs fractional PMMs, April Dunford alternatives and positioning sprint cost. Published prices for each option are on what positioning costs.
 
 [EXERCISE positioning-ex-12]
 **Title:** Decide who runs your positioning
@@ -435,6 +435,7 @@ A: Review positioning when something it depends on changes. Triggers include a n
 | /april-dunford-alternatives | April Dunford alternatives | "Who needs positioning work" closing paragraph |
 | /sprint | two week sprint | "Get positioning and copy done in two weeks" |
 | /positioning-sprint-cost | positioning sprint cost | "Who needs positioning work" closing paragraph |
+| /positioning-cost | what positioning costs | "Who needs positioning work" closing paragraph |
 | /#pricing | Stake and Stronghold | CTA section package list |
 | /#book | Book a 15 minute call | Primary CTA (site BOOK_CALL_URL is https://cal.com/heyblake/positioning) |
 | /free-tools | free Boundset tools | FAQ "Can I do positioning myself" |

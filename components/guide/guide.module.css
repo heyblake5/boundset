@@ -2,6 +2,9 @@
 .skip{position:absolute;left:-9999px;top:8px;z-index:50;background:var(--bone);color:var(--ink)!important;padding:8px 14px;border-radius:8px}
 .skip:focus{left:16px}
 .wrap{max-width:1240px;margin:0 auto;padding:calc(72px + var(--s8)) var(--pad) var(--s12)}
+.canvas{max-width:1040px;margin:0 auto}
+.canvas .head{max-width:68ch}
+.canvas .body{max-width:none}
 .grid{display:grid;grid-template-columns:minmax(0,68ch);justify-content:center;column-gap:var(--s8)}
 .head{grid-column:1/-1;max-width:68ch;margin-bottom:var(--s6)}
 .side{display:none}
