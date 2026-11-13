@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 """Homepage positioning benchmark, 2026.
 
-Reads data-private/rows.json (company, homepage, funding source, hand scores,
+Reads data-private/rows.json (company, homepage, funding source, reviewed scores,
 and the hero text used for the first pass). Writes:
 
 - data-private/homepage-benchmark-2026.csv  full file, not deployed
 - public/research/homepage-positioning-benchmark-2026.csv  scores only
 - lib/benchmark2026.js  totals and paraphrases for the page
 
-The numbers on the site are the hand reading. The script columns are a
-keyword first pass over the saved hero text.
+The numbers on the site are the reading after the keyword pass. Both
+readings were done by the same reviewer, an AI model. The script columns
+are a keyword first pass over the saved hero text.
 
-Rubric, each check is yes or no from the fetched homepage on 2026-11-13.
+Rubric, each check is yes or no from the fetched homepage on 2026-11-12.
 
 1. Category. The headline (the H1) or the line under it (the meta description,
    or the first sentence of body text) names a category a buyer would type
@@ -39,7 +40,7 @@ Rubric, each check is yes or no from the fetched homepage on 2026-11-13.
    the product does in one ordinary sentence. A coined term fails this check
    unless those same two lines explain it.
 
-Hand scores use Y or N in rows.json field "scores", six characters in the
+Reviewed scores use Y or N in rows.json field "scores", six characters in the
 order above. Ten companies, chosen with random seed 20261113, were read a
 second time. Their "rescore" field is that second reading.
 """
@@ -51,7 +52,7 @@ FULL = ROOT / 'data-private' / 'homepage-benchmark-2026.csv'
 PUBLIC = ROOT / 'public' / 'research' / 'homepage-positioning-benchmark-2026.csv'
 JS = ROOT / 'lib' / 'benchmark2026.js'
 KEYS = ['category', 'customer', 'alternative', 'outcome', 'proof', 'plain']
-CHECKED = '2026-11-13'
+CHECKED = '2026-11-12'
 
 # Keyword first pass. A hit is not a reading. It only flags the hero text.
 CAT = r'\b(software|platform|crm|ats|security|compliance|analytics|runtime|warranty|procurement|accounting|kubernetes|localization|charging|testing|payments|recruit|fraud|desktop|messaging|benchmark|cad|gateway|monitoring|workspace)\b'
@@ -134,9 +135,9 @@ def main():
     # Public module: totals only. No company names.
     checks = [
         {'id': 'plain', 'name': 'Plain', 'n': totals[5],
-         'q': 'From the headline and the line under it, a stranger can say what the product does.',
-         'pass': 'The first two lines say the job in ordinary words, the way a person would repeat it after one look.',
-         'fail': 'The first two lines are a new phrase for a layer or a system, and they never say what that phrase means.'},
+         'q': 'The headline plus the line under it say what the product does in plain words.',
+         'pass': 'Those two lines name the job in words a stranger can repeat. They do not have to name the customer, the alternative, or a result.',
+         'fail': 'Those two lines are a new phrase, and they never say what the product does.'},
         {'id': 'category', 'name': 'Category', 'n': totals[0],
          'q': 'The headline or the line under it names a category a buyer would search for.',
          'pass': 'The first line uses a noun a buyer already types, such as a kind of software or a kind of platform, and stops.',

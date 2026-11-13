@@ -5,7 +5,6 @@ import { BENCHMARK } from '../lib/benchmark2026.js'
 
 const page = fs.readFileSync(new URL('../app/research/homepage-positioning-benchmark-2026/page.js', import.meta.url), 'utf8')
 const pub = fs.readFileSync(new URL('../public/research/homepage-positioning-benchmark-2026.csv', import.meta.url), 'utf8')
-const full = fs.readFileSync(new URL('../data-private/homepage-benchmark-2026.csv', import.meta.url), 'utf8')
 
 test('opening is 40 to 60 words and the page uses it', () => {
   const words = BENCHMARK.opening.match(/[A-Za-z0-9]+(?:'[A-Za-z]+)?/g)
@@ -35,19 +34,19 @@ test('public file has scores only, and the totals match', () => {
   assert.equal(BENCHMARK.seed + BENCHMARK.seriesA, 100)
 })
 
-test('company names stay out of the public page and the public csv', () => {
-  const names = full.trim().split('\n').slice(1).map((l) => l.split(',')[0])
-  assert.equal(names.length, 100)
-  const pubText = page + '\n' + pub + '\n' + fs.readFileSync(new URL('../lib/benchmark2026.js', import.meta.url), 'utf8')
-  for (const name of names) {
-    if (name.length < 4) continue
-    assert.equal(pubText.includes(name), false, name)
-  }
+test('the public csv has no names or urls, and the check date is November 12', () => {
+  assert.equal(BENCHMARK.checked, '2026-11-12')
+  assert.match(page, /Nov 12, 2026/)
+  assert.doesNotMatch(page, /Nov 13/)
+  assert.doesNotMatch(pub, /https?:/)
+  assert.doesNotMatch(page + pub, /data-private/)
 })
 
-test('new copy has no em dash and does not name old employers', () => {
+test('new copy has no em dash, names the AI reviewer, and does not name old employers', () => {
   assert.doesNotMatch(page, /[—–]/)
   assert.doesNotMatch(page, /Copy\.ai|Riverside|MarketerHire/)
   assert.match(page, /3x Head of Marketing/)
+  assert.match(page, /an AI model/)
+  assert.match(page, /loosest check/)
   assert.match(page, /Dataset/)
 })

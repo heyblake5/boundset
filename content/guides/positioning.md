@@ -1,7 +1,7 @@
 ---
 slug: positioning
 route: /positioning
-updated: 2026-11-13
+updated: 2026-11-12
 ---
 ## META
 - Meta title (<=60 chars): What Is Product Positioning and How to Do It Step by Step
