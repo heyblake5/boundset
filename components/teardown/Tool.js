@@ -5,6 +5,7 @@ import s from './td.module.css'
 import Icon from '../../app/design/c2/Icons'
 import TrackedLink from '../TrackedLink'
 import Blocks from './Blocks'
+import Scorecard from './Scorecard'
 import { COPY } from './copy'
 import { track } from './track'
 import { UrlForm } from './UrlForm'
@@ -22,11 +23,11 @@ export default function Tool({ available, emailOn, bookUrl, samples }) {
   const t0 = useRef(0), [initialUrl, setInit] = useState('')
   useEffect(() => { t0.current = Date.now(); const q = new URLSearchParams(location.search).get('url'); if (q) setInit(q.slice(0, 300)) }, [])
   const [phase, setPhase] = useState(available ? 'idle' : 'unavailable')
-  const [page, setPage] = useState(null), [r, setR] = useState({}), [done, setDone] = useState(null), [err, setErr] = useState(null), [last, setLast] = useState(null)
+  const [page, setPage] = useState(null), [r, setR] = useState({}), [score, setScore] = useState(null), [done, setDone] = useState(null), [err, setErr] = useState(null), [last, setLast] = useState(null)
   const live = useRef(null)
 
   async function run(url, hp) {
-    setLast({ url, hp }); setErr(null); setPage(null); setR({}); setDone(null); setPhase('reading')
+    setLast({ url, hp }); setErr(null); setPage(null); setR({}); setScore(null); setDone(null); setPhase('reading')
     track('Teardown start', { host: new URL(url).hostname })
     let res
     try { res = await fetch('/api/teardown', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ url, company_hp: hp, elapsed: Date.now() - t0.current }) }) } catch { return fail('blocked') }
@@ -39,6 +40,7 @@ export default function Tool({ available, emailOn, bookUrl, samples }) {
         const e = JSON.parse(line)
         if (e.type === 'page') setPage(e)
         else if (e.type === 'section') setR((p) => ({ ...p, [e.key]: e.value }))
+        else if (e.type === 'scorecard' && Array.isArray(e.checks)) setScore(e.checks)
         else if (e.type === 'done') { setDone(e); setPhase('result'); track('Teardown result', { host: e.host, cached: String(e.cached) }) }
         else if (e.type === 'error') return fail(e.reason)
       }
@@ -72,6 +74,7 @@ export default function Tool({ available, emailOn, bookUrl, samples }) {
               {page ? <><p className={s.title}>{page.title}</p>{page.h1 && <p className={s.pH1}>{page.h1}</p>}
                 {phase === 'reading' && <ul className={s.heads}>{page.headlines?.slice(0, 6).map((h, i) => <m.li key={i} initial={{ opacity: 0, x: -6 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * .08 }}>{h}</m.li>)}</ul>}</>
                 : <div aria-hidden="true"><div className={s.skel} style={{ width: 220 }} /><div className={s.skel} style={{ width: '60%', height: 28 }} /></div>}
+              {score ? <Scorecard checks={score} /> : null}
               <Blocks r={r} pageLines={phase === 'result' ? lines : null} onCopy={() => track('Teardown copy rewrite')} />
               {phase === 'result' && (
                 <>
@@ -80,7 +83,7 @@ export default function Tool({ available, emailOn, bookUrl, samples }) {
                   </p>
                   <div className={s.after}>
                     {emailOn ? <Email id={done.id} book={book} /> : <span />}
-                    <TrackedLink href={book} event="Book call" props={{ src: 'teardown-tool' }} className={s.btn}>{COPY.book}</TrackedLink>
+                    <TrackedLink href={withParams(book, { src: 'scorecard' })} event="Book call" props={{ src: 'scorecard' }} className={s.btn}>{COPY.book}</TrackedLink>
                   </div>
                 </>
               )}
