@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import Shell from '../../../../components/c2/Shell'
 import Blocks from '../../../../components/teardown/Blocks'
+import Scorecard from '../../../../components/teardown/Scorecard'
 import TrackedLink from '../../../../components/TrackedLink'
 import s from '../../../../components/teardown/td.module.css'
 import { BOOK_CALL_URL } from '../../../../components/site'
@@ -17,11 +18,12 @@ export default async function Page({ params }) {
   return (
     <Shell><div className={s.page}>
       <p className={s.title}>{rec.page.title}</p>{rec.page.h1 && <h1 className={s.pH1}>{rec.page.h1}</h1>}
+      {rec.scorecard?.checks ? <Scorecard checks={rec.scorecard.checks} /> : null}
       <Blocks r={rec.result} pageLines={rec.page.text.split('\n').map((l) => l.replace(/^H[1-3]: /, ''))} />
       <p className={s.invite}>
         <TrackedLink href={withParams(book, { src: 'teardown-result' })} event="Book call" props={{ src: 'teardown-result' }}>{COPY.bookWalk}</TrackedLink>
       </p>
-      <div className={s.after}><span /><TrackedLink href={book} event="Book call" props={{ src: 'teardown-tool' }} className={s.btn}>{COPY.book}</TrackedLink></div>
+      <div className={s.after}><span /><TrackedLink href={withParams(book, { src: 'scorecard' })} event="Book call" props={{ src: 'scorecard' }} className={s.btn}>{COPY.book}</TrackedLink></div>
     </div></Shell>
   )
 }

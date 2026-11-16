@@ -14,6 +14,11 @@ export const COPY = {
   emailSent: (e) => `Sent to ${e}`,
   book: 'Book a 15 minute call',
   bookWalk: 'Book a 15-minute call to walk through this teardown.',
+  scoreOf: (n) => `${n} of 6`,
+  scorePass: 'Pass.',
+  scoreMiss: 'Miss.',
+  scoreCompare: (n) => `${n} of the 100 homepages passed this check.`,
+  scoreBenchmark: 'Homepage positioning benchmark 2026',
   retry: 'Try again',
   errors: {
     blocked: "We couldn't read that page. Try the full URL, starting with https.",

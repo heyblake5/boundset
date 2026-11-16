@@ -78,6 +78,7 @@ export default function Page() {
           ))}
 
           <h2 id="check" className={g.h2}>Check your homepage</h2>
+          <p><a href="/teardown">Score your homepage on the same 6 checks</a>.</p>
           <div className={s.box}>
             <form className={s.form} action="/teardown" method="get">
               <input name="url" type="text" inputMode="url" autoComplete="url" autoCapitalize="none" spellCheck="false" aria-label="Homepage URL" required />
