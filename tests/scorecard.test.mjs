@@ -25,7 +25,7 @@ function card(overrides = {}) {
 }
 
 test('guard keeps a grounded card and drops a quote or a number that is not on the page', () => {
-  const ok = guardScore(card(), text)
+  const ok = guardScore(card(), text, 'Welcome to agentic revenue.')
   assert.equal(ok.checks.length, 6)
   assert.deepEqual(ok.checks.map((c) => c.id), BENCHMARK.checks.map((c) => c.id))
   assert.equal(ok.checks.filter((c) => c.pass).length, 1)
@@ -35,7 +35,10 @@ test('guard keeps a grounded card and drops a quote or a number that is not on t
   const missing = card()
   missing.checks = missing.checks.filter((c) => c.id !== 'plain')
   assert.equal(guardScore(missing, text), null)
-  const dashed = guardScore(card({ plain: { reason: 'The line is a metaphor \u2014 not the job.' } }), text)
+  const dashed = guardScore(card({ plain: { reason: 'The line is a metaphor \u2014 not the job.' } }), text, 'Welcome to agentic revenue.')
+  assert.equal(guardScore(card({ outcome: { quote: 'The intelligent system that never sleeps.' } }), text, 'Welcome to agentic revenue.'), null)
+  const trust = 'Companies of all sizes trust the product to deliver.'
+  assert.equal(guardScore(card({ proof: { pass: true, quote: trust, reason: 'The first screen says companies trust the product.' } }), text + ' ' + trust.toLowerCase(), 'Welcome to agentic revenue.'), null)
   assert.equal(dashed.checks.find((c) => c.id === 'plain').reason.includes('\u2014'), false)
   assert.match(dashed.checks.find((c) => c.id === 'plain').reason, /metaphor/)
 })
