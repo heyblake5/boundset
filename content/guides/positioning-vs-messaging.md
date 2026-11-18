@@ -1,7 +1,7 @@
 ---
 slug: positioning-vs-messaging
 route: /answers/positioning-vs-messaging
-updated: 2026-11-09
+updated: 2026-11-18
 ---
 ## META
 - Meta title (<=60 chars): Positioning vs Messaging and Why the Order Matters
@@ -23,6 +23,12 @@ Positioning is the strategy that decides which customers you are best for and wh
 - A quick test tells you which one is broken. If your team disagrees on who you are for, fix positioning. If they agree but the words fall flat, fix messaging.
 
 ## BODY
+
+## Positioning vs messaging difference
+
+Positioning is the set of choices: who you are best for, what they would use instead, and why you win. Messaging is the words that carry those choices into a headline or a sales call. Positioning stays inside the company and changes when the market or the product changes. Messaging is what buyers read, and it can change by channel.
+
+Write the choices down before anyone drafts the homepage. If the team disagrees on the customer, the next draft will drift. The table under The short answer lays out the same split. [Run a positioning teardown](/teardown) when the homepage is where the drift shows. [Book a 15 minute call](https://cal.com/heyblake/positioning?src=aeo-positioning-vs-messaging).
 
 ## The short answer
 
@@ -171,6 +177,13 @@ Boundset handles positioning and messaging in one two week sprint for seed stage
 
 **Primary CTA:** Book a 15 minute call
 
+## Questions this page answers
+
+- [Positioning vs messaging difference](#positioning-vs-messaging-difference)
+- [Messaging framework consultant for startups](/answers/what-is-a-messaging-framework#messaging-framework-consultant-for-startups)
+- [Positioning canvas for startups](/templates/positioning-canvas#positioning-canvas-for-startups)
+- [How to fix a startup homepage that doesn't convert](/answers/how-to-fix-a-homepage-that-doesnt-convert#how-to-fix-a-startup-homepage-that-doesnt-convert)
+
 ## WORKBOOK SUMMARY
 1. positioning-vs-messaging-ex-1 Sort your current materials (section: What messaging covers)
 2. positioning-vs-messaging-ex-2 Diagnose which layer is broken (section: How to tell which one is broken)
@@ -178,6 +191,9 @@ Boundset handles positioning and messaging in one two week sprint for seed stage
 4. positioning-vs-messaging-ex-4 Write your stop saying list (section: Where value propositions and taglines fit)
 
 ## FAQ
+**Q: Positioning vs messaging difference**
+A: Positioning is the set of choices: who you are best for, what they would use instead, and why you win. Messaging is the words that carry those choices into a headline or a sales call. Positioning stays inside the company and changes when the market or the product changes. Messaging is what buyers read, and it can change by channel.
+
 **Q: What is the difference between positioning and messaging?**
 A: Positioning is the strategy. It decides which customers you are best for, and why you win. Messaging is the words that carry that strategy to buyers in headlines and sales calls. Positioning is internal and changes rarely. Messaging is external and changes by channel and persona.
 

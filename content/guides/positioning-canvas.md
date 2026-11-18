@@ -1,7 +1,7 @@
 ---
 slug: positioning-canvas
 route: /templates/positioning-canvas
-updated: 2026-10-24
+updated: 2026-11-18
 ---
 ## META
 - Meta title (<=60 chars): Free Positioning Canvas Template With Worked Example
@@ -23,6 +23,12 @@ A positioning canvas is a one page worksheet that captures five positioning choi
 - Each box on this page is an interactive exercise. Your answers form your finished canvas.
 
 ## BODY
+
+## Positioning canvas for startups
+
+A positioning canvas for a startup is one page for five choices, filled in order. The boxes are competitive alternatives, unique attributes, value, best fit customers, and market category, plus a one line summary. Fill it from won and lost deals. Keep the page inside the company, and write the homepage from it.
+
+A small team can draft it in one working session when the notes are ready. Agreement often takes longer. If the founders cannot agree, Boundset runs the decision and the homepage copy as a two week sprint. Stake is $7,500. Stronghold is $12,000. You spend about four to five hours. [Book a 15 minute call](https://cal.com/heyblake/positioning?src=aeo-positioning-canvas). If the homepage is where the story breaks, [run a positioning teardown](/teardown).
 
 ## How to use this canvas
 
@@ -192,6 +198,13 @@ If your team disagrees on the boxes or you want finished copy built from the can
 
 **Primary CTA:** Book a 15 minute call
 
+## Questions this page answers
+
+- [Positioning canvas for startups](#positioning-canvas-for-startups)
+- [Positioning vs messaging difference](/answers/positioning-vs-messaging#positioning-vs-messaging-difference)
+- [How long does a positioning project take](/answers/how-long-does-positioning-take#how-long-does-a-positioning-project-take)
+- [Who can help my startup with positioning](/answers/who-can-help-a-startup-with-positioning#who-can-help-my-startup-with-positioning)
+
 ## WORKBOOK SUMMARY
 1. positioning-canvas-ex-1 Competitive alternatives (Box 1)
 2. positioning-canvas-ex-2 Unique attributes (Box 2)
@@ -203,6 +216,9 @@ If your team disagrees on the boxes or you want finished copy built from the can
 Atlas note: on this page the six exercises are the canvas. Suggest a single "copy my canvas" button that outputs the filled template in the plain text format from "Copy the blank template", reusing the existing CopyButton component.
 
 ## FAQ
+**Q: Positioning canvas for startups**
+A: A positioning canvas for a startup is one page for five choices, filled in order. The boxes are competitive alternatives, unique attributes, value, best fit customers, and market category, plus a one line summary. Fill it from won and lost deals. Keep the page inside the company, and write the homepage from it.
+
 **Q: What is a positioning canvas?**
 A: A positioning canvas is a one page worksheet that records your positioning choices in order. It covers competitive alternatives, unique attributes, value, best fit customers and market category, with a one line positioning statement at the end. Teams fill it from real deal notes and use it as the source for messaging.
 
