@@ -52,7 +52,7 @@ None of these are copy. Nobody puts "competitive alternatives: spreadsheets" on 
 
 ## What messaging covers
 
-Messaging covers the words you use with buyers. It takes each positioning choice and writes it for a specific reader in a specific place. A good messaging document gives every team approved language to start from, so the site and the sales team say the same thing.
+Messaging covers the words you use with buyers. It takes each positioning choice and writes it for a specific reader in a specific place. A good messaging document gives every team approved language to start from, so the site and the sales team say the same thing. The way Boundset writes that file is a messaging strategy.
 
 A messaging document usually includes:
 
@@ -200,6 +200,7 @@ A: Messaging can change often. Teams adjust headlines and emails by channel and 
 | Path | Anchor text | Where it goes in the body |
 |---|---|---|
 | /positioning | complete guide to product positioning | End of "What positioning covers" |
+| /messaging-strategy | messaging strategy | "What messaging covers" |
 | /answers/message-house-template | message house template | End of "What messaging covers" |
 | /answers/positioning-vs-branding | branding vs positioning | "Where value propositions and taglines fit" |
 | /free-tools/positioning-debt-check | free positioning debt check | After positioning-vs-messaging-ex-2 |

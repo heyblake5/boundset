@@ -94,7 +94,7 @@ export default function Sprint() {
 
           <h2 id="choose" className={g.h2}>Consultant, agency or sprint</h2>
           <p>{CHOOSE}</p>
-          <p>Read <a href="/compare/positioning-consultant-vs-agency">positioning consultant vs agency</a>, <a href="/april-dunford-alternatives">April Dunford alternatives</a> and <a href="/positioning-sprint-cost">what a positioning sprint costs</a>.</p>
+          <p>Read <a href="/compare/positioning-consultant-vs-agency">positioning consultant vs agency</a>, <a href="/april-dunford-alternatives">April Dunford alternatives</a>, <a href="/positioning-sprint-cost">what a positioning sprint costs</a>, and <a href="/positioning-cost">what positioning costs</a>. The file the sprint produces is a <a href="/messaging-strategy">messaging strategy</a>.</p>
 
           <h2 id="client" className={g.h2}>What a client said</h2>
           <blockquote className={g.quote}><p>{QUOTE}</p></blockquote>

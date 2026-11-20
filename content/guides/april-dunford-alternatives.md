@@ -38,7 +38,7 @@ April Dunford's main offer is a facilitated positioning workshop. She also runs 
 | Obviously Awesome (book) | Her step by step positioning process | Book price |
 | Sales Pitch (book) | An eight step sales pitch structure built on her positioning work | Book price |
 
-Her contact page answers a few common questions. She works with growth stage startups and larger organizations. She mainly works with B2B companies. She does not work with pre launch or very early release products, and recommends reading Obviously Awesome at that stage. She is generally booked a few months in advance. She does not sell single paid hours.
+Her contact page answers a few common questions. She works with growth stage startups and larger organizations. She mainly works with B2B companies. She does not work with pre launch or very early release products, and recommends reading Obviously Awesome at that stage. She is generally booked a few months in advance. She does not sell single paid hours. Her workshop prices sit next to the other published prices on what positioning costs.
 
 ## Who April Dunford is best for
 
@@ -220,6 +220,7 @@ A: Compare the file you leave with, who does the work, the hours you will spend,
 | Path | Anchor text | Where it goes in the body |
 |---|---|---|
 | /sprint | Boundset's sprint | "Where Boundset fits" |
+| /positioning-cost | what positioning costs | End of "What April Dunford offers" |
 | /positioning | this site's guides | "What April Dunford offers" first paragraph |
 | /positioning-sprint-cost | positioning sprint cost guide | "Positioning sprint" H3 |
 | /positioning-agency-vs-fractional-pmm | positioning agency vs fractional PMM | End of "The main alternatives compared" |

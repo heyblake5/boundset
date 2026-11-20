@@ -38,7 +38,7 @@ A positioning agency fits a team that needs brand design and copy delivered toge
 | Your involvement | Reviews across the project | Regular meetings, like a team member | A few focused sessions |
 | Watch for | Scope and timeline growing | Strategy waiting behind daily tasks | Work after the sprint needs an owner |
 
-Pricing varies widely by provider in all three groups, so get quotes on the same scope. The positioning sprint cost guide lists published sprint prices.
+Pricing varies widely by provider in all three groups, so get quotes on the same scope. The positioning sprint cost guide lists published sprint prices. Monthly rates and project fees for the other options are on what positioning costs.
 
 ## When a positioning agency is the right choice
 
@@ -182,6 +182,7 @@ A: Put every quote against the same list. Ask what files you get, who does the w
 |---|---|---|
 | /sprint | Boundset is a positioning sprint | "Where Boundset fits" |
 | /positioning-sprint-cost | positioning sprint cost guide | After the comparison table |
+| /positioning-cost | what positioning costs | After the comparison table |
 | /positioning | positioning | "Why many teams do positioning first" first sentence |
 | /april-dunford-alternatives | April Dunford alternatives | Optional, end of "How to choose between them" |
 | /free-tools/positioning-debt-check | positioning debt check | Optional, before positioning-agency-vs-fractional-pmm-ex-1 |

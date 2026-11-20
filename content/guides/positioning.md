@@ -1,7 +1,7 @@
 ---
 slug: positioning
 route: /positioning
-updated: 2026-11-09
+updated: 2026-11-12
 ---
 ## META
 - Meta title (<=60 chars): What Is Product Positioning and How to Do It Step by Step
@@ -68,7 +68,7 @@ Weak positioning shows up in daily work long before anyone calls it a positionin
 - The site leads with features and buries what customers get.
 - Your homepage could belong to a competitor with a logo swap.
 
-Boundset calls the build up of these problems positioning debt. It grows as the product changes and the story stays put. Most founders can explain what their product does. Fewer can explain why anyone should care. By seed stage the homepage often describes the old company.
+Boundset calls the build up of these problems positioning debt. It grows as the product changes and the story stays put. Most founders can explain what their product does. Fewer can explain why anyone should care. By seed stage the homepage often describes the old company. The homepage positioning benchmark checked 100 of those homepages in November 2026. 21 of 100 name the alternative they replace.
 
 Good positioning also makes other work cheaper. A designer or a new marketing hire can start from a clear brief on day one. Sales reps stop improvising. Content stops guessing at the angle.
 
@@ -335,7 +335,7 @@ Any company that sells to buyers with other options needs positioning. It matter
 | Seed to Series A, scaling sales | High. New hires and channels need one story | A sprint that produces positioning and the copy built on it |
 | Later stage, many teams | Ongoing. Positioning needs an owner | An in house product marketer, a facilitated workshop or a consultant |
 
-You can do positioning yourself with this guide and the free tools. Outside help is worth it when the founding team disagrees or when you need finished copy fast. Compare your options in the guides on positioning agencies vs fractional PMMs, April Dunford alternatives and positioning sprint cost.
+You can do positioning yourself with this guide and the free tools. Outside help is worth it when the founding team disagrees or when you need finished copy fast. Compare your options in the guides on positioning agencies vs fractional PMMs, April Dunford alternatives and positioning sprint cost. Published prices for each option are on what positioning costs.
 
 [EXERCISE positioning-ex-12]
 **Title:** Decide who runs your positioning
@@ -435,9 +435,11 @@ A: Review positioning when something it depends on changes. Triggers include a n
 | /april-dunford-alternatives | April Dunford alternatives | "Who needs positioning work" closing paragraph |
 | /sprint | two week sprint | "Get positioning and copy done in two weeks" |
 | /positioning-sprint-cost | positioning sprint cost | "Who needs positioning work" closing paragraph |
+| /positioning-cost | what positioning costs | "Who needs positioning work" closing paragraph |
 | /#pricing | Stake and Stronghold | CTA section package list |
 | /#book | Book a 15 minute call | Primary CTA (site BOOK_CALL_URL is https://cal.com/heyblake/positioning) |
 | /free-tools | free Boundset tools | FAQ "Can I do positioning myself" |
+| /research/homepage-positioning-benchmark-2026 | homepage positioning benchmark | "Why positioning matters for startups", the paragraph on positioning debt |
 
 All paths exist in /workspace/boundset-redesign/app/ (anchors #pricing and #book exist on the homepage). The sprint page is /sprint.
 
