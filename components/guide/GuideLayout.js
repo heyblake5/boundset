@@ -80,7 +80,9 @@ function Block({ b, i, ex }) {
     case 'ol': return <ol className={g.ol}>{b.items.map((x, j) => <li key={j}><Inline text={x} /></li>)}</ol>
     case 'code': return <pre className={g.pre}><code>{b.text}</code></pre>
     case 'table': return <div className={g.tableWrap} tabIndex={0} role="region" aria-label={b.head.join(', ')}><table className={g.table}><thead><tr>{b.head.map((h) => <th key={h} scope="col">{h}</th>)}</tr></thead><tbody>{b.rows.map((r, j) => <tr key={j}>{r.map((x, k) => k ? <td key={k}><Inline text={x} /></td> : <th key={k} scope="row"><Inline text={x} /></th>)}</tr>)}</tbody></table></div>
-    case 'cta': return <p className={g.cta}><a href={BOOK} className={c.btn}>{b.text}</a></p>
+    case 'cta': return b.src
+      ? <p className={g.cta}><TrackedLink href={withParams(BOOK_CALL_URL, { src: b.src })} event="Book call" props={{ src: b.src }} className={c.btn}>{b.text}</TrackedLink></p>
+      : <p className={g.cta}><a href={BOOK} className={c.btn}>{b.text}</a></p>
     case 'steps': return <ol className={g.steps}>{b.items.map(([t, d], j) => <li key={j}><span className={g.stepN} aria-hidden="true">{String(j + 1).padStart(2, '0')}</span><div><p className={g.stepT}>{t}</p><p>{d}</p></div></li>)}</ol>
     case 'cards': return <ol className={g.cards}>{b.items.map(([t, q], j) => <li key={t} className={j === b.items.length - 1 && b.items.length % 2 ? g.cardWide : undefined}><h2 id={b.ids[j]} className={g.cardH}>{t}</h2><p>{q}</p></li>)}</ol>
     case 'actions': return <p className={g.actions}><CopyButton text={b.copy} label={b.label || 'Copy template'} className={c.btnSm} />{(b.links || []).map(([h, t]) => <a key={h} href={h} className={g.ghost}>{t}</a>)}</p>
