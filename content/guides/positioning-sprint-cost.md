@@ -1,18 +1,18 @@
 ---
 slug: positioning-sprint-cost
 route: /positioning-sprint-cost
-updated: 2026-10-24
+updated: 2026-11-26
 ---
 ## META
-- Meta title (<=60 chars): Positioning Sprint Cost With Published Prices Compared
-- Meta description (<=155 chars): What a positioning sprint costs, with published prices from real providers, what changes the price and how to compare scope before you book.
+- Meta title (<=60 chars): How Much Does a Positioning Sprint Cost
+- Meta description (<=155 chars): As of November 12, 2026, a Boundset positioning sprint costs $7,500 or $12,000. See what each price includes before you book.
 - Word count: 2506 total file, 1540 in BODY
 
 ## H1
 How much a positioning sprint costs
 
 ## DEFINITION (40-60 words)
-A positioning sprint is a fixed scope, fixed price project that sets a company's positioning in a few weeks. Published startup sprint prices we checked in October 2026 range from $2,400 to $7,500. Boundset charges $7,500 for a two week sprint that includes homepage copy, or $12,000 with more pages and assets.
+As of November 12, 2026, a Boundset positioning sprint costs $7,500 for Stake or $12,000 for Stronghold. Stake runs two weeks and includes homepage copy. Stronghold adds more pages, more assets, and a year of coaching. Other published sprint prices are in the table below. Compare the deliverables and the fee.
 
 ## KEY TAKEAWAYS
 - Published prices we verified: Rethink GTM lists a three week sprint at $2,400. SF Marketing Agency lists a $7,500 fixed scope sprint. Boundset lists $7,500 and $12,000.
@@ -22,6 +22,16 @@ A positioning sprint is a fixed scope, fixed price project that sets a company's
 - Ask about payment terms and what happens after the last day before you sign.
 
 ## BODY
+
+## How much does a positioning sprint cost
+
+As of November 12, 2026, a Boundset positioning sprint costs $7,500 for Stake or $12,000 for Stronghold. Stake is a two week sprint and includes homepage copy. Stronghold adds three more pages, three activation assets, and a year of async coaching in Slack.
+
+1. Match the fee to the file. Stake includes the positioning, a messaging matrix, homepage copy with variants, and a wireframe.
+2. Use the workshop when you want the brief first. It costs $2,000 and is credited in full toward the sprint if you start within 30 days.
+3. Read the table below for other published sprint prices, then confirm the current fee on that provider's page.
+
+[Book a 15 minute call](https://cal.com/heyblake/positioning?src=aeo-positioning-sprint-cost). The [sprint page](/sprint) lists both fees. [How to reposition a B2B SaaS product](/answers/how-to-reposition-a-product#how-to-reposition-a-b2b-saas-product) and the [positioning workshop for startup founders](/answers/positioning-workshop-agenda#positioning-workshop-for-startup-founders) cover the work those fees buy.
 
 ## What positioning sprints cost
 
@@ -182,8 +192,8 @@ If you want positioning and finished copy in two weeks, book a 15 minute call. Y
 4. positioning-sprint-cost-ex-4 Check your readiness (section: When a sprint is the wrong buy)
 
 ## FAQ
-**Q: How much does a positioning sprint cost?**
-A: Published startup positioning sprints we checked in October 2026 range from $2,400 at Rethink GTM to $7,500 at SF Marketing Agency. Boundset costs $7,500 for Stake or $12,000 for Stronghold. April Dunford's three day facilitated workshop is a separate tier, listed at $50,000 or $80,000 depending on company size.
+**Q: How much does a positioning sprint cost**
+A: As of November 12, 2026, a Boundset positioning sprint costs $7,500 for Stake or $12,000 for Stronghold. Stake is a two week sprint and includes homepage copy. Stronghold adds three more pages, three activation assets, and a year of async coaching in Slack.
 
 **Q: How long does a positioning sprint take?**
 A: The sprints compared here run two to four weeks. Rethink GTM lists three weeks plus an optional revision week. SF Marketing Agency lists 14 business days. Boundset runs two weeks. Most also need a short prep step where you send materials such as a demo and a recorded sales call before the first session.
